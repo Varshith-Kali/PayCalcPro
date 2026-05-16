@@ -1,0 +1,169 @@
+﻿'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import { calculateSalary, formatINR, formatINRCompact, type SalaryBreakdown } from '@/lib/calculators'
+import FAQSection from '@/components/FAQSection'
+import AdUnit from '@/components/AdUnit'
+
+const SalaryChart = dynamic(() => import('@/components/SalaryChart'), { ssr: false })
+
+const faqs = [
+  { question: 'What is the difference between in-hand salary and net salary?', answer: 'They mean the same thing — the actual amount credited to your bank account after all deductions from gross salary.' },
+  { question: 'Is professional tax the same across all states?', answer: 'No. Professional tax rates and slabs vary by state. ₹200/month is the common maximum in states like Maharashtra, Karnataka, and West Bengal.' },
+  { question: 'Does the in-hand salary calculator account for variable pay?', answer: 'Variable pay (bonuses, incentives) is not included in standard calculation since it depends on performance. Add it separately to your annual figure if it is guaranteed.' },
+]
+
+export default function InHandSalaryPage() {
+  const [ctc, setCtc] = useState('')
+  const [city, setCity] = useState<'metro' | 'non-metro'>('metro')
+  const [result, setResult] = useState<SalaryBreakdown | null>(null)
+  const [showChart, setShowChart] = useState(false)
+
+  const calculate = () => {
+    const val = parseFloat(ctc.replace(/,/g, ''))
+    if (!val || val <= 0) return
+    const res = calculateSalary(val * 100000, city)
+    setResult(res)
+    setShowChart(false)
+    setTimeout(() => setShowChart(true), 100)
+  }
+
+  return (
+    <div className="min-h-screen">
+      <section className="calc-hero">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="breadcrumb mb-4 text-slate-400">
+            <Link href="/" className="hover:text-white">Home</Link><span>/</span>
+            <span className="text-slate-300">In-Hand Salary Calculator</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">In-Hand Salary Calculator with Full Breakdown</h1>
+          <p className="text-slate-300 text-lg max-w-2xl">See your complete monthly salary breakdown — every earning and deduction — with interactive charts for easy understanding.</p>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-3 space-y-6">
+            <div className="card p-6 md:p-8">
+              <h2 className="text-xl font-bold text-slate-900 mb-6">Calculate Salary Breakdown</h2>
+              <div className="space-y-5">
+                <div>
+                  <label className="form-label">Annual CTC (in Lakhs)</label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
+                    <input type="number" placeholder="e.g. 15" value={ctc} onChange={e => setCtc(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && calculate()} className="form-input pl-8" />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">LPA</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="form-label">City Type (affects HRA)</label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {(['metro', 'non-metro'] as const).map(c => (
+                      <button key={c} onClick={() => setCity(c)}
+                        className={`py-3 px-4 rounded-xl border-2 text-sm font-semibold transition-all ${city === c ? 'border-sky-500 bg-sky-50 text-sky-700' : 'border-slate-200 text-slate-600'}`}>
+                        {c === 'metro' ? '🏙 Metro' : '🏘 Non-Metro'}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <button onClick={calculate} className="btn-primary w-full btn-lg">Get Full Salary Breakdown →</button>
+              </div>
+            </div>
+
+            {result && (
+              <div className="animate-scale-in space-y-5">
+                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white rounded-2xl p-6 shadow-blue">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-sky-200 text-xs font-medium mb-1">Monthly In-Hand</p>
+                      <p className="text-3xl font-bold">{formatINR(result.inHandMonthly)}</p>
+                    </div>
+                    <div>
+                      <p className="text-sky-200 text-xs font-medium mb-1">Annual In-Hand</p>
+                      <p className="text-3xl font-bold">{formatINRCompact(result.inHandAnnual)}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="card overflow-hidden">
+                  <div className="grid grid-cols-3 divide-x divide-slate-100 bg-slate-50 text-center">
+                    {[
+                      { label: 'CTC', value: formatINRCompact(result.ctc) },
+                      { label: 'Gross', value: formatINRCompact(result.gross) },
+                      { label: 'In-Hand', value: formatINRCompact(result.inHandAnnual) },
+                    ].map((s, i) => (
+                      <div key={i} className="px-4 py-4">
+                        <p className="text-xs text-slate-500 mb-0.5">{s.label}</p>
+                        <p className="font-bold text-slate-900 text-sm">{s.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="divide-y divide-slate-50">
+                    <div className="px-6 py-3 bg-emerald-50/50">
+                      <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2">Monthly Earnings</p>
+                      {result.components.filter(c => c.type === 'earning').map((c, i) => (
+                        <div key={i} className="flex justify-between items-center py-1.5">
+                          <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }}></div><span className="text-sm text-slate-700">{c.label}</span></div>
+                          <span className="text-sm font-semibold text-slate-900">{formatINR(c.monthly)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="px-6 py-3 bg-red-50/30">
+                      <p className="text-xs font-semibold text-red-600 uppercase tracking-wider mb-2">Monthly Deductions</p>
+                      {result.components.filter(c => c.type === 'deduction').map((c, i) => (
+                        <div key={i} className="flex justify-between items-center py-1.5">
+                          <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }}></div><span className="text-sm text-slate-700">{c.label}</span></div>
+                          <span className="text-sm font-semibold text-red-500">−{formatINR(c.monthly)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="px-6 py-4 bg-sky-50 flex justify-between">
+                      <span className="font-bold text-slate-900">Net Monthly Take-Home</span>
+                      <span className="text-xl font-bold text-sky-600">{formatINR(result.inHandMonthly)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {showChart && (
+                  <div className="card p-6">
+                    <h3 className="font-bold text-slate-900 mb-4">Salary Visualization</h3>
+                    <SalaryChart components={result.components} />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          <div className="lg:col-span-2 space-y-5">
+            <div className="card-flat p-5">
+              <h3 className="font-bold text-slate-800 text-sm mb-3">Related Tools</h3>
+              <div className="space-y-2">
+                {[
+                  { href: '/ctc-to-inhand', label: '💰 CTC to In-Hand' },
+                  { href: '/pf-calculator', label: '🏦 PF Calculator' },
+                  { href: '/hra-calculator', label: '🏠 HRA Calculator' },
+                  { href: '/tax-estimator', label: '📊 Tax Estimator' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors text-sm text-slate-700 hover:text-sky-700 border border-transparent hover:border-sky-100">
+                    {l.label} <span className="text-slate-300">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-3xl mt-8 mb-2">
+          <AdUnit slot="1956241775" format="horizontal" />
+        </div>
+        <div className="max-w-3xl mt-2">
+          <FAQSection faqs={faqs} title="In-Hand Salary FAQs" />
+        </div>
+        <div className="max-w-3xl mt-6 mb-4">
+          <AdUnit slot="5101050950" format="auto" />
+        </div>
+      </div>
+    </div>
+  )
+}
