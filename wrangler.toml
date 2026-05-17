@@ -1,3 +1,9 @@
 name = "paycalcpro"
 compatibility_date = "2025-05-17"
 pages_build_output_dir = "./out"
+
+# This config is for Cloudflare Pages (not Workers).
+# In the Cloudflare Pages dashboard, set:
+#   Build command:       npm run build
+#   Build output dir:    out
+#   Deploy command:      (leave EMPTY — Pages handles deployment automatically)

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:deploy": "npx wrangler pages deploy out --project-name paycalcpro"
   },
   "dependencies": {
     "next": "^14.2.0",
