@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
           { title: '5. Children\'s Privacy', body: 'PayCalc Pro is not intended for children under 13. We do not knowingly collect information from children. If you believe a child has provided us information, please contact us.' },
           { title: '6. Third-Party Links', body: 'Our website may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their privacy policies.' },
           { title: '7. Changes to This Policy', body: 'We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Continued use of the site after changes constitutes acceptance.' },
-          { title: '8. Contact', body: 'For any questions about this Privacy Policy, contact us at hello@paycalcpro.online.' },
+          { title: '8. Contact', body: 'For any questions about this Privacy Policy, contact us at contact.paycalcpro@gmail.com.' },
         ].map((s, i) => (
           <div key={i}>
             <h2 className="text-xl font-bold text-slate-900 mb-3">{s.title}</h2>

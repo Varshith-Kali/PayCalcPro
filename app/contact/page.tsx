@@ -31,10 +31,10 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-slate-900 mb-1">Email Us</p>
                 <a
-                  href="mailto:hello@paycalcpro.online"
+                  href="mailto:contact.paycalcpro@gmail.com"
                   className="text-sky-600 hover:text-sky-700 text-sm font-medium transition-colors"
                 >
-                  hello@paycalcpro.online
+                  contact.paycalcpro@gmail.com
                 </a>
                 <p className="text-slate-500 text-xs mt-1">We typically respond within 24–48 hours.</p>
               </div>
@@ -47,10 +47,10 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-slate-900 mb-1">Website</p>
                 <a
-                  href="https://paycalcpro.online"
+                  href="https://paycalcpro.utilhub.workers.dev"
                   className="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors"
                 >
-                  paycalcpro.online
+                  paycalcpro.utilhub.workers.dev
                 </a>
                 <p className="text-slate-500 text-xs mt-1">Free salary calculators for India</p>
               </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
               {
                 icon: '🤝',
                 title: 'Partnerships & Collaborations',
-                desc: 'Interested in collaborating, writing a guest post, or exploring a partnership? Reach out to us at hello@paycalcpro.online.',
+                desc: 'Interested in collaborating, writing a guest post, or exploring a partnership? Reach out to us at contact.paycalcpro@gmail.com.',
               },
               {
                 icon: '🔒',
