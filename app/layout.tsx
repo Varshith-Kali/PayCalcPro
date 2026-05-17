@@ -105,6 +105,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
+        {/* Google Analytics GA4 */}
+        <Script
+          id="ga4-init"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-37KW56DFVE"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-37KW56DFVE');`}
+        </Script>
+
         {/* Google AdSense — Auto Ads */}
         <Script
           id="adsense-init"
