@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Use – PayCalc Pro',
@@ -24,7 +24,7 @@ export default function TermsPage() {
           { title: '6. Third-Party Advertisements', body: 'PayCalc Pro displays third-party advertisements via Google AdSense. We are not responsible for the content of advertisements or the products/services they promote. Clicking on ads takes you to third-party sites governed by their own terms.' },
           { title: '7. Changes to Terms', body: 'We reserve the right to modify these terms at any time. Changes are effective immediately upon posting. Continued use constitutes acceptance of the modified terms.' },
           { title: '8. Governing Law', body: 'These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of Indian courts.' },
-          { title: '9. Contact', body: 'For questions about these terms, contact us at hello@paycalcpro.online.' },
+          { title: '9. Contact', body: 'For questions about these terms, contact us at contact.paycalcpro@gmail.com.' },
         ].map((s, i) => (
           <div key={i}>
             <h2 className="text-xl font-bold text-slate-900 mb-3">{s.title}</h2>

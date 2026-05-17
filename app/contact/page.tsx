@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -47,10 +47,10 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-slate-900 mb-1">Website</p>
                 <a
-                  href="https://paycalcpro.utilhub.workers.dev"
+                  href="https://paycalcpro.online"
                   className="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors"
                 >
-                  paycalcpro.utilhub.workers.dev
+                  paycalcpro.online
                 </a>
                 <p className="text-slate-500 text-xs mt-1">Free salary calculators for India</p>
               </div>

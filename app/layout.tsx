@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://paycalcpro.utilhub.workers.dev'),
+  metadataBase: new URL('https://paycalcpro.online'),
   title: {
     default: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand 2025-26',
     template: '%s | PayCalc Pro',
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://paycalcpro.utilhub.workers.dev',
+    url: 'https://paycalcpro.online',
     title: 'PayCalc Pro – Free Salary Calculator India | FY 2025-26',
     description: 'Calculate CTC to in-hand salary, PF, HRA & income tax instantly. Updated for FY 2025-26.',
     siteName: 'PayCalc Pro',
-    images: [{ url: 'https://paycalcpro.utilhub.workers.dev/icon.png', width: 512, height: 512, alt: 'PayCalc Pro Logo' }],
+    images: [{ url: 'https://paycalcpro.online/icon.png', width: 512, height: 512, alt: 'PayCalc Pro Logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PayCalc Pro – Free Salary Calculator India',
     description: 'Calculate your in-hand salary, PF, HRA & taxes instantly. Free, no signup.',
-    images: ['https://paycalcpro.utilhub.workers.dev/icon.png'],
+    images: ['https://paycalcpro.online/icon.png'],
   },
   verification: {
     // Add your Google Search Console verification code here after verifying the domain
@@ -61,11 +61,11 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'PayCalc Pro',
-  url: 'https://paycalcpro.utilhub.workers.dev',
+  url: 'https://paycalcpro.online',
   description: 'Free salary calculators for Indian professionals — FY 2025-26',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://paycalcpro.utilhub.workers.dev/blog?q={search_term_string}',
+    target: 'https://paycalcpro.online/blog?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 }
@@ -74,8 +74,8 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'PayCalc Pro',
-  url: 'https://paycalcpro.utilhub.workers.dev',
-  logo: 'https://paycalcpro.utilhub.workers.dev/icon.png',
+  url: 'https://paycalcpro.online',
+  logo: 'https://paycalcpro.online/icon.png',
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'contact.paycalcpro@gmail.com',
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://paycalcpro.utilhub.workers.dev" />
+        <link rel="canonical" href="https://paycalcpro.online" />
         <link rel="icon" type="image/png" href="/icon.png" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
