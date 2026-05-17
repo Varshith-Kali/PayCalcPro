@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -52,8 +52,7 @@ export const metadata: Metadata = {
     images: ['https://paycalcpro.online/icon.png'],
   },
   verification: {
-    // Add your Google Search Console verification code here after verifying the domain
-    // google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    google: 'Q8bK0Bp3t1Ie6bVQmL6s7ldvjmGmCAG8JRXXZdN2dzg',
   },
 }
 
