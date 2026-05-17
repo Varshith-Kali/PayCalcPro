@@ -1,0 +1,26 @@
+{
+  "name": "PayCalc Pro",
+  "short_name": "PayCalc",
+  "description": "Free Indian salary calculators — CTC to in-hand, PF, HRA, Tax Estimator for FY 2025-26",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["finance", "utilities"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}

@@ -13,6 +13,7 @@ const tools = [
 const quickLinks = [
   { href: '/blog', label: 'Salary Blog' },
   { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact Us' },
 ]
 
 const legal = [

@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://paycalcpro.com'),
+  metadataBase: new URL('https://paycalcpro.online'),
   title: {
     default: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand 2025-26',
     template: '%s | PayCalc Pro',
@@ -39,28 +39,33 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://paycalcpro.com',
+    url: 'https://paycalcpro.online',
     title: 'PayCalc Pro – Free Salary Calculator India | FY 2025-26',
     description: 'Calculate CTC to in-hand salary, PF, HRA & income tax instantly. Updated for FY 2025-26.',
     siteName: 'PayCalc Pro',
+    images: [{ url: 'https://paycalcpro.online/icon.png', width: 512, height: 512, alt: 'PayCalc Pro Logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PayCalc Pro – Free Salary Calculator India',
     description: 'Calculate your in-hand salary, PF, HRA & taxes instantly. Free, no signup.',
+    images: ['https://paycalcpro.online/icon.png'],
   },
-  verification: { google: 'your-google-verification-code' },
+  verification: {
+    // Add your Google Search Console verification code here after verifying the domain
+    // google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+  },
 }
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'PayCalc Pro',
-  url: 'https://paycalcpro.com',
+  url: 'https://paycalcpro.online',
   description: 'Free salary calculators for Indian professionals — FY 2025-26',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://paycalcpro.com/blog?q={search_term_string}',
+    target: 'https://paycalcpro.online/blog?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 }
@@ -69,8 +74,13 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'PayCalc Pro',
-  url: 'https://paycalcpro.com',
-  logo: 'https://paycalcpro.com/icon.png',
+  url: 'https://paycalcpro.online',
+  logo: 'https://paycalcpro.online/icon.png',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@paycalcpro.online',
+    contactType: 'customer support',
+  },
   sameAs: [],
 }
 
@@ -80,11 +90,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://paycalcpro.com" />
+        <link rel="canonical" href="https://paycalcpro.online" />
         <link rel="icon" type="image/png" href="/icon.png" />
         <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="rating" content="general" />
+        <meta name="language" content="English" />
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
 
         {/* JSON-LD Schemas */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />

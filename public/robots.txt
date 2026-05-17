@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paycalcpro.com/sitemap.xml
+# Disallow admin or private paths if any (currently none)
+# Disallow: /private/
+
+Sitemap: https://paycalcpro.online/sitemap.xml

@@ -48,6 +48,7 @@ export default function Navbar() {
             </div>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">About</Link>
+            <Link href="/contact" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Contact</Link>
           </nav>
 
           {/* CTA */}
@@ -88,7 +89,7 @@ export default function Navbar() {
                 ))}
               </div>
             )}
-            {[{ href: '/blog', label: 'Blog' }, { href: '/about', label: 'About' }].map(l => (
+            {[{ href: '/blog', label: 'Blog' }, { href: '/about', label: 'About' }, { href: '/contact', label: 'Contact' }].map(l => (
               <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
                 className="block py-2.5 text-sm font-medium text-gray-700 border-t border-gray-50">
                 {l.label}
