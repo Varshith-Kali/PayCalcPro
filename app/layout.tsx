@@ -114,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
 
+
         <Navbar />
         <main>{children}</main>
         <Footer />
