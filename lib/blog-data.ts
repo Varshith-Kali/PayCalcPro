@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Learn the exact formula to convert your CTC to monthly take-home salary. Understand PF, HRA, professional tax deductions step-by-step.',
     category: 'Salary Guide',
     readTime: '6 min read',
-    publishedAt: '2024-11-15',
+    publishedAt: '2025-04-15',
     content: `
 ## What is CTC and In-Hand Salary?
 
@@ -82,7 +82,7 @@ Use the [CTC to In-Hand Salary Calculator](/ctc-to-inhand) to get instant, accur
     description: 'Confused about CTC, Gross, and Net Salary? This guide explains all three terms clearly with examples and a comparison table.',
     category: 'Salary Guide',
     readTime: '5 min read',
-    publishedAt: '2024-11-10',
+    publishedAt: '2025-04-10',
     content: `
 ## Three Terms, Three Meanings
 
@@ -142,7 +142,7 @@ When negotiating, ask:
     description: 'Understand how EPF deductions work, why it reduces your take-home, and how it builds massive wealth over time with 8.1% tax-free returns.',
     category: 'PF & Savings',
     readTime: '7 min read',
-    publishedAt: '2024-11-05',
+    publishedAt: '2025-04-05',
     content: `
 ## How PF Works in India
 
@@ -199,7 +199,7 @@ Use our [PF Calculator](/pf-calculator) to see your exact corpus.
     description: 'Complete guide to HRA tax exemption in India. Learn the formula, metro vs non-metro rules, and how to maximize your HRA tax benefit.',
     category: 'Tax Savings',
     readTime: '6 min read',
-    publishedAt: '2024-10-28',
+    publishedAt: '2025-03-28',
     content: `
 ## What is HRA?
 
@@ -251,7 +251,7 @@ Use our [HRA Calculator](/hra-calculator) to find your exact tax savings.
     description: 'First job? Decode your salary slip components — Basic, HRA, PF, TDS, Special Allowance, Gratuity — with clear explanations and examples.',
     category: 'Freshers Guide',
     readTime: '8 min read',
-    publishedAt: '2024-10-20',
+    publishedAt: '2025-03-20',
     content: `
 ## Your First Salary Slip Decoded
 
@@ -317,7 +317,7 @@ Use our [In-Hand Salary Calculator](/in-hand-salary-calculator) to verify your s
     description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India. Complete breakdown with PF, HRA, tax deductions, and city-wise differences.',
     category: 'Salary Examples',
     readTime: '5 min read',
-    publishedAt: '2024-10-12',
+    publishedAt: '2025-03-12',
     content: `
 ## ₹10 LPA CTC — Monthly Take-Home Calculation
 
@@ -373,7 +373,7 @@ Want your exact number? Use our [CTC to In-Hand Calculator](/ctc-to-inhand).
     description: 'Everything about notice period buyout in India — calculation formula, tax implications, negotiation tips, and how to estimate the exact cost.',
     category: 'Career Tips',
     readTime: '6 min read',
-    publishedAt: '2024-10-05',
+    publishedAt: '2025-03-05',
     content: `
 ## What is Notice Period Buyout?
 
@@ -434,7 +434,7 @@ Use our [Notice Period Buyout Calculator](/notice-period-buyout) for your exact 
     description: 'Complete guide to gratuity calculation in India. Formula, eligibility, tax rules, and worked examples for ₹10L, ₹15L, ₹20L salaries.',
     category: 'Benefits',
     readTime: '6 min read',
-    publishedAt: '2024-09-28',
+    publishedAt: '2025-02-28',
     content: `
 ## What is Gratuity?
 
@@ -496,7 +496,7 @@ Calculate yours: [Gratuity Calculator](/gratuity-calculator)
     description: 'Proven salary negotiation strategies for Indian job seekers. How to counter-offer, handle "current salary" questions, and maximize your hike.',
     category: 'Career Tips',
     readTime: '7 min read',
-    publishedAt: '2024-09-20',
+    publishedAt: '2025-02-20',
     content: `
 ## Why Negotiation Matters
 
@@ -561,7 +561,7 @@ Verbal offers mean nothing. Wait for the written offer letter before resigning.
     description: 'Legal ways to reduce income tax for salaried employees in India. Save tax on HRA, 80C, NPS, medical, home loan, and more.',
     category: 'Tax Savings',
     readTime: '8 min read',
-    publishedAt: '2024-09-12',
+    publishedAt: '2025-02-12',
     content: `
 ## You're Probably Paying More Tax Than Needed
 
@@ -623,6 +623,361 @@ Ask HR to restructure your salary to include:
 - Mobile/internet reimbursement
 - LTA component
 - NPS employer contribution (additional 10% of basic, tax-free)
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-5-lpa',
+    title: '5 LPA In-Hand Salary in India 2025 — Exact Monthly Breakdown',
+    description: 'What is the exact in-hand salary for 5 LPA CTC in India? Complete monthly breakdown with PF, HRA, income tax, and city-wise differences for FY 2025-26.',
+    category: 'Salary Examples',
+    readTime: '4 min read',
+    publishedAt: '2025-05-10',
+    content: `
+## ₹5 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹5 LPA is a common fresher and entry-level salary in India. Here's the exact breakdown.
+
+## Salary Components at 5 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (50%) | ₹2,50,000 | ₹20,833 |
+| HRA (50% of basic, metro) | ₹1,25,000 | ₹10,417 |
+| Special Allowance | ₹85,462 | ₹7,122 |
+| Employer PF (in CTC) | ₹18,000 | ₹1,500 |
+| Gratuity (in CTC) | ₹14,423 | ₹1,202 |
+| **Total CTC** | **₹5,00,000** | **₹41,667** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF (12% of basic) | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ₹0 (below ₹12L threshold) |
+
+## Final Monthly In-Hand: ~₹36,800
+
+Under the new tax regime FY 2025-26, income up to ₹12 lakh is effectively zero-tax (87A rebate). So for ₹5 LPA, **you pay zero income tax**.
+
+## City-Wise In-Hand
+
+| City | Monthly In-Hand |
+|------|-----------------|
+| Metro (Delhi/Mumbai) | ~₹36,800 |
+| Non-Metro (Pune/Hyd) | ~₹36,300 |
+
+Use our [CTC to In-Hand Calculator](/ctc-to-inhand) for your exact number.
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-7-lpa',
+    title: '7 LPA In-Hand Salary in India 2025 — Monthly Take-Home Breakdown',
+    description: 'Exact monthly in-hand salary for ₹7 LPA CTC in India for FY 2025-26. PF, HRA, tax breakdown and city-wise comparison.',
+    category: 'Salary Examples',
+    readTime: '4 min read',
+    publishedAt: '2025-05-08',
+    content: `
+## ₹7 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹7 LPA is a common salary for 1–3 year experienced professionals. Here's the exact breakdown.
+
+## Salary Components at 7 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (50%) | ₹3,50,000 | ₹29,167 |
+| HRA (50% of basic, metro) | ₹1,75,000 | ₹14,583 |
+| Special Allowance | ₹1,23,731 | ₹10,311 |
+| Employer PF (in CTC) | ₹18,000 | ₹1,500 |
+| Gratuity (in CTC) | ₹20,192 | ₹1,683 |
+| **Total CTC** | **₹7,00,000** | **₹58,333** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ₹0 (below ₹12L threshold) |
+
+## Final Monthly In-Hand: ~₹52,900
+
+Under FY 2025-26 new regime, ₹7 LPA attracts **zero income tax** (87A rebate covers up to ₹12L).
+
+## City-Wise In-Hand
+
+| City | Monthly In-Hand |
+|------|-----------------|
+| Metro (Delhi/Mumbai) | ~₹52,900 |
+| Non-Metro | ~₹52,200 |
+
+Try our [In-Hand Salary Calculator](/in-hand-salary-calculator) for your exact salary.
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-8-lpa',
+    title: '8 LPA In-Hand Salary in India 2025 — Exact Monthly Calculation',
+    description: 'What is the monthly in-hand salary for 8 LPA CTC? Complete FY 2025-26 breakdown with all deductions, HRA, PF, and zero tax benefit.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-05-06',
+    content: `
+## ₹8 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹8 LPA is a popular benchmark salary. Many freshers from top colleges and 2–3 year experienced professionals earn this.
+
+## Full Salary Breakdown
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (50%) | ₹4,00,000 | ₹33,333 |
+| HRA (metro, 50% of basic) | ₹2,00,000 | ₹16,667 |
+| Special Allowance | ₹1,47,731 | ₹12,311 |
+| Employer PF | ₹18,000 | ₹1,500 |
+| Gratuity | ₹23,077 | ₹1,923 |
+| **Total CTC** | **₹8,00,000** | **₹66,667** |
+
+## Deductions Monthly
+
+| Deduction | Amount |
+|-----------|--------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ₹0 |
+
+## Final Monthly In-Hand: ~₹60,900
+
+**Key 2025 update:** Under the new ₹12L zero-tax rule (Section 87A rebate), your ₹8 LPA attracts zero income tax — saving ₹10,000–₹15,000 vs old rules.
+
+## Old vs New Regime Comparison
+
+| Regime | Annual Tax | Monthly Saving |
+|--------|-----------|----------------|
+| New Regime (2025) | ₹0 | — |
+| Old Regime (no deductions) | ~₹35,000 | ₹2,916 saved |
+
+Use our [CTC Calculator](/ctc-to-inhand) to get your personalized result.
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-12-lpa',
+    title: '12 LPA In-Hand Salary in India 2025 — Monthly Take-Home with Tax',
+    description: 'Exact monthly in-hand salary for ₹12 LPA CTC. New vs old tax regime comparison, PF, HRA breakdown for FY 2025-26.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-05-04',
+    content: `
+## ₹12 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹12 LPA is a very important salary level — it's exactly at the ₹12L zero-tax boundary under the new regime.
+
+## Salary Components at 12 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (50%) | ₹6,00,000 | ₹50,000 |
+| HRA (metro) | ₹3,00,000 | ₹25,000 |
+| Special Allowance | ₹1,97,731 | ₹16,478 |
+| Employer PF | ₹18,000 | ₹1,500 |
+| Gratuity | ₹34,615 | ₹2,885 |
+| **Total CTC** | **₹12,00,000** | **₹1,00,000** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ₹0 (87A rebate!) |
+
+## Final Monthly In-Hand: ~₹74,900
+
+**Critical 2025 note:** Exactly at ₹12L, the Section 87A rebate makes your effective tax **₹0**. This is the biggest tax benefit for this salary level in Budget 2025.
+
+## Old Regime vs New Regime
+
+| Regime | Annual Tax | Monthly In-Hand |
+|--------|-----------|-----------------|
+| New Regime (2025) | ₹0 | ~₹74,900 |
+| Old Regime (80C+HRA) | ~₹62,000 | ~₹69,700 |
+
+New regime wins at ₹12 LPA by ~₹5,200/month!
+
+Calculate exactly: [Tax Estimator](/tax-estimator)
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-15-lpa',
+    title: '15 LPA In-Hand Salary in India 2025 — Complete Monthly Breakdown',
+    description: 'Monthly in-hand salary for ₹15 LPA CTC in India FY 2025-26. New vs old tax regime, PF, HRA, professional tax deductions explained.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-05-02',
+    content: `
+## ₹15 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹15 LPA is a milestone salary — common for mid-level engineers, MBAs, and 5+ year experienced professionals.
+
+## Salary Components at 15 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (50%) | ₹7,50,000 | ₹62,500 |
+| HRA (metro) | ₹3,75,000 | ₹31,250 |
+| Special Allowance | ₹2,72,731 | ₹22,728 |
+| Employer PF | ₹21,600 | ₹1,800 |
+| Gratuity | ₹43,269 | ₹3,606 |
+| **Total CTC** | **₹15,00,000** | **₹1,25,000** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ~₹5,417 |
+
+## Final Monthly In-Hand: ~₹93,200
+
+## New vs Old Regime at 15 LPA
+
+| Regime | Annual Tax | Monthly In-Hand |
+|--------|-----------|-----------------|
+| New Regime | ~₹65,000 | ~₹93,200 |
+| Old Regime (80C + HRA) | ~₹72,000 | ~₹92,600 |
+
+New regime is better by ~₹600/month. [Compare both regimes](/tax-estimator).
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-20-lpa',
+    title: '20 LPA In-Hand Salary in India 2025 — Exact Monthly Take-Home',
+    description: 'Monthly in-hand salary for ₹20 LPA CTC. Complete breakdown with income tax (new vs old regime), PF, HRA for senior professionals FY 2025-26.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-04-30',
+    content: `
+## ₹20 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹20 LPA is a senior-level salary — common for tech leads, senior managers, and 8–12 year experienced professionals.
+
+## Salary Components at 20 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (40%) | ₹8,00,000 | ₹66,667 |
+| HRA (metro) | ₹4,00,000 | ₹33,333 |
+| Special Allowance | ₹5,20,362 | ₹43,364 |
+| Employer PF | ₹21,600 | ₹1,800 |
+| Gratuity | ₹46,154 | ₹3,846 |
+| **Total CTC** | **₹20,00,000** | **₹1,66,667** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ~₹20,833 |
+
+## Final Monthly In-Hand: ~₹1,20,700
+
+## New vs Old Regime at 20 LPA
+
+| Regime | Annual Tax | Monthly In-Hand |
+|--------|-----------|-----------------|
+| New Regime | ~₹2,50,000 | ~₹1,20,700 |
+| Old Regime (80C+HRA+NPS) | ~₹1,85,000 | ~₹1,26,200 |
+
+At ₹20 LPA, **old regime saves ~₹5,500/month** if you maximize deductions. [Check your situation](/tax-estimator).
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-25-lpa',
+    title: '25 LPA In-Hand Salary in India 2025 — Monthly Breakdown & Tax',
+    description: 'What is the monthly in-hand for 25 LPA CTC? Detailed tax calculation, PF, HRA breakdown for senior Indian professionals FY 2025-26.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-04-28',
+    content: `
+## ₹25 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹25 LPA is a top-tier salary — common for senior engineers at MNCs, product managers, and directors.
+
+## Salary Components at 25 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (40%) | ₹10,00,000 | ₹83,333 |
+| HRA (metro) | ₹5,00,000 | ₹41,667 |
+| Special Allowance | ₹7,20,362 | ₹60,030 |
+| Employer PF | ₹21,600 | ₹1,800 |
+| Gratuity | ₹57,692 | ₹4,808 |
+| **Total CTC** | **₹25,00,000** | **₹2,08,333** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ~₹35,000 |
+
+## Final Monthly In-Hand: ~₹1,47,800
+
+## Tax Saving Tip at 25 LPA
+
+Max your deductions under old regime:
+- 80C: ₹1.5L (ELSS/PPF)
+- NPS 80CCD(1B): ₹50K
+- HRA exemption: ~₹2L+
+- Home loan interest 24B: ₹2L
+
+This can save ₹8,000–₹12,000/month vs new regime. [Calculate your tax](/tax-estimator).
+    `.trim()
+  },
+  {
+    slug: 'take-home-salary-30-lpa',
+    title: '30 LPA In-Hand Salary in India 2025 — Monthly Take-Home & Tax Breakdown',
+    description: 'Exact monthly in-hand salary for ₹30 LPA CTC. Senior executive tax breakdown, new vs old regime comparison for FY 2025-26.',
+    category: 'Salary Examples',
+    readTime: '5 min read',
+    publishedAt: '2025-04-26',
+    content: `
+## ₹30 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+
+₹30 LPA puts you in the top 1% of Indian earners — common for principal engineers, AVPs, senior managers at top MNCs.
+
+## Salary Components at 30 LPA
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic (40%) | ₹12,00,000 | ₹1,00,000 |
+| HRA (metro) | ₹6,00,000 | ₹50,000 |
+| Special Allowance | ₹9,20,362 | ₹76,697 |
+| Employer PF | ₹21,600 | ₹1,800 |
+| Gratuity | ₹69,231 | ₹5,769 |
+| **Total CTC** | **₹30,00,000** | **₹2,50,000** |
+
+## Deductions
+
+| Deduction | Monthly |
+|-----------|---------|
+| Employee PF | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (New Regime) | ~₹54,167 |
+
+## Final Monthly In-Hand: ~₹1,70,800
+
+## Old Regime Can Save Big
+
+With full deductions (80C + NPS + HRA + 24B):
+- Old regime tax: ~₹4,50,000/year
+- New regime tax: ~₹6,50,000/year
+- **Saving with old regime: ~₹16,700/month**
+
+At ₹30 LPA, **always evaluate old regime** with your CA. [Use our Tax Estimator](/tax-estimator).
     `.trim()
   },
 ];
