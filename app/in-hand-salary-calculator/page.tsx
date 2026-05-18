@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -9,10 +9,16 @@ import AdUnit from '@/components/AdUnit'
 const SalaryChart = dynamic(() => import('@/components/SalaryChart'), { ssr: false })
 
 const faqs = [
-  { question: 'What is the difference between in-hand salary and net salary?', answer: 'They mean the same thing — the actual amount credited to your bank account after all deductions from gross salary.' },
-  { question: 'Is professional tax the same across all states?', answer: 'No. Professional tax rates and slabs vary by state. ₹200/month is the common maximum in states like Maharashtra, Karnataka, and West Bengal.' },
-  { question: 'Does the in-hand salary calculator account for variable pay?', answer: 'Variable pay (bonuses, incentives) is not included in standard calculation since it depends on performance. Add it separately to your annual figure if it is guaranteed.' },
+  { question: 'What is the difference between in-hand salary and net salary?', answer: 'They mean the same thing — the actual amount credited to your bank account after all deductions from gross salary including PF, professional tax, and TDS.' },
+  { question: 'How much in-hand salary will I get for 10 LPA CTC?', answer: 'For ₹10 LPA CTC in FY 2025-26, your monthly in-hand salary is approximately ₹76,000–₹77,000 under the new tax regime. This assumes standard salary structure with 50% basic, metro HRA, and zero income tax under the ₹12L rebate.' },
+  { question: 'How much in-hand salary for 15 LPA CTC?', answer: 'For ₹15 LPA CTC, your monthly in-hand is approximately ₹93,000–₹95,000 under the new tax regime FY 2025-26, after PF (₹1,800), professional tax (₹200), and income tax (~₹5,400/month).' },
+  { question: 'Is income tax zero for salary below 12 LPA in 2025?', answer: 'Yes! Under Budget 2025, Section 87A rebate makes income up to ₹12 lakh effectively zero-tax under the new regime. If your annual CTC-based taxable income is ₹12L or below, you pay ₹0 income tax.' },
+  { question: 'What percentage of CTC is the actual in-hand salary?', answer: 'Typically, in-hand salary is 75–85% of CTC for salaries below ₹12 LPA (due to zero income tax in 2025). For higher salaries (₹20L+), in-hand is usually 65–75% of CTC depending on tax regime and deductions.' },
+  { question: 'Is professional tax the same across all states?', answer: 'No. Professional tax rates vary by state. ₹200/month is the maximum in Maharashtra, Karnataka, and West Bengal. Some states like Delhi have no professional tax at all. The maximum is capped at ₹2,500/year nationally.' },
+  { question: 'Does the in-hand salary calculator account for variable pay?', answer: 'Variable pay (bonuses, performance incentives) is not included in standard CTC calculation since it depends on performance. Add guaranteed variable pay to your annual CTC figure before calculating for accurate results.' },
+  { question: 'How is basic salary calculated from CTC?', answer: 'Basic salary is typically 40–50% of CTC. Most Indian companies set it at 50%. Basic salary is the foundation — PF (12%), HRA (40–50% of basic), and gratuity (4.81% of basic) are all calculated from it.' },
 ]
+
 
 export default function InHandSalaryPage() {
   const [ctc, setCtc] = useState('')
