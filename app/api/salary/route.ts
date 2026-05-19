@@ -1,0 +1,61 @@
+import { NextResponse } from 'next/server'
+
+// Static salary data — FY 2025-26, new tax regime, metro city
+// This route is statically prerendered (no request.url read = compatible with output: 'export')
+const SALARY_DATA = {
+  source: 'paycalcpro.online',
+  fy: '2025-26',
+  regime: 'new_regime',
+  city: 'metro',
+  last_updated: '2025-05-19',
+  budget_2025: {
+    zero_tax_limit: '₹12,00,000',
+    rebate_section: '87A',
+    standard_deduction: '₹75,000',
+    epf_interest_rate: '8.25%',
+    new_slabs: [
+      '₹0–4L: 0%', '₹4–8L: 5%', '₹8–12L: 10%',
+      '₹12–16L: 15%', '₹16–20L: 20%', '₹20–24L: 25%', 'Above ₹24L: 30%',
+    ],
+  },
+  salary_structure: {
+    basic: '50% of fixed CTC',
+    hra_metro: '50% of basic',
+    hra_non_metro: '40% of basic',
+    employee_pf: '12% of basic (max ₹1,800/month)',
+    employer_epf: '3.67% of basic',
+    employer_eps: '8.33% of basic',
+    gratuity_provision: '4.81% of basic annually',
+  },
+  data: [
+    { ctc_lpa: 3,  gross_monthly: 23730,  pf_monthly: 1500, tax_annual: 0,       in_hand_monthly: 22030, in_hand_annual: 264360  },
+    { ctc_lpa: 4,  gross_monthly: 31640,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 29640, in_hand_annual: 355680  },
+    { ctc_lpa: 5,  gross_monthly: 39550,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 37550, in_hand_annual: 450600  },
+    { ctc_lpa: 6,  gross_monthly: 47460,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 45460, in_hand_annual: 545520  },
+    { ctc_lpa: 7,  gross_monthly: 55370,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 53370, in_hand_annual: 640440  },
+    { ctc_lpa: 8,  gross_monthly: 63280,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 61080, in_hand_annual: 732960  },
+    { ctc_lpa: 9,  gross_monthly: 71190,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 69190, in_hand_annual: 830280  },
+    { ctc_lpa: 10, gross_monthly: 79100,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 77100, in_hand_annual: 925200  },
+    { ctc_lpa: 12, gross_monthly: 94920,  pf_monthly: 1800, tax_annual: 0,       in_hand_monthly: 92720, in_hand_annual: 1112640 },
+    { ctc_lpa: 15, gross_monthly: 118650, pf_monthly: 1800, tax_annual: 62400,   in_hand_monthly: 106450, in_hand_annual: 1277400 },
+    { ctc_lpa: 18, gross_monthly: 142380, pf_monthly: 1800, tax_annual: 143520,  in_hand_monthly: 124380, in_hand_annual: 1492560 },
+    { ctc_lpa: 20, gross_monthly: 158200, pf_monthly: 1800, tax_annual: 202800,  in_hand_monthly: 137200, in_hand_annual: 1646400 },
+    { ctc_lpa: 25, gross_monthly: 197750, pf_monthly: 1800, tax_annual: 374400,  in_hand_monthly: 163550, in_hand_annual: 1962600 },
+    { ctc_lpa: 30, gross_monthly: 237300, pf_monthly: 1800, tax_annual: 586800,  in_hand_monthly: 189500, in_hand_annual: 2274000 },
+    { ctc_lpa: 40, gross_monthly: 316400, pf_monthly: 1800, tax_annual: 1069200, in_hand_monthly: 245200, in_hand_annual: 2942400 },
+    { ctc_lpa: 50, gross_monthly: 395500, pf_monthly: 1800, tax_annual: 1594800, in_hand_monthly: 298650, in_hand_annual: 3583800 },
+  ],
+  calculator_url: 'https://paycalcpro.online/ctc-to-inhand',
+  salary_guide_url: 'https://paycalcpro.online/salary-guide',
+  disclaimer: 'Approximate. New regime, metro, standard deductions. Use the calculator for exact values.',
+}
+
+export async function GET() {
+  return NextResponse.json(SALARY_DATA, {
+    headers: {
+      'Cache-Control': 'public, max-age=86400',
+      'Access-Control-Allow-Origin': '*',
+      'X-Data-Source': 'PayCalc Pro — paycalcpro.online',
+    },
+  })
+}
