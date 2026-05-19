@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
+
 // Pre-computed salary data for FY 2025-26 (new tax regime, metro city)
 // Basic = 50% of Fixed CTC | EPF = 12% of Basic capped ₹15K | Std deduction ₹75K | 87A rebate ≤ ₹12L
 const SALARY_TABLE = [
