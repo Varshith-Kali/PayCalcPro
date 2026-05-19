@@ -22,6 +22,7 @@ const faqs = [
 
 export default function InHandSalaryPage() {
   const [ctc, setCtc] = useState('')
+  const [variablePay, setVariablePay] = useState('')
   const [city, setCity] = useState<'metro' | 'non-metro'>('metro')
   const [result, setResult] = useState<SalaryBreakdown | null>(null)
   const [showChart, setShowChart] = useState(false)
@@ -29,7 +30,8 @@ export default function InHandSalaryPage() {
   const calculate = () => {
     const val = parseFloat(ctc.replace(/,/g, ''))
     if (!val || val <= 0) return
-    const res = calculateSalary(val * 100000, city)
+    const variable = parseFloat(variablePay) * 100000 || 0
+    const res = calculateSalary(val * 100000, city, variable)
     setResult(res)
     setShowChart(false)
     setTimeout(() => setShowChart(true), 100)
@@ -62,6 +64,20 @@ export default function InHandSalaryPage() {
                       onKeyDown={e => e.key === 'Enter' && calculate()} className="form-input pl-8" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">LPA</span>
                   </div>
+                  <p className="text-xs text-slate-400 mt-1.5">Enter in lakhs. Example: 15 for ₹15,00,000 per year</p>
+                </div>
+
+                {/* Variable Pay */}
+                <div>
+                  <label className="form-label">Variable Pay / Bonus <span className="text-slate-400 font-normal">(optional, in Lakhs)</span></label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
+                    <input type="number" placeholder="e.g. 2 for ₹2,00,000 bonus" value={variablePay}
+                      onChange={e => setVariablePay(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && calculate()}
+                      className="form-input pl-8" min="0" step="0.5" />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">LPA</span>
+                  </div>
                 </div>
                 <div>
                   <label className="form-label">City Type (affects HRA)</label>
@@ -80,15 +96,15 @@ export default function InHandSalaryPage() {
 
             {result && (
               <div className="animate-scale-in space-y-5">
-                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white rounded-2xl p-6 shadow-blue">
-                  <div className="grid grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white rounded-2xl p-5 sm:p-6 shadow-blue">
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-sky-200 text-xs font-medium mb-1">Monthly In-Hand</p>
-                      <p className="text-3xl font-bold">{formatINR(result.inHandMonthly)}</p>
+                      <p className="text-2xl sm:text-3xl font-bold">{formatINR(result.inHandMonthly)}</p>
                     </div>
                     <div>
                       <p className="text-sky-200 text-xs font-medium mb-1">Annual In-Hand</p>
-                      <p className="text-3xl font-bold">{formatINRCompact(result.inHandAnnual)}</p>
+                      <p className="text-2xl sm:text-3xl font-bold">{formatINRCompact(result.inHandAnnual)}</p>
                     </div>
                   </div>
                 </div>
