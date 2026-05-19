@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { calculatePF, formatINR, formatINRCompact } from '@/lib/calculators'
@@ -61,14 +61,16 @@ export default function PFCalculatorPage() {
 
             {result && (
               <div className="animate-scale-in space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="result-card text-center">
                     <p className="result-label mb-1">Your Contribution/Month</p>
                     <p className="result-value">{formatINR(result.employeeContribution)}</p>
+                    <p className="text-xs text-slate-400 mt-1">12% of Basic (capped at ₹15K)</p>
                   </div>
-                  <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100 rounded-2xl p-6 text-center">
-                    <p className="text-sm text-emerald-600 font-medium mb-1">Employer Share/Month</p>
-                    <p className="text-3xl font-bold text-emerald-600">{formatINR(result.employerContribution)}</p>
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100 rounded-2xl p-5 text-center">
+                    <p className="text-sm text-emerald-600 font-medium mb-1">Employer EPF Share/Month</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-emerald-600">{formatINR(result.employerEPFContribution)}</p>
+                    <p className="text-xs text-emerald-500 mt-1">3.67% to EPF (8.33% to EPS)</p>
                   </div>
                 </div>
 
@@ -83,6 +85,7 @@ export default function PFCalculatorPage() {
                       { label: '5 Year Corpus', value: result.corpus5Year },
                       { label: '10 Year Corpus', value: result.corpus10Year },
                       { label: '20 Year Corpus', value: result.corpus20Year },
+                      { label: '30 Year Corpus', value: result.corpus30Year },
                     ].map((r, i) => (
                       <div key={i} className="flex justify-between items-center px-6 py-4">
                         <span className="text-slate-700 font-medium">{r.label}</span>

@@ -2,7 +2,7 @@
 // New Tax Regime (Default): Rebate u/s 87A → Zero tax up to ₹12L
 // New slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
 // Standard Deduction under New Regime: ₹75,000
-// EPF Interest Rate: 8.25% (FY 2024-25, expected same for FY 2025-26)
+// EPF Interest Rate: 8.25% p.a. (EPFO declared rate)
 // Cess: 4% on total tax
 
 export interface SalaryComponent {
@@ -29,50 +29,55 @@ export interface SalaryBreakdown {
 
 /**
  * Calculate salary breakdown as per FY 2025-26 norms
- * Standard structure: Basic = 40-50% of CTC, HRA = 50% metro / 40% non-metro of Basic
+ * Standard structure: Basic = 50% of Fixed CTC (industry standard, most IT/corporate)
  * Employer PF capped at ₹21,600/yr (12% of ₹15,000 EPFO ceiling)
- * Gratuity provision = (Basic / 26) × 15 ÷ 12 × 12 = 4.81% of Basic
+ * Gratuity provision = (Basic × 15) / 26 = ~4.81% of basic annually
+ * Variable pay is taxed at marginal rate but excluded from PF base
  */
 export function calculateSalary(
   ctcAnnual: number,
   cityTier: 'metro' | 'non-metro' = 'metro',
   variablePayAnnual = 0
 ): SalaryBreakdown {
-  // Standard Indian salary structure: Basic = 50% of Fixed CTC (most companies)
   const fixedCTC = ctcAnnual - variablePayAnnual;
-  const basic = fixedCTC * 0.50;  // 50% of fixed CTC (industry standard)
-  const hra = cityTier === 'metro' ? basic * 0.50 : basic * 0.40;
-  // EPFO cap: employer PF max = 12% of ₹15,000 = ₹1,800/month = ₹21,600/year
-  const pfEmployer = Math.min(basic * 0.12, 21600);
-  const gratuityProvision = (basic * 15) / 26; // 4.81% of basic annually
+
+  // Standard Indian salary structure (TCS/Infosys/Wipro style)
+  const basic = fixedCTC * 0.50;                                      // 50% of fixed CTC
+  const hra   = cityTier === 'metro' ? basic * 0.50 : basic * 0.40;  // 50%/40% of basic
+
+  // EPFO cap: 12% of ₹15,000 = ₹1,800/month = ₹21,600/year
+  const pfEmployer       = Math.min(basic * 0.12, 21600);
+  const gratuityProvision = (basic * 15) / 26;                        // ~4.81% annually
+
   const specialAllowanceAnnual = Math.max(
     0,
     fixedCTC - basic - hra - pfEmployer - gratuityProvision
   );
-  // Gross = Fixed gross + variable pay (both credited to employee)
-  const fixedGross = fixedCTC - pfEmployer - gratuityProvision;
+
+  // Gross = Fixed gross (CTC minus employer-side costs) + variable pay
+  const fixedGross  = fixedCTC - pfEmployer - gratuityProvision;
   const grossAnnual = fixedGross + variablePayAnnual;
 
-  // Employee deductions (PF only on fixed basic, not variable)
-  const pfEmployee = Math.min(basic * 0.12, 21600);
-  const professionalTax = 2400; // ₹200/month
+  // Employee deductions — PF only on fixed basic, NOT on variable pay
+  const pfEmployee     = Math.min(basic * 0.12, 21600);
+  const professionalTax = 2400; // ₹200/month (national max)
 
-  // Taxable income = Gross - Employee PF - Std Deduction ₹75,000
+  // Taxable income = Gross − Employee PF − Standard Deduction ₹75,000
   const standardDeduction = 75000;
   const taxableIncome = Math.max(0, grossAnnual - pfEmployee - standardDeduction);
-  const incomeTax = estimateIncomeTax(taxableIncome, 'new');
+  const incomeTax     = estimateIncomeTax(taxableIncome, 'new');
 
-  const inHandAnnual = grossAnnual - pfEmployee - professionalTax - incomeTax;
+  const inHandAnnual  = grossAnnual - pfEmployee - professionalTax - incomeTax;
   const inHandMonthly = Math.round(inHandAnnual / 12);
 
   const components: SalaryComponent[] = [
-    { label: 'Basic Salary', monthly: Math.round(basic / 12), annual: Math.round(basic), type: 'earning', color: '#0ea5e9' },
-    { label: 'HRA', monthly: Math.round(hra / 12), annual: Math.round(hra), type: 'earning', color: '#38bdf8' },
-    { label: 'Special Allowance', monthly: Math.round(specialAllowanceAnnual / 12), annual: Math.round(specialAllowanceAnnual), type: 'earning', color: '#7dd3fc' },
+    { label: 'Basic Salary',          monthly: Math.round(basic / 12),                   annual: Math.round(basic),                   type: 'earning',   color: '#0ea5e9' },
+    { label: 'HRA',                   monthly: Math.round(hra / 12),                     annual: Math.round(hra),                     type: 'earning',   color: '#38bdf8' },
+    { label: 'Special Allowance',     monthly: Math.round(specialAllowanceAnnual / 12),  annual: Math.round(specialAllowanceAnnual),  type: 'earning',   color: '#7dd3fc' },
     ...(variablePayAnnual > 0 ? [{ label: 'Variable Pay / Bonus', monthly: Math.round(variablePayAnnual / 12), annual: Math.round(variablePayAnnual), type: 'earning' as const, color: '#a78bfa' }] : []),
-    { label: 'PF (Employee 12%)', monthly: Math.round(pfEmployee / 12), annual: Math.round(pfEmployee), type: 'deduction', color: '#f97316' },
-    { label: 'Professional Tax', monthly: Math.round(professionalTax / 12), annual: professionalTax, type: 'deduction', color: '#fb923c' },
-    { label: 'Income Tax (Est.)', monthly: Math.round(incomeTax / 12), annual: Math.round(incomeTax), type: 'deduction', color: '#ef4444' },
+    { label: 'PF (Employee 12%)',     monthly: Math.round(pfEmployee / 12),              annual: Math.round(pfEmployee),              type: 'deduction', color: '#f97316' },
+    { label: 'Professional Tax',      monthly: Math.round(professionalTax / 12),         annual: professionalTax,                     type: 'deduction', color: '#fb923c' },
+    { label: 'Income Tax (Est.)',     monthly: Math.round(incomeTax / 12),               annual: Math.round(incomeTax),               type: 'deduction', color: '#ef4444' },
   ];
 
   return {
@@ -93,16 +98,16 @@ export function calculateSalary(
 /**
  * Income Tax Estimator — FY 2025-26 (AY 2026-27)
  *
- * NEW REGIME (Default from FY 2023-24 onwards):
+ * NEW REGIME (Budget 2025):
  *   ₹0 – 4L      : 0%
- *   ₹4 – 8L      : 5%
- *   ₹8 – 12L     : 10%
- *   ₹12 – 16L    : 15%
- *   ₹16 – 20L    : 20%
- *   ₹20 – 24L    : 25%
+ *   ₹4 – 8L      : 5%   → max ₹20,000
+ *   ₹8 – 12L     : 10%  → max ₹40,000
+ *   ₹12 – 16L    : 15%  → max ₹60,000
+ *   ₹16 – 20L    : 20%  → max ₹80,000
+ *   ₹20 – 24L    : 25%  → max ₹1,00,000
  *   Above ₹24L   : 30%
- *   Rebate u/s 87A: Full rebate if net taxable ≤ ₹12L → effective zero tax up to ₹12L
- *   Standard Deduction: ₹75,000 (already applied before calling this)
+ *   Rebate u/s 87A: Full rebate if net taxable ≤ ₹12L → zero tax
+ *   Standard Deduction: ₹75,000 (applied before calling this function)
  *
  * OLD REGIME:
  *   ₹0 – 2.5L    : 0%
@@ -111,11 +116,7 @@ export function calculateSalary(
  *   Above ₹10L   : 30%
  *   Rebate u/s 87A: Full rebate if net taxable ≤ ₹5L
  *
- * Surcharge:
- *   ₹50L – ₹1Cr  : 10%
- *   ₹1Cr – ₹2Cr  : 15%
- *   ₹2Cr – ₹5Cr  : 25% (old) / 25% (new)
- *   Above ₹5Cr   : 37% (old) / 25% (new — capped at 25% from FY23-24)
+ * Surcharge: 10% (₹50L–₹1Cr), 15% (₹1–2Cr), 25% (₹2–5Cr), 25% new / 37% old (>₹5Cr)
  * Cess: 4% on (tax + surcharge)
  */
 export function estimateIncomeTax(
@@ -126,7 +127,6 @@ export function estimateIncomeTax(
   let tax = 0;
 
   if (regime === 'new') {
-    // FY 2025-26 New Regime Slabs (Budget 2025)
     if (taxableIncome <= 400000) {
       tax = 0;
     } else if (taxableIncome <= 800000) {
@@ -142,10 +142,10 @@ export function estimateIncomeTax(
     } else {
       tax = 300000 + (taxableIncome - 2400000) * 0.30;
     }
-    // Rebate u/s 87A: If net taxable ≤ ₹12,00,000 → zero tax
+    // Section 87A rebate: zero tax if taxable income ≤ ₹12,00,000
     if (taxableIncome <= 1200000) tax = 0;
   } else {
-    // Old Regime Slabs (unchanged)
+    // Old Regime
     if (taxableIncome <= 250000) {
       tax = 0;
     } else if (taxableIncome <= 500000) {
@@ -155,45 +155,47 @@ export function estimateIncomeTax(
     } else {
       tax = 112500 + (taxableIncome - 1000000) * 0.30;
     }
-    // Rebate u/s 87A old regime: zero if taxable ≤ ₹5L
+    // Rebate u/s 87A: zero if taxable ≤ ₹5L
     if (taxableIncome <= 500000) tax = 0;
   }
 
   // Surcharge
   let surcharge = 0;
-  if (taxableIncome > 5000000 && taxableIncome <= 10000000) surcharge = tax * 0.10;
+  if (taxableIncome > 5000000 && taxableIncome <= 10000000)  surcharge = tax * 0.10;
   else if (taxableIncome > 10000000 && taxableIncome <= 20000000) surcharge = tax * 0.15;
-  else if (taxableIncome > 20000000) surcharge = tax * (regime === 'new' ? 0.25 : 0.25);
+  else if (taxableIncome > 20000000 && taxableIncome <= 50000000) surcharge = tax * 0.25;
+  else if (taxableIncome > 50000000) surcharge = tax * (regime === 'new' ? 0.25 : 0.37);
 
   // Cess 4%
-  const total = Math.round((tax + surcharge) * 1.04);
-  return total;
+  return Math.round((tax + surcharge) * 1.04);
 }
 
 /**
- * PF Calculator — EPF rate 8.25% (EPFO, FY 2024-25)
- * Employee: 12% of basic (capped at ₹15,000 basic ceiling → max ₹1,800/mo)
- * Employer: 3.67% to EPF + 8.33% to EPS (pension) of ₹15,000 ceiling
- * Employer EPF contribution (3.67% of capped basic)
+ * PF Calculator — EPF rate 8.25% (EPFO declared, FY 2024-25, expected same FY 2025-26)
+ * Employee: 12% of basic (capped at 12% of ₹15,000 = ₹1,800/mo when basic > ₹15,000)
+ * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension — not in corpus)
+ * Corpus compounded annually at 8.25%
  */
 export interface PFResult {
-  employeeContribution: number;
-  employerContribution: number;
+  employeeContribution: number;   // monthly ₹
+  employerEPFContribution: number; // monthly ₹ (3.67% only — EPS excluded)
   totalMonthly: number;
   corpus1Year: number;
   corpus5Year: number;
   corpus10Year: number;
   corpus20Year: number;
+  corpus30Year: number;
   interestRate: number;
 }
 
 export function calculatePF(basicMonthly: number): PFResult {
   const cappedBasic = Math.min(basicMonthly, 15000);
-  const emp = Math.round(cappedBasic * 0.12);      // Employee: 12%
-  const er  = Math.round(cappedBasic * 0.0367);    // Employer EPF portion: 3.67%
+  const emp = Math.round(cappedBasic * 0.12);       // Employee: 12%
+  const er  = Math.round(cappedBasic * 0.0367);     // Employer EPF: 3.67% (only EPF portion)
   const total = emp + er;
-  const rate = 0.0825; // 8.25% p.a. (EPFO declared rate, applied for FY 2025-26)
+  const rate  = 0.0825;
 
+  // Compound annually: corpus after n years
   const corpus = (yrs: number): number => {
     let c = 0;
     for (let y = 0; y < yrs; y++) c = (c + total * 12) * (1 + rate);
@@ -201,31 +203,35 @@ export function calculatePF(basicMonthly: number): PFResult {
   };
 
   return {
-    employeeContribution: emp,
-    employerContribution: er,
-    totalMonthly: total,
+    employeeContribution:    emp,
+    employerEPFContribution: er,
+    totalMonthly:            total,
     corpus1Year:  corpus(1),
     corpus5Year:  corpus(5),
     corpus10Year: corpus(10),
     corpus20Year: corpus(20),
+    corpus30Year: corpus(30),
     interestRate: rate,
   };
 }
 
 /**
  * HRA Exemption — Section 10(13A) of Income Tax Act
- * Exemption = minimum of:
- *   (a) Actual HRA received
- *   (b) 50% of basic (metro: Delhi, Mumbai, Kolkata, Chennai) / 40% non-metro
- *   (c) Rent paid − 10% of basic salary
+ * Exemption = MINIMUM of:
+ *   (a) Actual HRA received annually
+ *   (b) 50% of annual basic (metro: Mumbai, Delhi, Kolkata, Chennai) / 40% non-metro
+ *   (c) Actual annual rent paid − 10% of annual basic salary
+ *
+ * NOTE: Only applicable under OLD tax regime. New regime: HRA is fully taxable.
  */
 export interface HRAResult {
   hraExemption: number;
   hraTaxable: number;
   taxSaved: number;
-  exemption1: number;
-  exemption2: number;
-  exemption3: number;
+  exemption1: number;  // Actual HRA
+  exemption2: number;  // % of basic
+  exemption3: number;  // Rent − 10% basic
+  limitingFactor: 1 | 2 | 3;
 }
 
 export function calculateHRA(
@@ -239,13 +245,16 @@ export function calculateHRA(
   const hraA   = hraMonthly * 12;
   const rentA  = rentMonthly * 12;
 
-  const e1 = hraA;                                                  // Actual HRA
-  const e2 = city === 'metro' ? basicA * 0.50 : basicA * 0.40;    // 50%/40% of basic
-  const e3 = Math.max(0, rentA - basicA * 0.10);                   // Rent − 10% basic
+  const e1 = hraA;                                                 // (a) Actual HRA
+  const e2 = city === 'metro' ? basicA * 0.50 : basicA * 0.40;   // (b) % of basic
+  const e3 = Math.max(0, rentA - basicA * 0.10);                  // (c) Rent − 10% basic
 
   const hraExemption = Math.min(e1, e2, e3);
   const hraTaxable   = Math.max(0, hraA - hraExemption);
-  const taxSaved     = Math.round(hraExemption * taxSlab * 1.04);  // with 4% cess
+  const taxSaved     = Math.round(hraExemption * taxSlab * 1.04); // incl. 4% cess
+
+  const minVal = Math.min(e1, e2, e3);
+  const limitingFactor = minVal === e1 ? 1 : minVal === e2 ? 2 : 3;
 
   return {
     hraExemption: Math.round(hraExemption),
@@ -254,13 +263,17 @@ export function calculateHRA(
     exemption1:   Math.round(e1),
     exemption2:   Math.round(e2),
     exemption3:   Math.round(e3),
+    limitingFactor,
   };
 }
 
 /**
  * Gratuity — Payment of Gratuity Act, 1972
  * Formula: (Last drawn Basic+DA × 15 × Years of service) / 26
- * Tax-free limit: ₹20 lakh (updated per 7th Pay Commission, notification 2023)
+ * Tax-free limit: ₹20 lakh (private sector employees)
+ *
+ * ROUNDING RULE: If service in last year > 6 months → round UP to next full year
+ * Example: 7 years 7 months = 8 years. 7 years 4 months = 7 years.
  */
 export interface GratuityResult {
   gratuity: number;
@@ -268,27 +281,39 @@ export interface GratuityResult {
   taxableGratuity: number;
   perYear: number;
   isEligible: boolean;
+  roundedYears: number;
 }
 
 export function calculateGratuity(
-  lastBasicDa: number,
-  yearsOfService: number
+  lastBasicDaMonthly: number,  // Monthly Basic + DA
+  yearsOfService: number        // Can be decimal, e.g. 7.5 = 7.5 years
 ): GratuityResult {
   const isEligible = yearsOfService >= 5;
-  const gratuity   = isEligible
-    ? Math.round((lastBasicDa * 15 * yearsOfService) / 26)
+
+  // Rounding rule per Payment of Gratuity Act:
+  // Fraction > 6 months (0.5 year) rounds UP
+  const fullYears     = Math.floor(yearsOfService);
+  const fractionYears = yearsOfService - fullYears;
+  const roundedYears  = fractionYears > 0.5 ? fullYears + 1 : fullYears;
+
+  const gratuity = isEligible
+    ? Math.round((lastBasicDaMonthly * 15 * roundedYears) / 26)
     : 0;
+
   const taxFreeLimit    = 2000000; // ₹20 lakh
   const taxableGratuity = Math.max(0, gratuity - taxFreeLimit);
-  const perYear = yearsOfService > 0 ? Math.round(gratuity / yearsOfService) : 0;
+  const perYear = roundedYears > 0 ? Math.round(gratuity / roundedYears) : 0;
 
-  return { gratuity, taxFreeLimit, taxableGratuity, perYear, isEligible };
+  return { gratuity, taxFreeLimit, taxableGratuity, perYear, isEligible, roundedYears };
 }
 
 /**
  * Notice Period Buyout Calculator
- * Buyout = (Monthly CTC / 26) × Remaining days
- * Taxed as salary income at marginal slab + 4% cess
+ * Daily rate = Monthly Gross Salary / 26 working days
+ * Buyout = Daily rate × Remaining notice days
+ * Tax = Buyout × marginal slab rate × 1.04 (cess)
+ *
+ * Note: Some companies use monthly CTC / 30 — check appointment letter.
  */
 export interface NoticeBuyoutResult {
   buyoutAmount: number;
@@ -299,15 +324,15 @@ export interface NoticeBuyoutResult {
 }
 
 export function calculateNoticeBuyout(
-  ctcMonthly: number,
+  grossMonthly: number,    // Monthly gross salary (not CTC)
   noticePeriodDays: number,
   daysServed: number,
   taxSlab = 0.30
 ): NoticeBuyoutResult {
-  const perDay       = Math.round(ctcMonthly / 26);
+  const perDay       = Math.round(grossMonthly / 26); // 26 working days standard
   const daysToPayFor = Math.max(0, noticePeriodDays - daysServed);
   const buyoutAmount = perDay * daysToPayFor;
-  const taxOnBuyout  = Math.round(buyoutAmount * taxSlab * 1.04); // with cess
+  const taxOnBuyout  = Math.round(buyoutAmount * taxSlab * 1.04);
   const netCost      = buyoutAmount + taxOnBuyout;
 
   return {

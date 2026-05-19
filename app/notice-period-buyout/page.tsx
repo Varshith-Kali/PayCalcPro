@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { calculateNoticeBuyout, formatINR } from '@/lib/calculators'
@@ -46,11 +46,12 @@ export default function NoticeBuyoutPage() {
               <h2 className="text-xl font-bold text-slate-900 mb-6">Notice Period Details</h2>
               <div className="space-y-5">
                 <div>
-                  <label className="form-label">Monthly CTC (Gross Pay)</label>
+                  <label className="form-label">Monthly Gross Salary</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
                     <input type="number" placeholder="e.g. 100000" value={ctc} onChange={e => setCtc(e.target.value)} className="form-input pl-8" />
                   </div>
+                  <p className="text-xs text-slate-400 mt-1.5">Enter your monthly gross salary (not annual CTC)</p>
                 </div>
                 <div>
                   <label className="form-label">Notice Period (Days)</label>
@@ -71,11 +72,12 @@ export default function NoticeBuyoutPage() {
                 <div>
                   <label className="form-label">Your Tax Slab</label>
                   <select value={slab} onChange={e => setSlab(e.target.value)} className="form-select">
-                    <option value="5">5% (Income ₹3–6L)</option>
-                    <option value="10">10% (Income ₹6–9L)</option>
-                    <option value="15">15% (Income ₹9–12L)</option>
-                    <option value="20">20% (Income ₹12–15L)</option>
-                    <option value="30">30% (Income above ₹15L)</option>
+                    <option value="5">5% — New regime ₹4–8L</option>
+                    <option value="10">10% — New regime ₹8–12L</option>
+                    <option value="15">15% — New regime ₹12–16L</option>
+                    <option value="20">20% — New regime ₹16–20L</option>
+                    <option value="25">25% — New regime ₹20–24L</option>
+                    <option value="30">30% — New regime above ₹24L</option>
                   </select>
                 </div>
                 <button onClick={calculate} className="btn-primary w-full btn-lg">Calculate Buyout Cost →</button>
@@ -84,9 +86,9 @@ export default function NoticeBuyoutPage() {
 
             {result && (
               <div className="animate-scale-in space-y-4">
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-2xl p-6">
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-2xl p-5 sm:p-6">
                   <p className="text-slate-400 text-sm mb-1">Buyout Amount (Pre-Tax)</p>
-                  <p className="text-5xl font-bold">{formatINR(result.buyoutAmount)}</p>
+                  <p className="text-3xl sm:text-4xl font-bold">{formatINR(result.buyoutAmount)}</p>
                   <p className="text-slate-400 text-sm mt-2">Total cost with tax: <strong className="text-red-400">{formatINR(result.netCost)}</strong></p>
                 </div>
 

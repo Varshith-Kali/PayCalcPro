@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { calculateGratuity, formatINR } from '@/lib/calculators'
@@ -53,8 +53,8 @@ export default function GratuityCalculatorPage() {
                 </div>
                 <div>
                   <label className="form-label">Years of Service</label>
-                  <input type="number" placeholder="e.g. 8" value={years} onChange={e => setYears(e.target.value)} onKeyDown={e => e.key === 'Enter' && calculate()} className="form-input" min="1" max="40" step="0.5" />
-                  <p className="text-xs text-slate-400 mt-1.5">Minimum 5 years for eligibility. Use 0.5 for half-year rounding.</p>
+                  <input type="number" placeholder="e.g. 7.5" value={years} onChange={e => setYears(e.target.value)} onKeyDown={e => e.key === 'Enter' && calculate()} className="form-input" min="1" max="40" step="0.5" />
+                  <p className="text-xs text-slate-400 mt-1.5">Min 5 yrs for eligibility. Enter decimals: e.g. 7.5 = 7 yrs 6 months (rounds up per Act).</p>
                 </div>
                 <div className="highlight-box text-sm">
                   <p className="font-bold text-slate-900 mb-1">📌 Gratuity Formula</p>
@@ -66,10 +66,10 @@ export default function GratuityCalculatorPage() {
 
             {result && (
               <div className="animate-scale-in space-y-4">
-                <div className={`rounded-2xl p-6 text-white ${result.gratuity <= result.taxFreeLimit ? 'bg-gradient-to-br from-emerald-600 to-teal-700' : 'bg-gradient-to-br from-sky-600 to-blue-700'}`}>
+                <div className={`rounded-2xl p-5 sm:p-6 text-white ${result.gratuity <= result.taxFreeLimit ? 'bg-gradient-to-br from-emerald-600 to-teal-700' : 'bg-gradient-to-br from-sky-600 to-blue-700'}`}>
                   <p className="text-emerald-200 text-sm mb-1">Total Gratuity Amount</p>
-                  <p className="text-5xl font-bold">{formatINR(result.gratuity)}</p>
-                  <p className="mt-2 text-sm opacity-80">≈ {formatINR(result.perYear)} per year of service</p>
+                  <p className="text-3xl sm:text-4xl font-bold">{formatINR(result.gratuity)}</p>
+                  <p className="mt-2 text-sm opacity-80">Calculated on {result.roundedYears} years · ≈ {formatINR(result.perYear)}/year</p>
                 </div>
 
                 <div className="card overflow-hidden">

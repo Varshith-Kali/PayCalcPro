@@ -107,6 +107,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* JSON-LD Schemas */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'CTC to In-Hand Salary Calculator', url: 'https://paycalcpro.online/ctc-to-inhand', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Convert annual CTC to monthly in-hand salary with full PF, HRA, tax breakdown for FY 2025-26.' },
+            { '@type': 'WebApplication', name: 'In-Hand Salary Calculator', url: 'https://paycalcpro.online/in-hand-salary-calculator', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Calculate monthly take-home salary from CTC with variable pay support. FY 2025-26.' },
+            { '@type': 'WebApplication', name: 'Income Tax Calculator India FY 2025-26', url: 'https://paycalcpro.online/tax-estimator', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Compare new vs old tax regime for FY 2025-26. Includes 87A rebate, variable pay, NPS, HRA.' },
+            { '@type': 'WebApplication', name: 'EPF PF Calculator India 2025', url: 'https://paycalcpro.online/pf-calculator', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Calculate monthly EPF deduction and 30-year corpus at 8.25% interest.' },
+            { '@type': 'WebApplication', name: 'HRA Exemption Calculator', url: 'https://paycalcpro.online/hra-calculator', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Calculate HRA tax exemption under Section 10(13A). Metro vs non-metro.' },
+            { '@type': 'WebApplication', name: 'Gratuity Calculator India', url: 'https://paycalcpro.online/gratuity-calculator', applicationCategory: 'FinanceApplication', operatingSystem: 'Web', offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' }, description: 'Calculate gratuity using Payment of Gratuity Act 1972 formula. Tax-free up to ₹20L.' },
+          ]
+        }) }} />
+
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
         {/* Google Analytics GA4 */}
