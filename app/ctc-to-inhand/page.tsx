@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -18,6 +18,7 @@ const faqs = [
 
 export default function CTCCalculatorPage() {
   const [ctc, setCtc] = useState('')
+  const [variablePay, setVariablePay] = useState('')
   const [city, setCity] = useState<'metro' | 'non-metro'>('metro')
   const [result, setResult] = useState<SalaryBreakdown | null>(null)
   const [showChart, setShowChart] = useState(false)
@@ -25,7 +26,8 @@ export default function CTCCalculatorPage() {
   const calculate = () => {
     const val = parseFloat(ctc.replace(/,/g, ''))
     if (!val || val <= 0) return
-    const res = calculateSalary(val * 100000, city)
+    const variable = parseFloat(variablePay) * 100000 || 0  // variable in LPA → ₹
+    const res = calculateSalary(val * 100000, city, variable)
     setResult(res)
     setShowChart(false)
     setTimeout(() => setShowChart(true), 100)
@@ -79,6 +81,22 @@ export default function CTCCalculatorPage() {
                   <p className="text-xs text-slate-400 mt-1.5">Enter in lakhs. Example: 12 for ₹12,00,000</p>
                 </div>
 
+                {/* Variable Pay */}
+                <div>
+                  <label className="form-label">Variable Pay / Annual Bonus <span className="text-slate-400 font-normal">(optional, in Lakhs)</span></label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
+                    <input
+                      type="number" placeholder="e.g. 2 for ₹2,00,000 bonus"
+                      value={variablePay} onChange={e => setVariablePay(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && calculate()}
+                      className="form-input pl-8" min="0" step="0.5"
+                    />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">LPA</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1.5">Variable pay is taxed at your marginal slab rate</p>
+                </div>
+
                 <div>
                   <label className="form-label">City Type</label>
                   <div className="grid grid-cols-2 gap-3">
@@ -115,9 +133,9 @@ export default function CTCCalculatorPage() {
             {result && (
               <div className="animate-scale-in space-y-5">
                 {/* Main Result */}
-                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white rounded-2xl p-6 shadow-blue">
+                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white rounded-2xl p-5 sm:p-6 shadow-blue">
                   <p className="text-sky-200 text-sm font-medium mb-1">Monthly In-Hand Salary</p>
-                  <p className="text-5xl font-bold mb-2">{formatINR(result.inHandMonthly)}</p>
+                  <p className="text-3xl sm:text-5xl font-bold mb-2">{formatINR(result.inHandMonthly)}</p>
                   <p className="text-sky-200 text-sm">Annual: {formatINR(result.inHandAnnual)} · CTC: {formatINRCompact(result.ctc)}</p>
                 </div>
 

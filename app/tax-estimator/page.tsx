@@ -1,13 +1,12 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { estimateIncomeTax, formatINR } from '@/lib/calculators'
+import { estimateIncomeTax, formatINR, formatINRCompact } from '@/lib/calculators'
 import FAQSection from '@/components/FAQSection'
 import AdUnit from '@/components/AdUnit'
 
-// FY 2025-26 (Budget 2025) New Regime Slabs
 const TAX_SLABS_NEW = [
-  { range: '0 – ₹4,00,000', rate: '0%' },
+  { range: '₹0 – ₹4,00,000', rate: '0%' },
   { range: '₹4,00,001 – ₹8,00,000', rate: '5%' },
   { range: '₹8,00,001 – ₹12,00,000', rate: '10%' },
   { range: '₹12,00,001 – ₹16,00,000', rate: '15%' },
@@ -17,37 +16,68 @@ const TAX_SLABS_NEW = [
 ]
 
 const faqs = [
-  { question: 'Which tax regime is better for FY 2025-26?', answer: 'Under the new regime (Budget 2025), there is zero tax up to ₹12 lakh due to the enhanced 87A rebate. If your deductions (HRA + 80C + home loan) exceed ₹3–4L, compare both regimes. For most salaried employees under ₹15L, new regime wins.' },
+  { question: 'Which tax regime is better for FY 2025-26?', answer: 'Under the new regime (Budget 2025), there is zero tax up to ₹12 lakh due to the enhanced 87A rebate. If your total deductions (HRA + 80C + home loan + NPS) exceed ₹3.75L, old regime may save more. Use this calculator to compare.' },
   { question: 'What is the standard deduction for FY 2025-26?', answer: 'Under the New Tax Regime, standard deduction is ₹75,000 for FY 2025-26 (increased from ₹50,000 in FY 2024-25). Under the Old Regime, it remains ₹50,000.' },
   { question: 'What is the 87A rebate limit for FY 2025-26?', answer: 'Under the New Regime for FY 2025-26, rebate u/s 87A is ₹60,000 — meaning if your net taxable income is ₹12 lakh or below, your effective tax is zero. Under old regime it remains ₹12,500 (for income ≤ ₹5L).' },
-  { question: 'What is the surcharge on income tax?', answer: 'Surcharge applies on high incomes: 10% for ₹50L–₹1Cr, 15% for ₹1–2Cr, 25% for ₹2–5Cr. In the new regime, surcharge is capped at 25% (no 37% bracket). All + 4% cess.' },
-  { question: 'Does TDS deducted by employer equal my final tax?', answer: 'Not always. TDS is an advance estimate. File your ITR to reconcile. If TDS > actual tax, you get a refund. If TDS < actual tax, pay self-assessment tax before July 31.' },
+  { question: 'How is variable pay or bonus taxed?', answer: 'Variable pay and annual bonuses are added to your gross salary and taxed at your marginal slab rate. For example, if you are in the 20% slab, a ₹1 lakh bonus adds approximately ₹20,800 to your tax (including 4% cess).' },
+  { question: 'Does TDS deducted by employer equal my final tax?', answer: 'Not always. TDS is an advance estimate based on your declarations. File your ITR to reconcile actual tax. If TDS exceeds actual tax, you get a refund. If TDS is less, pay self-assessment tax before July 31.' },
 ]
 
 export default function TaxEstimatorPage() {
   const [income, setIncome] = useState('')
+  const [variablePay, setVariablePay] = useState('')
   const [investments, setInvestments] = useState('')
+  const [nps, setNps] = useState('')
   const [hra, setHra] = useState('')
-  const [regime, setRegime] = useState<'new' | 'old'>('new')
-  const [result, setResult] = useState<{ newTax: number; oldTax: number; taxableNew: number; taxableOld: number } | null>(null)
+  const [homeLoan, setHomeLoan] = useState('')
+  const [result, setResult] = useState<{
+    newTax: number; oldTax: number
+    taxableNew: number; taxableOld: number
+    totalIncome: number
+  } | null>(null)
 
   const calculate = () => {
-    const inc = parseFloat(income) * 100000
+    const inc = parseFloat(income) * 100000  // User enters LPA (e.g. 24 = ₹24,00,000)
     if (!inc || inc <= 0) return
-    // FY 2025-26: New regime std deduction = ₹75,000; Old regime = ₹50,000
-    const stdDeductionNew = 75000
-    const stdDeductionOld = 50000
-    const inv = Math.min(parseFloat(investments) * 1000 || 0, 150000)
-    const hraAmt = parseFloat(hra) * 1000 || 0
 
-    const taxableNew = Math.max(0, inc - stdDeductionNew)
-    const taxableOld = Math.max(0, inc - stdDeductionOld - inv - hraAmt)
+    const bonus   = parseFloat(variablePay) || 0        // ₹ annual bonus (raw)
+    const totalIncome = inc + bonus
+
+    // New Regime: only std deduction ₹75,000
+    const taxableNew = Math.max(0, totalIncome - 75000)
+
+    // Old Regime: std deduction ₹50,000 + 80C (max ₹1.5L) + NPS (max ₹50K) + HRA + home loan (max ₹2L)
+    const inv80C  = Math.min(parseFloat(investments) || 0, 150000)   // ₹ direct input
+    const npsAmt  = Math.min(parseFloat(nps) || 0, 50000)             // ₹ direct input
+    const hraAmt  = parseFloat(hra) || 0                              // ₹ direct input
+    const hlAmt   = Math.min(parseFloat(homeLoan) || 0, 200000)       // ₹ direct input, max ₹2L
+    const taxableOld = Math.max(0, totalIncome - 50000 - inv80C - npsAmt - hraAmt - hlAmt)
 
     const newTax = estimateIncomeTax(taxableNew, 'new')
     const oldTax = estimateIncomeTax(taxableOld, 'old')
 
-    setResult({ newTax, oldTax, taxableNew, taxableOld })
+    setResult({ newTax, oldTax, taxableNew, taxableOld, totalIncome })
   }
+
+  const InputField = ({ label, hint, value, onChange, placeholder, max }: {
+    label: string; hint?: string; value: string
+    onChange: (v: string) => void; placeholder: string; max?: string
+  }) => (
+    <div>
+      <label className="form-label">
+        {label}
+        {hint && <span className="text-slate-400 font-normal text-xs ml-1">— {hint}</span>}
+      </label>
+      <div className="relative">
+        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
+        <input
+          type="number" value={value} onChange={e => onChange(e.target.value)}
+          placeholder={placeholder} className="form-input pl-8"
+          min="0" max={max} onKeyDown={e => e.key === 'Enter' && calculate()}
+        />
+      </div>
+    </div>
+  )
 
   return (
     <div className="min-h-screen">
@@ -58,7 +88,7 @@ export default function TaxEstimatorPage() {
             <span className="text-slate-300">Tax Estimator</span>
           </nav>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Income Tax Estimator India FY 2025–26</h1>
-          <p className="text-slate-300 text-lg max-w-2xl">Compare new vs old tax regime instantly. Zero tax up to ₹12L under new regime (Budget 2025). Updated for FY 2025-26.</p>
+          <p className="text-slate-300 text-lg max-w-2xl">Compare new vs old tax regime. Enter your CTC, variable pay, and deductions to get your exact tax liability.</p>
         </div>
       </section>
 
@@ -66,61 +96,107 @@ export default function TaxEstimatorPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 space-y-6">
             <div className="card p-6 md:p-8">
-              <h2 className="text-xl font-bold text-slate-900 mb-6">Income Details</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-1">Income Details</h2>
+              <p className="text-sm text-slate-500 mb-6">Enter amounts in Indian Rupees (₹). CTC/income should be the fixed annual component.</p>
               <div className="space-y-5">
+                {/* Fixed CTC */}
                 <div>
-                  <label className="form-label">Annual Income / CTC (in Lakhs)</label>
+                  <label className="form-label">Annual Fixed CTC / Salary</label>
+                  <p className="text-xs text-slate-400 mb-1.5">Enter in Lakhs (LPA). Example: enter <strong>24</strong> for ₹24,00,000 per year</p>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
-                    <input type="number" placeholder="e.g. 12" value={income} onChange={e => setIncome(e.target.value)} className="form-input pl-8" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">LPA</span>
+                    <input
+                      type="number" placeholder="e.g. 24" value={income}
+                      onChange={e => setIncome(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && calculate()}
+                      className="form-input pl-8" min="1" max="500" step="0.5"
+                    />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-medium">LPA</span>
                   </div>
                 </div>
-                <div>
-                  <label className="form-label">Investments under 80C (₹ Thousands) <span className="text-slate-400 font-normal">— Old Regime only</span></label>
-                  <input type="number" placeholder="e.g. 150 (max 1,50,000)" value={investments} onChange={e => setInvestments(e.target.value)} className="form-input" max="150" />
+
+                {/* Variable Pay */}
+                <InputField
+                  label="Variable Pay / Annual Bonus (₹)"
+                  hint="optional"
+                  value={variablePay}
+                  onChange={setVariablePay}
+                  placeholder="e.g. 200000 for ₹2,00,000 bonus"
+                />
+
+                <div className="border-t border-slate-100 pt-5">
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Old Regime Deductions (optional)</p>
+                  <div className="space-y-4">
+                    <InputField
+                      label="80C Investments (₹)"
+                      hint="max ₹1,50,000 — ELSS, PPF, LIC, PF etc."
+                      value={investments} onChange={setInvestments}
+                      placeholder="e.g. 150000" max="150000"
+                    />
+                    <InputField
+                      label="NPS Contribution 80CCD(1B) (₹)"
+                      hint="max ₹50,000 additional"
+                      value={nps} onChange={setNps}
+                      placeholder="e.g. 50000" max="50000"
+                    />
+                    <InputField
+                      label="HRA Exemption (₹)"
+                      hint="annual exempt amount — use HRA calculator"
+                      value={hra} onChange={setHra}
+                      placeholder="e.g. 120000"
+                    />
+                    <InputField
+                      label="Home Loan Interest (₹)"
+                      hint="max ₹2,00,000 under Section 24B"
+                      value={homeLoan} onChange={setHomeLoan}
+                      placeholder="e.g. 200000" max="200000"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="form-label">HRA Exemption (₹ Thousands) <span className="text-slate-400 font-normal">— Old Regime only</span></label>
-                  <input type="number" placeholder="e.g. 120" value={hra} onChange={e => setHra(e.target.value)} className="form-input" />
-                </div>
+
                 <button onClick={calculate} className="btn-primary w-full btn-lg">Compare Tax Regimes →</button>
               </div>
             </div>
 
             {result && (
               <div className="animate-scale-in space-y-4">
-                <div className={`grid grid-cols-2 gap-4`}>
+                {/* Regime Cards — mobile-safe */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className={`rounded-2xl p-5 text-center border-2 ${result.newTax <= result.oldTax ? 'border-sky-500 bg-sky-50' : 'border-slate-200 bg-white'}`}>
                     <p className="text-xs font-semibold text-slate-500 mb-1">NEW REGIME</p>
-                    <p className="text-3xl font-bold text-sky-600">{formatINR(result.newTax)}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-sky-600 break-all">{formatINR(result.newTax)}</p>
                     <p className="text-xs text-slate-500 mt-1">Annual Tax</p>
+                    <p className="text-xs text-slate-400">Monthly: {formatINR(result.newTax / 12)}</p>
                     {result.newTax <= result.oldTax && <span className="mt-2 inline-block bg-sky-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold">BETTER ✓</span>}
                   </div>
                   <div className={`rounded-2xl p-5 text-center border-2 ${result.oldTax < result.newTax ? 'border-emerald-500 bg-emerald-50' : 'border-slate-200 bg-white'}`}>
                     <p className="text-xs font-semibold text-slate-500 mb-1">OLD REGIME</p>
-                    <p className="text-3xl font-bold text-emerald-600">{formatINR(result.oldTax)}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-emerald-600 break-all">{formatINR(result.oldTax)}</p>
                     <p className="text-xs text-slate-500 mt-1">Annual Tax</p>
+                    <p className="text-xs text-slate-400">Monthly: {formatINR(result.oldTax / 12)}</p>
                     {result.oldTax < result.newTax && <span className="mt-2 inline-block bg-emerald-500 text-white text-xs px-2.5 py-1 rounded-full font-semibold">BETTER ✓</span>}
                   </div>
                 </div>
 
-                <div className="card p-6">
-                  <h3 className="font-bold text-slate-900 mb-4">Detailed Comparison</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-600">Taxable Income (New)</span>
-                      <span className="font-semibold">{formatINR(result.taxableNew)}</span>
+                <div className="card p-6 space-y-3">
+                  <h3 className="font-bold text-slate-900 mb-2">Detailed Breakdown</h3>
+                  {[
+                    { label: 'Total Gross Income', val: result.totalIncome, color: '' },
+                    { label: 'Taxable Income (New Regime)', val: result.taxableNew, color: '' },
+                    { label: 'Taxable Income (Old Regime)', val: result.taxableOld, color: '' },
+                  ].map((r, i) => (
+                    <div key={i} className="flex justify-between text-sm">
+                      <span className="text-slate-600">{r.label}</span>
+                      <span className="font-semibold">{formatINR(r.val)}</span>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-600">Taxable Income (Old)</span>
-                      <span className="font-semibold">{formatINR(result.taxableOld)}</span>
-                    </div>
-                    <div className="border-t border-slate-100 pt-3 flex justify-between font-bold">
-                      <span className="text-slate-800">You Save</span>
-                      <span className="text-emerald-600">{formatINR(Math.abs(result.newTax - result.oldTax))} {result.newTax <= result.oldTax ? 'in New Regime' : 'in Old Regime'}</span>
-                    </div>
+                  ))}
+                  <div className="border-t border-slate-100 pt-3 flex justify-between font-bold">
+                    <span className="text-slate-800">You Save</span>
+                    <span className="text-emerald-600">
+                      {formatINRCompact(Math.abs(result.newTax - result.oldTax))} in {result.newTax <= result.oldTax ? 'New' : 'Old'} Regime
+                    </span>
                   </div>
+                  <p className="text-xs text-slate-400 pt-1">Includes 4% cess and applicable surcharge. Estimates only — consult a CA for tax filing.</p>
                 </div>
               </div>
             )}
@@ -131,7 +207,7 @@ export default function TaxEstimatorPage() {
               <h3 className="font-bold text-slate-900 mb-3 text-sm">New Regime Slabs (FY 2025-26)</h3>
               <div className="overflow-hidden rounded-xl border border-slate-100">
                 <table className="data-table">
-                  <thead><tr><th>Income Range</th><th>Tax Rate</th></tr></thead>
+                  <thead><tr><th>Income Range</th><th>Rate</th></tr></thead>
                   <tbody>
                     {TAX_SLABS_NEW.map((s, i) => (
                       <tr key={i}><td className="text-xs">{s.range}</td><td className="font-bold text-sky-600">{s.rate}</td></tr>
@@ -139,7 +215,41 @@ export default function TaxEstimatorPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-slate-400 mt-2">+ 4% Cess. Rebate u/s 87A: Zero tax up to ₹12L net taxable income. Std deduction ₹75,000.</p>
+              <p className="text-xs text-slate-400 mt-2">+ 4% Cess. Zero tax up to ₹12L (87A rebate). Std deduction ₹75,000.</p>
+            </div>
+            <div className="card-flat p-5">
+              <h3 className="font-bold text-slate-900 mb-3 text-sm">Old Regime Deductions</h3>
+              <div className="space-y-2 text-sm">
+                {[
+                  ['80C', '₹1,50,000', 'ELSS, PPF, LIC, PF'],
+                  ['80CCD(1B) NPS', '₹50,000', 'Additional NPS'],
+                  ['HRA', 'Actual exempt', 'Sec 10(13A)'],
+                  ['Home Loan Interest', '₹2,00,000', 'Section 24B'],
+                  ['Std Deduction', '₹50,000', 'All salaried'],
+                ].map(([sec, limit, desc], i) => (
+                  <div key={i} className="flex justify-between items-start gap-2">
+                    <div>
+                      <span className="font-medium text-slate-700">{sec}</span>
+                      <p className="text-xs text-slate-400">{desc}</p>
+                    </div>
+                    <span className="text-xs font-semibold text-emerald-600 whitespace-nowrap">{limit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="card-flat p-5">
+              <h3 className="font-bold text-slate-900 mb-3 text-sm">Related Tools</h3>
+              <div className="space-y-2">
+                {[
+                  { href: '/ctc-to-inhand', label: '💰 CTC to In-Hand' },
+                  { href: '/hra-calculator', label: '🏠 HRA Calculator' },
+                  { href: '/pf-calculator', label: '🏦 PF Calculator' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors text-sm text-slate-700 hover:text-sky-700 border border-transparent hover:border-sky-100">
+                    {l.label} <span className="text-slate-300">→</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

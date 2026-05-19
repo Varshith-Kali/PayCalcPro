@@ -35,24 +35,29 @@ export interface SalaryBreakdown {
  */
 export function calculateSalary(
   ctcAnnual: number,
-  cityTier: 'metro' | 'non-metro' = 'metro'
+  cityTier: 'metro' | 'non-metro' = 'metro',
+  variablePayAnnual = 0
 ): SalaryBreakdown {
-  // Salary structure (standard Indian private sector)
-  const basic = ctcAnnual * 0.40; // 40% of CTC for CTC > 10L (reduces tax)
+  // Standard Indian salary structure: Basic = 50% of Fixed CTC (most companies)
+  const fixedCTC = ctcAnnual - variablePayAnnual;
+  const basic = fixedCTC * 0.50;  // 50% of fixed CTC (industry standard)
   const hra = cityTier === 'metro' ? basic * 0.50 : basic * 0.40;
-  const pfEmployer = Math.min(basic * 0.12, 21600); // EPFO ceiling ₹15,000/mo
-  const gratuityProvision = (basic / 26) * 15; // ~4.81% of basic annually
+  // EPFO cap: employer PF max = 12% of ₹15,000 = ₹1,800/month = ₹21,600/year
+  const pfEmployer = Math.min(basic * 0.12, 21600);
+  const gratuityProvision = (basic * 15) / 26; // 4.81% of basic annually
   const specialAllowanceAnnual = Math.max(
     0,
-    ctcAnnual - basic - hra - pfEmployer - gratuityProvision
+    fixedCTC - basic - hra - pfEmployer - gratuityProvision
   );
-  const grossAnnual = ctcAnnual - pfEmployer - gratuityProvision;
+  // Gross = Fixed gross + variable pay (both credited to employee)
+  const fixedGross = fixedCTC - pfEmployer - gratuityProvision;
+  const grossAnnual = fixedGross + variablePayAnnual;
 
-  // Employee deductions
+  // Employee deductions (PF only on fixed basic, not variable)
   const pfEmployee = Math.min(basic * 0.12, 21600);
-  const professionalTax = 2400; // ₹200/month (applicable states)
+  const professionalTax = 2400; // ₹200/month
 
-  // Taxable income = Gross - Employee PF - Standard Deduction (₹75,000 FY25-26)
+  // Taxable income = Gross - Employee PF - Std Deduction ₹75,000
   const standardDeduction = 75000;
   const taxableIncome = Math.max(0, grossAnnual - pfEmployee - standardDeduction);
   const incomeTax = estimateIncomeTax(taxableIncome, 'new');
@@ -64,6 +69,7 @@ export function calculateSalary(
     { label: 'Basic Salary', monthly: Math.round(basic / 12), annual: Math.round(basic), type: 'earning', color: '#0ea5e9' },
     { label: 'HRA', monthly: Math.round(hra / 12), annual: Math.round(hra), type: 'earning', color: '#38bdf8' },
     { label: 'Special Allowance', monthly: Math.round(specialAllowanceAnnual / 12), annual: Math.round(specialAllowanceAnnual), type: 'earning', color: '#7dd3fc' },
+    ...(variablePayAnnual > 0 ? [{ label: 'Variable Pay / Bonus', monthly: Math.round(variablePayAnnual / 12), annual: Math.round(variablePayAnnual), type: 'earning' as const, color: '#a78bfa' }] : []),
     { label: 'PF (Employee 12%)', monthly: Math.round(pfEmployee / 12), annual: Math.round(pfEmployee), type: 'deduction', color: '#f97316' },
     { label: 'Professional Tax', monthly: Math.round(professionalTax / 12), annual: professionalTax, type: 'deduction', color: '#fb923c' },
     { label: 'Income Tax (Est.)', monthly: Math.round(incomeTax / 12), annual: Math.round(incomeTax), type: 'deduction', color: '#ef4444' },
