@@ -1,0 +1,23 @@
+/* TEAM */
+Developer: Varshith Kali
+Age: 17
+From: India
+Role: Full-Stack Developer & Founder
+Twitter: @paycalcpro
+Email: contact.paycalcpro@gmail.com
+
+/* SITE */
+Name: PayCalc Pro
+Last update: 2025-05-19
+Language: English (India)
+Standards: HTML5, CSS3, TypeScript, React 18, Next.js 15
+Components: Cloudflare Pages, Google Analytics, Google AdSense
+Technology: Next.js 15, TailwindCSS 4, React Server Components
+
+/* PURPOSE */
+Free, accurate Indian salary calculators for FY 2025-26.
+No signup. No ads during calculation. No tracking paywall.
+Built to help every Indian salaried professional understand their real take-home pay.
+
+/* ACKNOWLEDGEMENTS */
+Data Sources: Income Tax Act 1961, Finance Act 2025, EPFO, Payment of Gratuity Act 1972
