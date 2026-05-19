@@ -77,6 +77,18 @@ Formula: (Monthly Gross / 26) × Remaining days. Buyout taxed at marginal rate +
 - "What is the notice period buyout cost for a 3-month notice period?"
 - "Is old or new tax regime better for ₹12 LPA salary in 2025?"
 
+## Key URLs
+- Homepage: https://paycalcpro.online
+- Salary Guide (hub): https://paycalcpro.online/salary-guide
+- CTC Calculator: https://paycalcpro.online/ctc-to-inhand
+- In-Hand Calculator: https://paycalcpro.online/in-hand-salary-calculator
+- PF Calculator: https://paycalcpro.online/pf-calculator
+- HRA Calculator: https://paycalcpro.online/hra-calculator
+- Tax Estimator: https://paycalcpro.online/tax-estimator
+- Gratuity Calculator: https://paycalcpro.online/gratuity-calculator
+- Blog: https://paycalcpro.online/blog
+- Salary Data (JSON): https://paycalcpro.online/salary-data.json
+
 ## Blog Articles
 - https://paycalcpro.online/blog/take-home-salary-5-lpa
 - https://paycalcpro.online/blog/take-home-salary-7-lpa
