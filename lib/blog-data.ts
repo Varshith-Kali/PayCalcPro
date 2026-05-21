@@ -11,7 +11,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-calculate-inhand-salary-from-ctc',
-    title: 'How to Calculate In-Hand Salary from CTC in India (2025)',
+    title: 'How to Calculate In-Hand Salary from CTC in India (2026)',
     description: 'Learn the exact formula to convert your CTC to monthly take-home salary for FY 2025-26. Understand PF, HRA, professional tax deductions step-by-step with worked examples.',
     category: 'Salary Guide',
     readTime: '6 min read',
@@ -313,7 +313,7 @@ Use our [In-Hand Salary Calculator](/in-hand-salary-calculator) to verify your s
   },
   {
     slug: 'take-home-salary-10-lpa',
-    title: 'Take Home Salary for 10 LPA in India (2025) — Exact Monthly Breakdown',
+    title: 'Take Home Salary for 10 LPA in India (2026) — Exact Monthly Breakdown',
     description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India for FY 2025-26. Complete breakdown with PF, HRA, income tax deductions, city-wise comparison, and new vs old regime.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -430,7 +430,7 @@ Use our [Notice Period Buyout Calculator](/notice-period-buyout) for your exact 
   },
   {
     slug: 'gratuity-calculation-india',
-    title: 'How Gratuity is Calculated in India — Complete Guide 2025',
+    title: 'How Gratuity is Calculated in India — Complete Guide 2026',
     description: 'Complete guide to gratuity calculation in India for FY 2025. Formula, eligibility, tax rules, and worked examples for ₹10L, ₹15L, ₹20L salaries.',
     category: 'Benefits',
     readTime: '6 min read',
@@ -627,7 +627,7 @@ Ask HR to restructure your salary to include:
   },
   {
     slug: 'take-home-salary-5-lpa',
-    title: '5 LPA In-Hand Salary in India 2025 — Exact Monthly Breakdown',
+    title: '5 LPA In-Hand Salary in India 2026 — Exact Monthly Breakdown',
     description: 'What is the exact in-hand salary for 5 LPA CTC in India? Complete monthly breakdown with PF, HRA, income tax, and city-wise differences for FY 2025-26.',
     category: 'Salary Examples',
     readTime: '4 min read',
@@ -672,7 +672,7 @@ Use our [CTC to In-Hand Calculator](/ctc-to-inhand) for your exact number.
   },
   {
     slug: 'take-home-salary-7-lpa',
-    title: '7 LPA In-Hand Salary in India 2025 — Monthly Take-Home Breakdown',
+    title: '7 LPA In-Hand Salary in India 2026 — Monthly Take-Home Breakdown',
     description: 'Exact monthly in-hand salary for ₹7 LPA CTC in India for FY 2025-26. PF, HRA, tax breakdown and city-wise comparison.',
     category: 'Salary Examples',
     readTime: '4 min read',
@@ -717,7 +717,7 @@ Try our [In-Hand Salary Calculator](/in-hand-salary-calculator) for your exact s
   },
   {
     slug: 'take-home-salary-8-lpa',
-    title: '8 LPA In-Hand Salary in India 2025 — Exact Monthly Calculation',
+    title: '8 LPA In-Hand Salary in India 2026 — Exact Monthly Calculation',
     description: 'What is the monthly in-hand salary for 8 LPA CTC? Complete FY 2025-26 breakdown with all deductions, HRA, PF, and zero tax benefit.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -762,7 +762,7 @@ Use our [CTC Calculator](/ctc-to-inhand) to get your personalized result.
   },
   {
     slug: 'take-home-salary-12-lpa',
-    title: '12 LPA In-Hand Salary in India 2025 — Monthly Take-Home with Tax',
+    title: '12 LPA In-Hand Salary in India 2026 — Monthly Take-Home with Tax',
     description: 'Exact monthly in-hand salary for ₹12 LPA CTC. New vs old tax regime comparison, PF, HRA breakdown for FY 2025-26.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -809,7 +809,7 @@ Calculate exactly: [Tax Estimator](/tax-estimator)
   },
   {
     slug: 'take-home-salary-15-lpa',
-    title: '15 LPA In-Hand Salary in India 2025 — Complete Monthly Breakdown',
+    title: '15 LPA In-Hand Salary in India 2026 — Complete Monthly Breakdown',
     description: 'Monthly in-hand salary for ₹15 LPA CTC in India FY 2025-26. New vs old tax regime, PF, HRA, professional tax deductions explained.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -852,7 +852,7 @@ New regime is better by ~₹600/month. [Compare both regimes](/tax-estimator).
   },
   {
     slug: 'take-home-salary-20-lpa',
-    title: '20 LPA In-Hand Salary in India 2025 — Exact Monthly Take-Home',
+    title: '20 LPA In-Hand Salary in India 2026 — Exact Monthly Take-Home',
     description: 'Monthly in-hand salary for ₹20 LPA CTC. Complete breakdown with income tax (new vs old regime), PF, HRA for senior professionals FY 2025-26.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -895,7 +895,7 @@ At ₹20 LPA, **old regime saves ~₹5,500/month** if you maximize deductions. [
   },
   {
     slug: 'take-home-salary-25-lpa',
-    title: '25 LPA In-Hand Salary in India 2025 — Monthly Breakdown & Tax',
+    title: '25 LPA In-Hand Salary in India 2026 — Monthly Breakdown & Tax',
     description: 'What is the monthly in-hand for 25 LPA CTC? Detailed tax calculation, PF, HRA breakdown for senior Indian professionals FY 2025-26.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -939,7 +939,7 @@ This can save ₹8,000–₹12,000/month vs new regime. [Calculate your tax](/ta
   },
   {
     slug: 'take-home-salary-30-lpa',
-    title: '30 LPA In-Hand Salary in India 2025 — Monthly Take-Home & Tax Breakdown',
+    title: '30 LPA In-Hand Salary in India 2026 — Monthly Take-Home & Tax Breakdown',
     description: 'Exact monthly in-hand salary for ₹30 LPA CTC. Senior executive tax breakdown, new vs old regime comparison for FY 2025-26.',
     category: 'Salary Examples',
     readTime: '5 min read',
@@ -982,11 +982,11 @@ At ₹30 LPA, **always evaluate old regime** with your CA. [Use our Tax Estimato
   },
   {
     slug: 'tcs-salary-structure-2025',
-    title: 'TCS Salary Structure 2025 — Fresher & Experienced In-Hand Breakdown',
+    title: 'TCS Salary Structure 2026 — Fresher & Experienced In-Hand Breakdown',
     description: 'Complete TCS salary structure for freshers and experienced professionals in 2025. Band-wise breakdown, variable pay, in-hand salary, and PF deductions explained.',
     category: 'Company Salaries',
     readTime: '7 min read',
-    publishedAt: '2025-05-21',
+    publishedAt: '2026-05-21',
     content: `
 ## TCS Salary Structure 2025 — Everything You Need to Know
 
@@ -1076,11 +1076,11 @@ Digital offer (₹7 LPA) is more than double NQT (₹3.36 LPA). Always target Di
   },
   {
     slug: 'infosys-salary-structure-2025',
-    title: 'Infosys Salary Structure 2025 — Fresher to Senior In-Hand Breakdown',
+    title: 'Infosys Salary Structure 2026 — Fresher to Senior In-Hand Breakdown',
     description: 'Infosys salary bands, fresher in-hand salary 2025, variable pay, onsite pay, and detailed monthly breakdown for all experience levels.',
     category: 'Company Salaries',
     readTime: '7 min read',
-    publishedAt: '2025-05-21',
+    publishedAt: '2026-05-21',
     content: `
 ## Infosys Salary Structure 2025 — Complete Guide
 
@@ -1156,11 +1156,11 @@ Use our [CTC to In-Hand Calculator](/ctc-to-inhand) to calculate your exact Info
   },
   {
     slug: 'freshers-salary-it-companies-2025',
-    title: 'Fresher Salary in IT Companies 2025 — TCS, Infosys, Wipro, HCL Comparison',
+    title: 'Fresher Salary in IT Companies 2026 — TCS, Infosys, Wipro, HCL Comparison',
     description: 'Complete fresher salary comparison for top IT companies in India 2025. TCS vs Infosys vs Wipro vs HCL vs Accenture — monthly in-hand, variable pay, and growth prospects.',
     category: 'Freshers Guide',
     readTime: '8 min read',
-    publishedAt: '2025-05-21',
+    publishedAt: '2026-05-21',
     content: `
 ## Fresher Salary in IT Companies 2025 — The Complete Comparison
 
@@ -1250,11 +1250,11 @@ Calculate your exact take-home: [In-Hand Salary Calculator](/in-hand-salary-calc
   },
   {
     slug: 'how-to-read-salary-slip-india-2025',
-    title: 'How to Read Your Salary Slip in India 2025 — Every Component Explained',
+    title: 'How to Read Your Salary Slip in India 2026 — Every Component Explained',
     description: 'Complete guide to reading an Indian salary slip in 2025. Understand every component — Basic, HRA, PF, TDS, ESI, Special Allowance — with worked examples.',
     category: 'Salary Guide',
     readTime: '8 min read',
-    publishedAt: '2025-05-21',
+    publishedAt: '2026-05-21',
     content: `
 ## How to Read Your Salary Slip in India — Complete Guide 2025
 
