@@ -31,7 +31,7 @@ export default function PFCalculatorPage() {
             <Link href="/" className="hover:text-white">Home</Link><span>/</span>
             <span className="text-slate-300">PF Calculator</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">PF (EPF) Calculator FY 2025-26</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">PF (EPF) Calculator FY 2026-27</h1>
           <p className="text-slate-300 text-lg max-w-2xl">Calculate your monthly EPF contribution, employer share, and long-term corpus growth at 8.25% interest.</p>
         </div>
       </section>

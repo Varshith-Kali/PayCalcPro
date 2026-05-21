@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'India Salary Guide FY 2025-26 – Complete Calculator Hub | PayCalc Pro',
-  description: 'Complete guide to Indian salaries FY 2025-26. In-hand salary for 5–50 LPA, tax comparison, PF, HRA, gratuity. Free calculators + real salary tables.',
+  title: 'India Salary Guide FY 2026-27 – Complete Calculator Hub | PayCalc Pro',
+  description: 'Complete guide to Indian salaries FY 2026-27. In-hand salary for 5–50 LPA, tax comparison, PF, HRA, gratuity. Free calculators + real salary tables.',
   alternates: { canonical: 'https://paycalcpro.online/salary-guide' },
   openGraph: {
-    title: 'India Salary Guide FY 2025-26 – All Calculators',
+    title: 'India Salary Guide FY 2026-27 – All Calculators',
     description: 'Real in-hand salary for every CTC from 5 to 50 LPA. Tax, PF, HRA, gratuity explained.',
     url: 'https://paycalcpro.online/salary-guide',
   },
@@ -40,7 +40,7 @@ const LPA_SLUGS: { lpa: string; slug: string; href: string }[] = [
 const guideSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'India Salary Guide FY 2025-26: In-Hand Salary for Every CTC',
+  headline: 'India Salary Guide FY 2026-27: In-Hand Salary for Every CTC',
   description: 'Complete salary guide for Indian professionals. Real in-hand amounts for 5–50 LPA under new tax regime with all deductions.',
   url: 'https://paycalcpro.online/salary-guide',
   datePublished: '2025-05-01',
@@ -61,7 +61,7 @@ export default function SalaryGuidePage() {
             <span className="text-slate-300">Salary Guide</span>
           </nav>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            India Salary Guide FY 2025-26
+            India Salary Guide FY 2026-27
           </h1>
           <p className="text-slate-300 text-lg max-w-3xl">
             Real in-hand salaries for every CTC — from freshers at 5 LPA to senior roles at 50 LPA. Updated for Budget 2025 with new tax regime, ₹12L zero-tax rebate, and variable pay.
@@ -73,7 +73,7 @@ export default function SalaryGuidePage() {
 
         {/* Quick salary table */}
         <section>
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">In-Hand Salary Table FY 2025-26</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">In-Hand Salary Table FY 2026-27</h2>
           <p className="text-slate-500 text-sm mb-5">New tax regime · Metro city · Basic = 50% of CTC · Employer PF excluded from gross</p>
           <div className="card overflow-hidden">
             <div className="overflow-x-auto">
@@ -153,7 +153,7 @@ export default function SalaryGuidePage() {
               { title: 'Zero Tax up to ₹12 Lakh', body: 'Section 87A rebate enhanced to ₹60,000 under new regime. If your net taxable income is ₹12L or below, you pay zero income tax.', color: 'bg-emerald-50 border-emerald-200' },
               { title: 'Standard Deduction ₹75,000', body: 'Increased from ₹50,000 to ₹75,000 for salaried under new regime. Directly reduces taxable income by ₹75,000.', color: 'bg-sky-50 border-sky-200' },
               { title: 'New Tax Slabs', body: '₹4-8L: 5% → ₹8-12L: 10% → ₹12-16L: 15% → ₹16-20L: 20% → ₹20-24L: 25% → Above ₹24L: 30%.', color: 'bg-violet-50 border-violet-200' },
-              { title: 'EPF Rate 8.25%', body: 'EPFO declared 8.25% interest for FY 2024-25. Expected to continue FY 2025-26. Employee + employer contributions compound at this rate.', color: 'bg-amber-50 border-amber-200' },
+              { title: 'EPF Rate 8.25%', body: 'EPFO declared 8.25% interest for FY 2024-25. Expected to continue FY 2026-27. Employee + employer contributions compound at this rate.', color: 'bg-amber-50 border-amber-200' },
             ].map((c, i) => (
               <div key={i} className={`p-5 rounded-xl border ${c.color}`}>
                 <h3 className="font-bold text-slate-900 mb-1">{c.title}</h3>

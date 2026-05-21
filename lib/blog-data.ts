@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-calculate-inhand-salary-from-ctc',
     title: 'How to Calculate In-Hand Salary from CTC in India (2026)',
-    description: 'Learn the exact formula to convert your CTC to monthly take-home salary for FY 2025-26. Understand PF, HRA, professional tax deductions step-by-step with worked examples.',
+    description: 'Learn the exact formula to convert your CTC to monthly take-home salary for FY 2026-27. Understand PF, HRA, professional tax deductions step-by-step with worked examples.',
     category: 'Salary Guide',
     readTime: '6 min read',
     publishedAt: '2025-04-15',
@@ -314,7 +314,7 @@ Use our [In-Hand Salary Calculator](/in-hand-salary-calculator) to verify your s
   {
     slug: 'take-home-salary-10-lpa',
     title: 'Take Home Salary for 10 LPA in India (2026) — Exact Monthly Breakdown',
-    description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India for FY 2025-26. Complete breakdown with PF, HRA, income tax deductions, city-wise comparison, and new vs old regime.',
+    description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India for FY 2026-27. Complete breakdown with PF, HRA, income tax deductions, city-wise comparison, and new vs old regime.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-03-12',
@@ -628,12 +628,12 @@ Ask HR to restructure your salary to include:
   {
     slug: 'take-home-salary-5-lpa',
     title: '5 LPA In-Hand Salary in India 2026 — Exact Monthly Breakdown',
-    description: 'What is the exact in-hand salary for 5 LPA CTC in India? Complete monthly breakdown with PF, HRA, income tax, and city-wise differences for FY 2025-26.',
+    description: 'What is the exact in-hand salary for 5 LPA CTC in India? Complete monthly breakdown with PF, HRA, income tax, and city-wise differences for FY 2026-27.',
     category: 'Salary Examples',
     readTime: '4 min read',
     publishedAt: '2025-05-10',
     content: `
-## ₹5 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹5 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹5 LPA is a common fresher and entry-level salary in India. Here's the exact breakdown.
 
@@ -658,7 +658,7 @@ Ask HR to restructure your salary to include:
 
 ## Final Monthly In-Hand: ~₹36,800
 
-Under the new tax regime FY 2025-26, income up to ₹12 lakh is effectively zero-tax (87A rebate). So for ₹5 LPA, **you pay zero income tax**.
+Under the new tax regime FY 2026-27, income up to ₹12 lakh is effectively zero-tax (87A rebate). So for ₹5 LPA, **you pay zero income tax**.
 
 ## City-Wise In-Hand
 
@@ -673,12 +673,12 @@ Use our [CTC to In-Hand Calculator](/ctc-to-inhand) for your exact number.
   {
     slug: 'take-home-salary-7-lpa',
     title: '7 LPA In-Hand Salary in India 2026 — Monthly Take-Home Breakdown',
-    description: 'Exact monthly in-hand salary for ₹7 LPA CTC in India for FY 2025-26. PF, HRA, tax breakdown and city-wise comparison.',
+    description: 'Exact monthly in-hand salary for ₹7 LPA CTC in India for FY 2026-27. PF, HRA, tax breakdown and city-wise comparison.',
     category: 'Salary Examples',
     readTime: '4 min read',
     publishedAt: '2025-05-08',
     content: `
-## ₹7 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹7 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹7 LPA is a common salary for 1–3 year experienced professionals. Here's the exact breakdown.
 
@@ -703,7 +703,7 @@ Use our [CTC to In-Hand Calculator](/ctc-to-inhand) for your exact number.
 
 ## Final Monthly In-Hand: ~₹52,900
 
-Under FY 2025-26 new regime, ₹7 LPA attracts **zero income tax** (87A rebate covers up to ₹12L).
+Under FY 2026-27 new regime, ₹7 LPA attracts **zero income tax** (87A rebate covers up to ₹12L).
 
 ## City-Wise In-Hand
 
@@ -718,12 +718,12 @@ Try our [In-Hand Salary Calculator](/in-hand-salary-calculator) for your exact s
   {
     slug: 'take-home-salary-8-lpa',
     title: '8 LPA In-Hand Salary in India 2026 — Exact Monthly Calculation',
-    description: 'What is the monthly in-hand salary for 8 LPA CTC? Complete FY 2025-26 breakdown with all deductions, HRA, PF, and zero tax benefit.',
+    description: 'What is the monthly in-hand salary for 8 LPA CTC? Complete FY 2026-27 breakdown with all deductions, HRA, PF, and zero tax benefit.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-05-06',
     content: `
-## ₹8 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹8 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹8 LPA is a popular benchmark salary. Many freshers from top colleges and 2–3 year experienced professionals earn this.
 
@@ -763,12 +763,12 @@ Use our [CTC Calculator](/ctc-to-inhand) to get your personalized result.
   {
     slug: 'take-home-salary-12-lpa',
     title: '12 LPA In-Hand Salary in India 2026 — Monthly Take-Home with Tax',
-    description: 'Exact monthly in-hand salary for ₹12 LPA CTC. New vs old tax regime comparison, PF, HRA breakdown for FY 2025-26.',
+    description: 'Exact monthly in-hand salary for ₹12 LPA CTC. New vs old tax regime comparison, PF, HRA breakdown for FY 2026-27.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-05-04',
     content: `
-## ₹12 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹12 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹12 LPA is a very important salary level — it's exactly at the ₹12L zero-tax boundary under the new regime.
 
@@ -810,12 +810,12 @@ Calculate exactly: [Tax Estimator](/tax-estimator)
   {
     slug: 'take-home-salary-15-lpa',
     title: '15 LPA In-Hand Salary in India 2026 — Complete Monthly Breakdown',
-    description: 'Monthly in-hand salary for ₹15 LPA CTC in India FY 2025-26. New vs old tax regime, PF, HRA, professional tax deductions explained.',
+    description: 'Monthly in-hand salary for ₹15 LPA CTC in India FY 2026-27. New vs old tax regime, PF, HRA, professional tax deductions explained.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-05-02',
     content: `
-## ₹15 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹15 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹15 LPA is a milestone salary — common for mid-level engineers, MBAs, and 5+ year experienced professionals.
 
@@ -853,12 +853,12 @@ New regime is better by ~₹600/month. [Compare both regimes](/tax-estimator).
   {
     slug: 'take-home-salary-20-lpa',
     title: '20 LPA In-Hand Salary in India 2026 — Exact Monthly Take-Home',
-    description: 'Monthly in-hand salary for ₹20 LPA CTC. Complete breakdown with income tax (new vs old regime), PF, HRA for senior professionals FY 2025-26.',
+    description: 'Monthly in-hand salary for ₹20 LPA CTC. Complete breakdown with income tax (new vs old regime), PF, HRA for senior professionals FY 2026-27.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-04-30',
     content: `
-## ₹20 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹20 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹20 LPA is a senior-level salary — common for tech leads, senior managers, and 8–12 year experienced professionals.
 
@@ -896,12 +896,12 @@ At ₹20 LPA, **old regime saves ~₹5,500/month** if you maximize deductions. [
   {
     slug: 'take-home-salary-25-lpa',
     title: '25 LPA In-Hand Salary in India 2026 — Monthly Breakdown & Tax',
-    description: 'What is the monthly in-hand for 25 LPA CTC? Detailed tax calculation, PF, HRA breakdown for senior Indian professionals FY 2025-26.',
+    description: 'What is the monthly in-hand for 25 LPA CTC? Detailed tax calculation, PF, HRA breakdown for senior Indian professionals FY 2026-27.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-04-28',
     content: `
-## ₹25 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹25 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹25 LPA is a top-tier salary — common for senior engineers at MNCs, product managers, and directors.
 
@@ -940,12 +940,12 @@ This can save ₹8,000–₹12,000/month vs new regime. [Calculate your tax](/ta
   {
     slug: 'take-home-salary-30-lpa',
     title: '30 LPA In-Hand Salary in India 2026 — Monthly Take-Home & Tax Breakdown',
-    description: 'Exact monthly in-hand salary for ₹30 LPA CTC. Senior executive tax breakdown, new vs old regime comparison for FY 2025-26.',
+    description: 'Exact monthly in-hand salary for ₹30 LPA CTC. Senior executive tax breakdown, new vs old regime comparison for FY 2026-27.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-04-26',
     content: `
-## ₹30 LPA CTC — Monthly In-Hand Salary (FY 2025-26)
+## ₹30 LPA CTC — Monthly In-Hand Salary (FY 2026-27)
 
 ₹30 LPA puts you in the top 1% of Indian earners — common for principal engineers, AVPs, senior managers at top MNCs.
 
@@ -1314,7 +1314,7 @@ Your salary slip (payslip) is the most important financial document you receive 
 
 ### 1. Employee PF (EPF)
 - **12% of Basic Salary** (capped at ₹1,800/month)
-- Goes to your EPFO account, earns **8.25% interest (FY 2025-26)**
+- Goes to your EPFO account, earns **8.25% interest (FY 2026-27)**
 - Tax-free maturity amount (after 5 years)
 - Check your UAN on [epfindia.gov.in](https://www.epfindia.gov.in)
 

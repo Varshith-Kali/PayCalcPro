@@ -1,8 +1,8 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact Us – PayCalc Pro',
+  title: 'Contact Us � PayCalc Pro',
   description: 'Get in touch with the PayCalc Pro team. We are happy to answer questions about our free salary calculators for Indian professionals.',
 }
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex items-start gap-4 p-5 bg-sky-50 rounded-xl border border-sky-100">
               <div className="w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-lg">✉</span>
+                <span className="text-white text-lg">?</span>
               </div>
               <div>
                 <p className="font-semibold text-slate-900 mb-1">Email Us</p>
@@ -36,13 +36,13 @@ export default function ContactPage() {
                 >
                   contact.paycalcpro@gmail.com
                 </a>
-                <p className="text-slate-500 text-xs mt-1">We typically respond within 24–48 hours.</p>
+                <p className="text-slate-500 text-xs mt-1">We typically respond within 24�48 hours.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-100">
               <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-lg">🌐</span>
+                <span className="text-white text-lg">??</span>
               </div>
               <div>
                 <p className="font-semibold text-slate-900 mb-1">Website</p>
@@ -64,27 +64,27 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               {
-                icon: '🐛',
+                icon: '??',
                 title: 'Report a Bug or Calculation Error',
                 desc: 'If you notice an incorrect calculation result or something is not working as expected, please email us with details including the inputs you used and the expected vs actual output.',
               },
               {
-                icon: '💡',
+                icon: '??',
                 title: 'Suggest a New Calculator',
                 desc: 'Have an idea for a new tool? We are always looking to expand PayCalc Pro with useful calculators for Indian professionals. Drop us a message!',
               },
               {
-                icon: '📋',
+                icon: '??',
                 title: 'Content Correction',
-                desc: 'Tax rules change frequently. If you spot outdated information in any of our guides or calculators (FY 2025-26 data), please let us know.',
+                desc: 'Tax rules change frequently. If you spot outdated information in any of our guides or calculators (FY 2026-27 data), please let us know.',
               },
               {
-                icon: '🤝',
+                icon: '??',
                 title: 'Partnerships & Collaborations',
                 desc: 'Interested in collaborating, writing a guest post, or exploring a partnership? Reach out to us at contact.paycalcpro@gmail.com.',
               },
               {
-                icon: '🔒',
+                icon: '??',
                 title: 'Privacy Concerns',
                 desc: 'For any questions related to our Privacy Policy or data handling, please email us and we will respond promptly.',
               },
@@ -111,8 +111,8 @@ export default function ContactPage() {
 
         {/* Navigation Back */}
         <div className="text-center">
-          <Link href="/" className="btn-secondary btn-lg mr-4">← Back to Home</Link>
-          <Link href="/about" className="btn-primary btn-lg">About Us →</Link>
+          <Link href="/" className="btn-secondary btn-lg mr-4">? Back to Home</Link>
+          <Link href="/about" className="btn-primary btn-lg">About Us ?</Link>
         </div>
       </div>
     </div>

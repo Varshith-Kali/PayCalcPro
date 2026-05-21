@@ -32,7 +32,7 @@ export default function GratuityCalculatorPage() {
             <Link href="/" className="hover:text-white">Home</Link><span>/</span>
             <span className="text-slate-300">Gratuity Calculator</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Gratuity Calculator India FY 2025-26</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Gratuity Calculator India FY 2026-27</h1>
           <p className="text-slate-300 text-lg max-w-2xl">Calculate your gratuity payout based on last drawn basic salary and years of service. Tax-free up to ₹20 lakh.</p>
         </div>
       </section>

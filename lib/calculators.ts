@@ -1,4 +1,4 @@
-// ─── FY 2025-26 (Budget 2025) Salary Calculator Engine ───────────────────────
+// ─── FY 2026-27 Salary Calculator Engine (Budget 2026 � slabs unchanged) ───────────────────────
 // New Tax Regime (Default): Rebate u/s 87A → Zero tax up to ₹12L
 // New slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
 // Standard Deduction under New Regime: ₹75,000
@@ -28,7 +28,7 @@ export interface SalaryBreakdown {
 }
 
 /**
- * Calculate salary breakdown as per FY 2025-26 norms
+ * Calculate salary breakdown as per FY 2026-27 norms (Budget 2026: no slab changes)
  * Standard structure: Basic = 50% of Fixed CTC (industry standard, most IT/corporate)
  * Employer PF capped at ₹21,600/yr (12% of ₹15,000 EPFO ceiling)
  * Gratuity provision = (Basic × 15) / 26 = ~4.81% of basic annually
@@ -96,9 +96,9 @@ export function calculateSalary(
 }
 
 /**
- * Income Tax Estimator — FY 2025-26 (AY 2026-27)
+ * Income Tax Estimator — FY 2026-27 (AY 2027-28)
  *
- * NEW REGIME (Budget 2025):
+ * NEW REGIME (Budget 2026 � identical slabs):
  *   ₹0 – 4L      : 0%
  *   ₹4 – 8L      : 5%   → max ₹20,000
  *   ₹8 – 12L     : 10%  → max ₹40,000
@@ -171,7 +171,7 @@ export function estimateIncomeTax(
 }
 
 /**
- * PF Calculator — EPF rate 8.25% (EPFO declared, FY 2024-25, expected same FY 2025-26)
+ * PF Calculator — EPF rate 8.25% (EPFO declared, FY 2026-27 (confirmed 8.25% � 3rd consecutive year))
  * Employee: 12% of basic (capped at 12% of ₹15,000 = ₹1,800/mo when basic > ₹15,000)
  * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension — not in corpus)
  * Corpus compounded annually at 8.25%

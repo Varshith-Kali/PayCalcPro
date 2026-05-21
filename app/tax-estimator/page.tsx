@@ -16,9 +16,9 @@ const TAX_SLABS_NEW = [
 ]
 
 const faqs = [
-  { question: 'Which tax regime is better for FY 2025-26?', answer: 'Under the new regime (Budget 2025), there is zero tax up to ₹12 lakh due to the enhanced 87A rebate. If your total deductions (HRA + 80C + home loan + NPS) exceed ₹3.75L, old regime may save more. Use this calculator to compare.' },
-  { question: 'What is the standard deduction for FY 2025-26?', answer: 'Under the New Tax Regime, standard deduction is ₹75,000 for FY 2025-26 (increased from ₹50,000 in FY 2024-25). Under the Old Regime, it remains ₹50,000.' },
-  { question: 'What is the 87A rebate limit for FY 2025-26?', answer: 'Under the New Regime for FY 2025-26, rebate u/s 87A is ₹60,000 — meaning if your net taxable income is ₹12 lakh or below, your effective tax is zero. Under old regime it remains ₹12,500 (for income ≤ ₹5L).' },
+  { question: 'Which tax regime is better for FY 2026-27?', answer: 'Under the new regime (Budget 2025), there is zero tax up to ₹12 lakh due to the enhanced 87A rebate. If your total deductions (HRA + 80C + home loan + NPS) exceed ₹3.75L, old regime may save more. Use this calculator to compare.' },
+  { question: 'What is the standard deduction for FY 2026-27?', answer: 'Under the New Tax Regime, standard deduction is ₹75,000 for FY 2026-27 (increased from ₹50,000 in FY 2024-25). Under the Old Regime, it remains ₹50,000.' },
+  { question: 'What is the 87A rebate limit for FY 2026-27?', answer: 'Under the New Regime for FY 2026-27, rebate u/s 87A is ₹60,000 — meaning if your net taxable income is ₹12 lakh or below, your effective tax is zero. Under old regime it remains ₹12,500 (for income ≤ ₹5L).' },
   { question: 'How is variable pay or bonus taxed?', answer: 'Variable pay and annual bonuses are added to your gross salary and taxed at your marginal slab rate. For example, if you are in the 20% slab, a ₹1 lakh bonus adds approximately ₹20,800 to your tax (including 4% cess).' },
   { question: 'Does TDS deducted by employer equal my final tax?', answer: 'Not always. TDS is an advance estimate based on your declarations. File your ITR to reconcile actual tax. If TDS exceeds actual tax, you get a refund. If TDS is less, pay self-assessment tax before July 31.' },
 ]
@@ -204,7 +204,7 @@ export default function TaxEstimatorPage() {
 
           <div className="lg:col-span-2 space-y-5">
             <div className="card-flat p-5">
-              <h3 className="font-bold text-slate-900 mb-3 text-sm">New Regime Slabs (FY 2025-26)</h3>
+              <h3 className="font-bold text-slate-900 mb-3 text-sm">New Regime Slabs (FY 2026-27)</h3>
               <div className="overflow-hidden rounded-xl border border-slate-100">
                 <table className="data-table">
                   <thead><tr><th>Income Range</th><th>Rate</th></tr></thead>

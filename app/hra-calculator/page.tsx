@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { calculateHRA, formatINR } from '@/lib/calculators'
@@ -6,11 +6,11 @@ import FAQSection from '@/components/FAQSection'
 import AdUnit from '@/components/AdUnit'
 
 const faqs = [
-  { question: 'What are the three conditions for HRA exemption?', answer: 'HRA exemption = minimum of: (1) Actual HRA received, (2) 50%/40% of Basic (metro/non-metro), (3) Actual rent − 10% of Basic.' },
+  { question: 'What are the three conditions for HRA exemption?', answer: 'HRA exemption = minimum of: (1) Actual HRA received, (2) 50%/40% of Basic (metro/non-metro), (3) Actual rent - 10% of Basic.' },
   { question: 'Can I claim HRA if I live in my own house?', answer: 'No. HRA exemption requires that you actually pay rent for accommodation. If you own and live in your house, HRA received is fully taxable.' },
-  { question: 'Can I pay rent to my parents and claim HRA?', answer: 'Yes! You can pay rent to parents and claim HRA. If annual rent exceeds ₹1 lakh, your parent must declare rental income and you need their PAN.' },
+  { question: 'Can I pay rent to my parents and claim HRA?', answer: 'Yes! You can pay rent to parents and claim HRA. If annual rent exceeds ?1 lakh, your parent must declare rental income and you need their PAN.' },
   { question: 'Is HRA available under the new tax regime?', answer: 'No. HRA exemption under Section 10(13A) is only available under the old tax regime. In the new regime, your entire HRA is taxable.' },
-  { question: 'What documents are needed for HRA claim?', answer: 'Rent receipts (monthly), rent agreement, landlord\'s PAN (if rent > ₹1 lakh/year). Submit to employer annually for Form 16.' },
+  { question: 'What documents are needed for HRA claim?', answer: 'Rent receipts (monthly), rent agreement, landlord\'s PAN (if rent > ?1 lakh/year). Submit to employer annually for Form 16.' },
 ]
 
 export default function HRACalculatorPage() {
@@ -35,7 +35,7 @@ export default function HRACalculatorPage() {
             <Link href="/" className="hover:text-white">Home</Link><span>/</span>
             <span className="text-slate-300">HRA Calculator</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">HRA Exemption Calculator FY 2025-26</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">HRA Exemption Calculator FY 2026-27</h1>
           <p className="text-slate-300 text-lg max-w-2xl">Calculate your HRA tax exemption under Section 10(13A). Find exactly how much tax you save on house rent.</p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function HRACalculatorPage() {
                   <div key={f.label}>
                     <label className="form-label">{f.label}</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">₹</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">?</span>
                       <input type="number" placeholder={f.ph} value={f.val} onChange={e => f.set(e.target.value)} className="form-input pl-8" />
                     </div>
                   </div>
@@ -66,7 +66,7 @@ export default function HRACalculatorPage() {
                     {(['metro', 'non-metro'] as const).map(c => (
                       <button key={c} onClick={() => setCity(c)}
                         className={`py-3 px-4 rounded-xl border-2 text-sm font-semibold transition-all ${city === c ? 'border-sky-500 bg-sky-50 text-sky-700' : 'border-slate-200 text-slate-600 hover:border-slate-300'}`}>
-                        {c === 'metro' ? '🏙 Metro (50%)' : '🏘 Non-Metro (40%)'}
+                        {c === 'metro' ? '?? Metro (50%)' : '?? Non-Metro (40%)'}
                       </button>
                     ))}
                   </div>
@@ -81,7 +81,7 @@ export default function HRACalculatorPage() {
                   </select>
                 </div>
 
-                <button onClick={calculate} className="btn-primary w-full btn-lg">Calculate HRA Exemption →</button>
+                <button onClick={calculate} className="btn-primary w-full btn-lg">Calculate HRA Exemption ?</button>
               </div>
             </div>
 
@@ -98,15 +98,15 @@ export default function HRACalculatorPage() {
                     <h3 className="font-bold text-slate-900">Exemption Calculation (Minimum of 3)</h3>
                   </div>
                   {[
-                    { label: '① Actual HRA received', value: result.exemption1 },
-                    { label: `② ${city === 'metro' ? '50%' : '40%'} of Annual Basic`, value: result.exemption2 },
-                    { label: '③ Rent Paid − 10% of Basic', value: result.exemption3 },
+                    { label: '? Actual HRA received', value: result.exemption1 },
+                    { label: `? ${city === 'metro' ? '50%' : '40%'} of Annual Basic`, value: result.exemption2 },
+                    { label: '? Rent Paid - 10% of Basic', value: result.exemption3 },
                   ].map((r, i) => (
                     <div key={i} className={`flex justify-between items-center px-6 py-4 border-b border-slate-50 ${Math.min(result.exemption1, result.exemption2, result.exemption3) === r.value ? 'bg-emerald-50' : ''}`}>
                       <span className="text-sm text-slate-700">{r.label}</span>
                       <div className="text-right">
                         <span className="font-bold text-slate-900">{formatINR(r.value)}</span>
-                        {Math.min(result.exemption1, result.exemption2, result.exemption3) === r.value && <span className="ml-2 text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">Minimum ✓</span>}
+                        {Math.min(result.exemption1, result.exemption2, result.exemption3) === r.value && <span className="ml-2 text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full">Minimum ?</span>}
                       </div>
                     </div>
                   ))}
@@ -127,7 +127,7 @@ export default function HRACalculatorPage() {
                 <p>Exemption = MIN(</p>
                 <p>  Actual HRA received,</p>
                 <p>  50% of Basic (metro),</p>
-                <p>  Rent − 10% of Basic</p>
+                <p>  Rent - 10% of Basic</p>
                 <p>)</p>
               </div>
             </div>
@@ -135,12 +135,12 @@ export default function HRACalculatorPage() {
               <h3 className="font-bold text-slate-800 text-sm mb-3">Related Calculators</h3>
               <div className="space-y-2">
                 {[
-                  { href: '/ctc-to-inhand', label: '💰 CTC to In-Hand' },
-                  { href: '/tax-estimator', label: '📊 Tax Estimator' },
-                  { href: '/in-hand-salary-calculator', label: '🧮 In-Hand Salary' },
+                  { href: '/ctc-to-inhand', label: '?? CTC to In-Hand' },
+                  { href: '/tax-estimator', label: '?? Tax Estimator' },
+                  { href: '/in-hand-salary-calculator', label: '?? In-Hand Salary' },
                 ].map(l => (
                   <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors text-sm text-slate-700 hover:text-sky-700 border border-transparent hover:border-sky-100">
-                    {l.label} <span className="text-slate-300">→</span>
+                    {l.label} <span className="text-slate-300">?</span>
                   </Link>
                 ))}
               </div>

@@ -15,7 +15,7 @@ Components: Cloudflare Pages, Google Analytics, Google AdSense
 Technology: Next.js 15, TailwindCSS 4, React Server Components
 
 /* PURPOSE */
-Free, accurate Indian salary calculators for FY 2025-26.
+Free, accurate Indian salary calculators for FY 2026-27.
 No signup. No ads during calculation. No tracking paywall.
 Built to help every Indian salaried professional understand their real take-home pay.
 

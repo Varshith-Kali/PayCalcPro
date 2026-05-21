@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'CTC to In-Hand Salary Calculator – Instant Monthly Take-Home FY 2025-26',
-  description: 'Convert CTC to monthly in-hand salary instantly. See exact PF, HRA, tax deductions. Free Indian salary calculator for FY 2025-26 new tax regime with variable pay support.',
+  title: 'CTC to In-Hand Salary Calculator – Instant Monthly Take-Home FY 2026-27',
+  description: 'Convert CTC to monthly in-hand salary instantly. See exact PF, HRA, tax deductions. Free Indian salary calculator for FY 2026-27 new tax regime with variable pay support.',
   openGraph: {
-    title: 'CTC to In-Hand Salary Calculator India FY 2025-26',
+    title: 'CTC to In-Hand Salary Calculator India FY 2026-27',
     description: 'Free CTC to take-home salary converter. See PF, HRA, tax breakdown. Updated for Budget 2025.',
     url: 'https://paycalcpro.online/ctc-to-inhand',
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Calculate In-Hand Salary from CTC in India (FY 2025-26)',
+  name: 'How to Calculate In-Hand Salary from CTC in India (FY 2026-27)',
   description: 'Step-by-step method to convert your annual CTC to monthly in-hand take-home salary using the standard Indian salary structure.',
   totalTime: 'PT2M',
   tool: [{ '@type': 'HowToTool', name: 'PayCalc Pro CTC Calculator', url: 'https://paycalcpro.online/ctc-to-inhand' }],

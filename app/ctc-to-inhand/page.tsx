@@ -208,7 +208,7 @@ export default function CTCCalculatorPage() {
 
             {/* Key Notes */}
             <div className="highlight-box">
-              <h3 className="font-bold text-slate-800 text-sm mb-3">📌 Key Assumptions (FY 2025-26)</h3>
+              <h3 className="font-bold text-slate-800 text-sm mb-3">📌 Key Assumptions (FY 2026-27)</h3>
               <ul className="space-y-2 text-xs text-slate-600">
                 <li className="flex gap-2"><span className="text-sky-500">•</span>Basic = 40% of CTC</li>
                 <li className="flex gap-2"><span className="text-sky-500">•</span>HRA = 50% metro / 40% non-metro of Basic</li>

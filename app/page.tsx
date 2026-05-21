@@ -4,8 +4,8 @@ import FAQSection from '@/components/FAQSection'
 import { blogPosts } from '@/lib/blog-data'
 
 export const metadata: Metadata = {
-  title: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand FY 2025-26',
-  description: 'Calculate your in-hand salary from CTC instantly. Free Indian salary calculators for PF, HRA, Gratuity & Tax. Updated for FY 2025-26 new tax regime.',
+  title: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand FY 2026-27',
+  description: 'Calculate your in-hand salary from CTC instantly. Free Indian salary calculators for PF, HRA, Gratuity & Tax. Updated for FY 2026-27 new tax regime.',
 }
 
 const tools = [
@@ -108,7 +108,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">What Does Your CTC Mean in Reality?</h2>
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                India's simplest salary calculators. Enter your CTC and get an instant, accurate breakdown of every rupee — PF, HRA, tax, and net salary. Updated for FY 2025-26.
+                India's simplest salary calculators. Enter your CTC and get an instant, accurate breakdown of every rupee — PF, HRA, tax, and net salary. Updated for FY 2026-27.
               </p>
               <Link href="/ctc-to-inhand"
                 className="inline-block bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors">
