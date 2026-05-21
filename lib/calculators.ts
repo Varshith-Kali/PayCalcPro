@@ -1,9 +1,8 @@
-// --- FY 2026-27 Salary Calculator Engine (Budget 2026 -- slabs unchanged) -----------------------
+// FY 2026-27 Salary Calculator Engine
 // New Tax Regime (Default): Rebate u/s 87A => Zero tax up to Rs.12L
-// New slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
-// Standard Deduction under New Regime: Rs.75,000
-// EPF Interest Rate: 8.25% p.a. (EPFO declared rate)
-// Cess: 4% on total tax
+// Slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
+// Standard Deduction: Rs.75,000 | EPF: 8.25% p.a. | Cess: 4%
+// Budget 2026-27: No changes from FY 2025-26 slabs
 
 export interface SalaryComponent {
   label: string;
@@ -58,11 +57,11 @@ export function calculateSalary(
   const fixedGross  = fixedCTC - pfEmployer - gratuityProvision;
   const grossAnnual = fixedGross + variablePayAnnual;
 
-  // Employee deductions — PF only on fixed basic, NOT on variable pay
+  // Employee deductions - PF only on fixed basic, NOT on variable pay
   const pfEmployee     = Math.min(basic * 0.12, 21600);
   const professionalTax = 2400; // Rs.200/month (national max)
 
-  // Taxable income = Gross − Employee PF − Standard Deduction Rs.75,000
+  // Taxable income = Gross - Employee PF - Standard Deduction Rs.75,000
   const standardDeduction = 75000;
   const taxableIncome = Math.max(0, grossAnnual - pfEmployee - standardDeduction);
   const incomeTax     = estimateIncomeTax(taxableIncome, 'new');
@@ -96,27 +95,27 @@ export function calculateSalary(
 }
 
 /**
- * Income Tax Estimator — FY 2026-27 (AY 2027-28)
+ * Income Tax Estimator - FY 2026-27 (AY 2027-28)
  *
- * NEW REGIME (Budget 2026 -- identical slabs):
- *   Rs.0 – 4L      : 0%
- *   Rs.4 – 8L      : 5%   -> max Rs.20,000
- *   Rs.8 – 12L     : 10%  -> max Rs.40,000
- *   Rs.12 – 16L    : 15%  -> max Rs.60,000
- *   Rs.16 – 20L    : 20%  -> max Rs.80,000
- *   Rs.20 – 24L    : 25%  -> max Rs.1,00,000
+ * NEW REGIME (Budget 2026 - identical slabs to FY 2025-26):
+ *   Rs.0 - 4L      : 0%
+ *   Rs.4 - 8L      : 5%   -> max Rs.20,000
+ *   Rs.8 - 12L     : 10%  -> max Rs.40,000
+ *   Rs.12 - 16L    : 15%  -> max Rs.60,000
+ *   Rs.16 - 20L    : 20%  -> max Rs.80,000
+ *   Rs.20 - 24L    : 25%  -> max Rs.1,00,000
  *   Above Rs.24L   : 30%
  *   Rebate u/s 87A: Full rebate if net taxable <= Rs.12L -> zero tax
  *   Standard Deduction: Rs.75,000 (applied before calling this function)
  *
  * OLD REGIME:
- *   Rs.0 – 2.5L    : 0%
- *   Rs.2.5 – 5L    : 5%
- *   Rs.5 – 10L     : 20%
+ *   Rs.0 - 2.5L    : 0%
+ *   Rs.2.5 - 5L    : 5%
+ *   Rs.5 - 10L     : 20%
  *   Above Rs.10L   : 30%
  *   Rebate u/s 87A: Full rebate if net taxable <= Rs.5L
  *
- * Surcharge: 10% (Rs.50L–Rs.1Cr), 15% (Rs.1–2Cr), 25% (Rs.2–5Cr), 25% new / 37% old (>Rs.5Cr)
+ * Surcharge: 10% (Rs.50L-Rs.1Cr), 15% (Rs.1-2Cr), 25% (Rs.2-5Cr), 25% new / 37% old (>Rs.5Cr)
  * Cess: 4% on (tax + surcharge)
  */
 export function estimateIncomeTax(
@@ -171,14 +170,14 @@ export function estimateIncomeTax(
 }
 
 /**
- * PF Calculator -- EPF rate 8.25% (EPFO declared, FY 2026-27 (confirmed 8.25% -- 3rd consecutive year))
+ * PF Calculator - EPF rate 8.25% (EPFO confirmed for FY 2025-26, 3rd consecutive year)
  * Employee: 12% of basic (capped at 12% of Rs.15,000 = Rs.1,800/mo when basic > Rs.15,000)
- * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension -- not in corpus)
+ * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension - not in corpus)
  * Corpus compounded annually at 8.25%
  */
 export interface PFResult {
   employeeContribution: number;   // monthly Rs.
-  employerEPFContribution: number; // monthly Rs. (3.67% only -- EPS excluded)
+  employerEPFContribution: number; // monthly Rs. (3.67% only - EPS excluded)
   totalMonthly: number;
   corpus1Year: number;
   corpus5Year: number;
@@ -216,11 +215,11 @@ export function calculatePF(basicMonthly: number): PFResult {
 }
 
 /**
- * HRA Exemption -- Section 10(13A) of Income Tax Act
+ * HRA Exemption - Section 10(13A) of Income Tax Act
  * Exemption = MINIMUM of:
  *   (a) Actual HRA received annually
  *   (b) 50% of annual basic (metro: Mumbai, Delhi, Kolkata, Chennai) / 40% non-metro
- *   (c) Actual annual rent paid − 10% of annual basic salary
+ *   (c) Actual annual rent paid - 10% of annual basic salary
  *
  * NOTE: Only applicable under OLD tax regime. New regime: HRA is fully taxable.
  */
@@ -230,7 +229,7 @@ export interface HRAResult {
   taxSaved: number;
   exemption1: number;  // Actual HRA
   exemption2: number;  // % of basic
-  exemption3: number;  // Rent − 10% basic
+  exemption3: number;  // Rent - 10% basic
   limitingFactor: 1 | 2 | 3;
 }
 
@@ -247,7 +246,7 @@ export function calculateHRA(
 
   const e1 = hraA;                                                 // (a) Actual HRA
   const e2 = city === 'metro' ? basicA * 0.50 : basicA * 0.40;   // (b) % of basic
-  const e3 = Math.max(0, rentA - basicA * 0.10);                  // (c) Rent − 10% basic
+  const e3 = Math.max(0, rentA - basicA * 0.10);                  // (c) Rent - 10% basic
 
   const hraExemption = Math.min(e1, e2, e3);
   const hraTaxable   = Math.max(0, hraA - hraExemption);
@@ -268,11 +267,11 @@ export function calculateHRA(
 }
 
 /**
- * Gratuity -- Payment of Gratuity Act, 1972
+ * Gratuity - Payment of Gratuity Act, 1972
  * Formula: (Last drawn Basic+DA * 15 * Years of service) / 26
  * Tax-free limit: Rs.20 lakh (private sector employees)
  *
- * ROUNDING RULE: If service in last year > 6 months -- round UP to next full year
+ * ROUNDING RULE: If service in last year > 6 months -> round UP to next full year
  * Example: 7 years 7 months = 8 years. 7 years 4 months = 7 years.
  */
 export interface GratuityResult {
@@ -313,7 +312,7 @@ export function calculateGratuity(
  * Buyout = Daily rate * Remaining notice days
  * Tax = Buyout * marginal slab rate * 1.04 (cess)
  *
- * Note: Some companies use monthly CTC / 30 -- check appointment letter.
+ * Note: Some companies use monthly CTC / 30 - check appointment letter.
  */
 export interface NoticeBuyoutResult {
   buyoutAmount: number;
@@ -347,7 +346,7 @@ export function calculateNoticeBuyout(
 // --- Formatting Utilities ---
 
 export function formatINR(amount: number): string {
-  if (!isFinite(amount) || isNaN(amount)) return 'Rs.0';
+  if (!isFinite(amount) || isNaN(amount)) return '\u20B90';
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
@@ -356,13 +355,13 @@ export function formatINR(amount: number): string {
 }
 
 export function formatINRCompact(amount: number): string {
-  if (!isFinite(amount) || isNaN(amount)) return '₹0';
-  if (amount >= 10000000) return `₹${(amount / 10000000).toFixed(2)} Cr`;
-  if (amount >= 100000)   return `₹${(amount / 100000).toFixed(2)} L`;
-  if (amount >= 1000)     return `₹${(amount / 1000).toFixed(1)}K`;
-  return `₹${Math.round(amount)}`;
+  if (!isFinite(amount) || isNaN(amount)) return '\u20B90';
+  if (amount >= 10000000) return '\u20B9' + (amount / 10000000).toFixed(2) + ' Cr';
+  if (amount >= 100000)   return '\u20B9' + (amount / 100000).toFixed(2) + ' L';
+  if (amount >= 1000)     return '\u20B9' + (amount / 1000).toFixed(1) + 'K';
+  return '\u20B9' + Math.round(amount);
 }
 
 export function formatLPA(amount: number): string {
-  return `${(amount / 100000).toFixed(2)} LPA`;
+  return (amount / 100000).toFixed(2) + ' LPA';
 }
