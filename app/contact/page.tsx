@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact Us – PayCalc Pro',
+  title: 'Contact Us ï¿½ PayCalc Pro',
   description: 'Get in touch with the PayCalc Pro team. We are happy to answer questions about our free salary calculators for Indian professionals.',
 }
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 >
                   contact.paycalcpro@gmail.com
                 </a>
-                <p className="text-slate-500 text-xs mt-1">We typically respond within 24–48 hours.</p>
+                <p className="text-slate-500 text-xs mt-1">We typically respond within 24ï¿½48 hours.</p>
               </div>
             </div>
 
