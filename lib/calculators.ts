@@ -1,7 +1,7 @@
-// ─── FY 2026-27 Salary Calculator Engine (Budget 2026 � slabs unchanged) ───────────────────────
-// New Tax Regime (Default): Rebate u/s 87A → Zero tax up to ₹12L
+// --- FY 2026-27 Salary Calculator Engine (Budget 2026 -- slabs unchanged) -----------------------
+// New Tax Regime (Default): Rebate u/s 87A => Zero tax up to Rs.12L
 // New slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
-// Standard Deduction under New Regime: ₹75,000
+// Standard Deduction under New Regime: Rs.75,000
 // EPF Interest Rate: 8.25% p.a. (EPFO declared rate)
 // Cess: 4% on total tax
 
@@ -30,8 +30,8 @@ export interface SalaryBreakdown {
 /**
  * Calculate salary breakdown as per FY 2026-27 norms (Budget 2026: no slab changes)
  * Standard structure: Basic = 50% of Fixed CTC (industry standard, most IT/corporate)
- * Employer PF capped at ₹21,600/yr (12% of ₹15,000 EPFO ceiling)
- * Gratuity provision = (Basic × 15) / 26 = ~4.81% of basic annually
+ * Employer PF capped at Rs.21,600/yr (12% of Rs.15,000 EPFO ceiling)
+ * Gratuity provision = (Basic * 15) / 26 = ~4.81% of basic annually
  * Variable pay is taxed at marginal rate but excluded from PF base
  */
 export function calculateSalary(
@@ -45,7 +45,7 @@ export function calculateSalary(
   const basic = fixedCTC * 0.50;                                      // 50% of fixed CTC
   const hra   = cityTier === 'metro' ? basic * 0.50 : basic * 0.40;  // 50%/40% of basic
 
-  // EPFO cap: 12% of ₹15,000 = ₹1,800/month = ₹21,600/year
+  // EPFO cap: 12% of Rs.15,000 = Rs.1,800/month = Rs.21,600/year
   const pfEmployer       = Math.min(basic * 0.12, 21600);
   const gratuityProvision = (basic * 15) / 26;                        // ~4.81% annually
 
@@ -60,9 +60,9 @@ export function calculateSalary(
 
   // Employee deductions — PF only on fixed basic, NOT on variable pay
   const pfEmployee     = Math.min(basic * 0.12, 21600);
-  const professionalTax = 2400; // ₹200/month (national max)
+  const professionalTax = 2400; // Rs.200/month (national max)
 
-  // Taxable income = Gross − Employee PF − Standard Deduction ₹75,000
+  // Taxable income = Gross − Employee PF − Standard Deduction Rs.75,000
   const standardDeduction = 75000;
   const taxableIncome = Math.max(0, grossAnnual - pfEmployee - standardDeduction);
   const incomeTax     = estimateIncomeTax(taxableIncome, 'new');
@@ -98,25 +98,25 @@ export function calculateSalary(
 /**
  * Income Tax Estimator — FY 2026-27 (AY 2027-28)
  *
- * NEW REGIME (Budget 2026 � identical slabs):
- *   ₹0 – 4L      : 0%
- *   ₹4 – 8L      : 5%   → max ₹20,000
- *   ₹8 – 12L     : 10%  → max ₹40,000
- *   ₹12 – 16L    : 15%  → max ₹60,000
- *   ₹16 – 20L    : 20%  → max ₹80,000
- *   ₹20 – 24L    : 25%  → max ₹1,00,000
- *   Above ₹24L   : 30%
- *   Rebate u/s 87A: Full rebate if net taxable ≤ ₹12L → zero tax
- *   Standard Deduction: ₹75,000 (applied before calling this function)
+ * NEW REGIME (Budget 2026 -- identical slabs):
+ *   Rs.0 – 4L      : 0%
+ *   Rs.4 – 8L      : 5%   -> max Rs.20,000
+ *   Rs.8 – 12L     : 10%  -> max Rs.40,000
+ *   Rs.12 – 16L    : 15%  -> max Rs.60,000
+ *   Rs.16 – 20L    : 20%  -> max Rs.80,000
+ *   Rs.20 – 24L    : 25%  -> max Rs.1,00,000
+ *   Above Rs.24L   : 30%
+ *   Rebate u/s 87A: Full rebate if net taxable <= Rs.12L -> zero tax
+ *   Standard Deduction: Rs.75,000 (applied before calling this function)
  *
  * OLD REGIME:
- *   ₹0 – 2.5L    : 0%
- *   ₹2.5 – 5L    : 5%
- *   ₹5 – 10L     : 20%
- *   Above ₹10L   : 30%
- *   Rebate u/s 87A: Full rebate if net taxable ≤ ₹5L
+ *   Rs.0 – 2.5L    : 0%
+ *   Rs.2.5 – 5L    : 5%
+ *   Rs.5 – 10L     : 20%
+ *   Above Rs.10L   : 30%
+ *   Rebate u/s 87A: Full rebate if net taxable <= Rs.5L
  *
- * Surcharge: 10% (₹50L–₹1Cr), 15% (₹1–2Cr), 25% (₹2–5Cr), 25% new / 37% old (>₹5Cr)
+ * Surcharge: 10% (Rs.50L–Rs.1Cr), 15% (Rs.1–2Cr), 25% (Rs.2–5Cr), 25% new / 37% old (>Rs.5Cr)
  * Cess: 4% on (tax + surcharge)
  */
 export function estimateIncomeTax(
@@ -142,7 +142,7 @@ export function estimateIncomeTax(
     } else {
       tax = 300000 + (taxableIncome - 2400000) * 0.30;
     }
-    // Section 87A rebate: zero tax if taxable income ≤ ₹12,00,000
+    // Section 87A rebate: zero tax if taxable income <= Rs.12,00,000
     if (taxableIncome <= 1200000) tax = 0;
   } else {
     // Old Regime
@@ -155,7 +155,7 @@ export function estimateIncomeTax(
     } else {
       tax = 112500 + (taxableIncome - 1000000) * 0.30;
     }
-    // Rebate u/s 87A: zero if taxable ≤ ₹5L
+    // Rebate u/s 87A: zero if taxable <= Rs.5L
     if (taxableIncome <= 500000) tax = 0;
   }
 
@@ -171,14 +171,14 @@ export function estimateIncomeTax(
 }
 
 /**
- * PF Calculator — EPF rate 8.25% (EPFO declared, FY 2026-27 (confirmed 8.25% � 3rd consecutive year))
- * Employee: 12% of basic (capped at 12% of ₹15,000 = ₹1,800/mo when basic > ₹15,000)
- * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension — not in corpus)
+ * PF Calculator -- EPF rate 8.25% (EPFO declared, FY 2026-27 (confirmed 8.25% -- 3rd consecutive year))
+ * Employee: 12% of basic (capped at 12% of Rs.15,000 = Rs.1,800/mo when basic > Rs.15,000)
+ * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension -- not in corpus)
  * Corpus compounded annually at 8.25%
  */
 export interface PFResult {
-  employeeContribution: number;   // monthly ₹
-  employerEPFContribution: number; // monthly ₹ (3.67% only — EPS excluded)
+  employeeContribution: number;   // monthly Rs.
+  employerEPFContribution: number; // monthly Rs. (3.67% only -- EPS excluded)
   totalMonthly: number;
   corpus1Year: number;
   corpus5Year: number;
@@ -216,7 +216,7 @@ export function calculatePF(basicMonthly: number): PFResult {
 }
 
 /**
- * HRA Exemption — Section 10(13A) of Income Tax Act
+ * HRA Exemption -- Section 10(13A) of Income Tax Act
  * Exemption = MINIMUM of:
  *   (a) Actual HRA received annually
  *   (b) 50% of annual basic (metro: Mumbai, Delhi, Kolkata, Chennai) / 40% non-metro
@@ -268,11 +268,11 @@ export function calculateHRA(
 }
 
 /**
- * Gratuity — Payment of Gratuity Act, 1972
- * Formula: (Last drawn Basic+DA × 15 × Years of service) / 26
- * Tax-free limit: ₹20 lakh (private sector employees)
+ * Gratuity -- Payment of Gratuity Act, 1972
+ * Formula: (Last drawn Basic+DA * 15 * Years of service) / 26
+ * Tax-free limit: Rs.20 lakh (private sector employees)
  *
- * ROUNDING RULE: If service in last year > 6 months → round UP to next full year
+ * ROUNDING RULE: If service in last year > 6 months -- round UP to next full year
  * Example: 7 years 7 months = 8 years. 7 years 4 months = 7 years.
  */
 export interface GratuityResult {
@@ -300,7 +300,7 @@ export function calculateGratuity(
     ? Math.round((lastBasicDaMonthly * 15 * roundedYears) / 26)
     : 0;
 
-  const taxFreeLimit    = 2000000; // ₹20 lakh
+  const taxFreeLimit    = 2000000; // Rs.20 lakh
   const taxableGratuity = Math.max(0, gratuity - taxFreeLimit);
   const perYear = roundedYears > 0 ? Math.round(gratuity / roundedYears) : 0;
 
@@ -310,10 +310,10 @@ export function calculateGratuity(
 /**
  * Notice Period Buyout Calculator
  * Daily rate = Monthly Gross Salary / 26 working days
- * Buyout = Daily rate × Remaining notice days
- * Tax = Buyout × marginal slab rate × 1.04 (cess)
+ * Buyout = Daily rate * Remaining notice days
+ * Tax = Buyout * marginal slab rate * 1.04 (cess)
  *
- * Note: Some companies use monthly CTC / 30 — check appointment letter.
+ * Note: Some companies use monthly CTC / 30 -- check appointment letter.
  */
 export interface NoticeBuyoutResult {
   buyoutAmount: number;
@@ -344,10 +344,10 @@ export function calculateNoticeBuyout(
   };
 }
 
-// ─── Formatting Utilities ────────────────────────────────────────────────────
+// --- Formatting Utilities ---
 
 export function formatINR(amount: number): string {
-  if (!isFinite(amount) || isNaN(amount)) return '₹0';
+  if (!isFinite(amount) || isNaN(amount)) return 'Rs.0';
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
