@@ -11,8 +11,8 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-calculate-inhand-salary-from-ctc',
-    title: 'How to Calculate In-Hand Salary from CTC in India (2024)',
-    description: 'Learn the exact formula to convert your CTC to monthly take-home salary. Understand PF, HRA, professional tax deductions step-by-step.',
+    title: 'How to Calculate In-Hand Salary from CTC in India (2025)',
+    description: 'Learn the exact formula to convert your CTC to monthly take-home salary for FY 2025-26. Understand PF, HRA, professional tax deductions step-by-step with worked examples.',
     category: 'Salary Guide',
     readTime: '6 min read',
     publishedAt: '2025-04-15',
@@ -313,8 +313,8 @@ Use our [In-Hand Salary Calculator](/in-hand-salary-calculator) to verify your s
   },
   {
     slug: 'take-home-salary-10-lpa',
-    title: 'Take Home Salary for 10 LPA in India (2024) — Exact Breakdown',
-    description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India. Complete breakdown with PF, HRA, tax deductions, and city-wise differences.',
+    title: 'Take Home Salary for 10 LPA in India (2025) — Exact Monthly Breakdown',
+    description: 'Exact monthly in-hand salary for ₹10 LPA CTC in India for FY 2025-26. Complete breakdown with PF, HRA, income tax deductions, city-wise comparison, and new vs old regime.',
     category: 'Salary Examples',
     readTime: '5 min read',
     publishedAt: '2025-03-12',
@@ -430,8 +430,8 @@ Use our [Notice Period Buyout Calculator](/notice-period-buyout) for your exact 
   },
   {
     slug: 'gratuity-calculation-india',
-    title: 'How Gratuity is Calculated in India — Complete Guide 2024',
-    description: 'Complete guide to gratuity calculation in India. Formula, eligibility, tax rules, and worked examples for ₹10L, ₹15L, ₹20L salaries.',
+    title: 'How Gratuity is Calculated in India — Complete Guide 2025',
+    description: 'Complete guide to gratuity calculation in India for FY 2025. Formula, eligibility, tax rules, and worked examples for ₹10L, ₹15L, ₹20L salaries.',
     category: 'Benefits',
     readTime: '6 min read',
     publishedAt: '2025-02-28',
@@ -980,6 +980,391 @@ With full deductions (80C + NPS + HRA + 24B):
 At ₹30 LPA, **always evaluate old regime** with your CA. [Use our Tax Estimator](/tax-estimator).
     `.trim()
   },
+  {
+    slug: 'tcs-salary-structure-2025',
+    title: 'TCS Salary Structure 2025 — Fresher & Experienced In-Hand Breakdown',
+    description: 'Complete TCS salary structure for freshers and experienced professionals in 2025. Band-wise breakdown, variable pay, in-hand salary, and PF deductions explained.',
+    category: 'Company Salaries',
+    readTime: '7 min read',
+    publishedAt: '2025-05-21',
+    content: `
+## TCS Salary Structure 2025 — Everything You Need to Know
+
+Tata Consultancy Services (TCS) is India's largest IT employer with over 600,000 employees. Understanding your TCS salary structure is crucial before joining or negotiating.
+
+## TCS Fresher Salary (2025)
+
+For candidates joining through campus recruitment:
+
+| Qualification | CTC Offered | Monthly In-Hand |
+|---------------|-------------|-----------------|
+| B.E./B.Tech (NQT) | ₹3.36 LPA | ~₹23,500 |
+| B.E./B.Tech (Digital) | ₹7 LPA | ~₹49,500 |
+| M.E./M.Tech | ₹7–9 LPA | ₹49,500–₹63,000 |
+| MBA (Management Trainee) | ₹7–10 LPA | ₹49,500–₹70,000 |
+
+## TCS Salary Components Breakdown (₹7 LPA Example)
+
+| Component | Annual | Monthly |
+|-----------|--------|---------|
+| Basic Salary (50%) | ₹3,50,000 | ₹29,167 |
+| HRA (50% of Basic) | ₹1,75,000 | ₹14,583 |
+| Special Allowance | ₹1,23,731 | ₹10,311 |
+| Employer PF (in CTC) | ₹18,000 | ₹1,500 |
+| Gratuity Provision | ₹20,192 | ₹1,683 |
+| **Total CTC** | **₹7,00,000** | **₹58,333** |
+
+## TCS Variable Pay (VDA)
+
+TCS includes a Variable Salary Component (VDA) based on quarterly performance:
+- **Q1–Q4 rating A:** 100% variable paid
+- **Rating B:** 70–80% variable paid
+- **Rating C/D:** 0–50% variable paid
+
+For freshers, variable pay is typically **₹8,000–₹15,000/quarter** at ₹7 LPA.
+
+## TCS Experienced Salary Bands (2025)
+
+| Band | Experience | CTC Range | Monthly In-Hand |
+|------|-----------|-----------|-----------------|
+| C1 (Trainee) | 0–1 years | ₹3.36–7 LPA | ₹23,500–₹49,500 |
+| C2 (Developer) | 1–3 years | ₹6–10 LPA | ₹44,000–₹71,000 |
+| C3 (Senior) | 3–6 years | ₹10–18 LPA | ₹71,000–₹1,25,000 |
+| C4 (Lead) | 6–10 years | ₹18–28 LPA | ₹1,25,000–₹1,80,000 |
+| C5 (Manager) | 10+ years | ₹28–45 LPA | ₹1,80,000–₹2,80,000 |
+
+## TCS Benefits & Perks (Part of CTC)
+
+- **Group Health Insurance:** Family floater ₹3–5 lakh
+- **NPS:** Optional employer contribution
+- **Referral Bonus:** ₹15,000–₹75,000 per referral
+- **Cab/Transport:** Provided for night shifts
+
+## TCS In-Hand at ₹7 LPA — Actual Monthly Take-Home
+
+**Deductions:**
+- Employee PF: ₹1,800/month
+- Professional Tax: ₹200/month
+- Income Tax: ₹0 (below ₹12L, new regime)
+
+**Monthly In-Hand: ~₹49,500**
+
+## TCS vs Infosys vs Wipro Fresher Salary Comparison
+
+| Company | Fresher CTC | Monthly In-Hand |
+|---------|------------|-----------------|
+| TCS (Digital) | ₹7 LPA | ~₹49,500 |
+| Infosys (Digital Specialist) | ₹6.25 LPA | ~₹44,000 |
+| Wipro (Turbo) | ₹6.5 LPA | ~₹46,000 |
+| HCL (Tech) | ₹3.5–6.5 LPA | ₹24,000–₹46,000 |
+| Cognizant | ₹4–7 LPA | ₹28,000–₹49,500 |
+
+## Frequently Asked Questions
+
+**Q: Is TCS ₹3.36 LPA enough to survive in a metro city?**
+₹3.36 LPA gives ~₹23,500/month in-hand. In tier-2 cities it's manageable. In metros like Mumbai/Bangalore, shared accommodation costs ₹8,000–₹12,000, leaving limited savings.
+
+**Q: How to calculate my exact TCS in-hand salary?**
+Use our [CTC to In-Hand Calculator](/ctc-to-inhand) — enter your TCS CTC offer and get the exact monthly take-home.
+
+**Q: Does TCS deduct PF for ₹3.36 LPA?**
+Yes. Employee PF = 12% of Basic. At ₹3.36 LPA, basic ≈ ₹14,000/month, so PF = ₹1,500/month.
+
+**Q: Is TCS Digital vs NQT worth it for salary?**
+Digital offer (₹7 LPA) is more than double NQT (₹3.36 LPA). Always target Digital/Prime roles.
+    `.trim(),
+  },
+  {
+    slug: 'infosys-salary-structure-2025',
+    title: 'Infosys Salary Structure 2025 — Fresher to Senior In-Hand Breakdown',
+    description: 'Infosys salary bands, fresher in-hand salary 2025, variable pay, onsite pay, and detailed monthly breakdown for all experience levels.',
+    category: 'Company Salaries',
+    readTime: '7 min read',
+    publishedAt: '2025-05-21',
+    content: `
+## Infosys Salary Structure 2025 — Complete Guide
+
+Infosys is India's second-largest IT company. Here's the complete salary breakdown for 2025.
+
+## Infosys Fresher Salary (2025)
+
+| Role | CTC | Monthly In-Hand |
+|------|-----|-----------------|
+| System Engineer (SE) | ₹3.6 LPA | ~₹25,500 |
+| Digital Specialist Engineer | ₹6.25 LPA | ~₹44,000 |
+| Senior Specialist (DSE) | ₹8 LPA | ~₹57,000 |
+| Power Programmer (PP) | ₹9.5 LPA | ~₹67,000 |
+
+## Infosys ₹3.6 LPA Monthly Breakdown
+
+| Component | Monthly |
+|-----------|---------|
+| Basic (50%) | ₹15,000 |
+| HRA (50% of Basic) | ₹7,500 |
+| Special Allowance | ₹5,500 |
+| Employer PF | ₹1,800 |
+| **Gross** | **₹28,000** |
+
+**Deductions:**
+- Employee PF: ₹1,800
+- Professional Tax: ₹200
+- Income Tax: ₹0 (new regime)
+
+**Monthly In-Hand: ~₹25,500**
+
+## Infosys Band-Wise Salary 2025
+
+| Band | Title | CTC Range | In-Hand/Month |
+|------|-------|-----------|---------------|
+| Band 2 | System Engineer | ₹3.6–5 LPA | ₹25,500–₹36,000 |
+| Band 3 | Senior SE | ₹5–9 LPA | ₹36,000–₹64,000 |
+| Band 4 | Tech Lead | ₹9–15 LPA | ₹64,000–₹1,06,000 |
+| Band 5 | Sr Tech Lead | ₹15–22 LPA | ₹1,06,000–₹1,50,000 |
+| Band 6 | Manager | ₹22–35 LPA | ₹1,50,000–₹2,20,000 |
+
+## Infosys Variable Pay
+
+- Variable component: 10–20% of CTC
+- Paid quarterly based on company + individual performance
+- At ₹3.6 LPA: ~₹6,000–₹9,000 quarterly
+
+## Infosys Onsite Salary (USA/Europe)
+
+- USA: $70,000–$110,000/year depending on location + Per Diem
+- UK: £45,000–£70,000/year
+- Australia: AUD 75,000–100,000/year
+
+## Infosys vs New Joiners — What to Negotiate
+
+1. Always negotiate in-hand, not CTC
+2. Ask for the DSE/PP track if you have a competitive GPA or skills
+3. Joining bonus is negotiable for lateral hires
+
+## Frequently Asked Questions
+
+**Q: What is the in-hand for Infosys ₹3.6 LPA?**
+Approximately ₹25,500/month after PF and professional tax deductions. Zero income tax under new regime.
+
+**Q: Does Infosys have a bond?**
+Infosys has a 1-year service agreement. Bond amount is typically ₹1.5–2 lakh for freshers.
+
+**Q: How long to reach ₹10 LPA at Infosys?**
+Typically 3–5 years for System Engineers, faster for DSE/PP tracks. Job-hopping can accelerate this to 2–3 years.
+
+Use our [CTC to In-Hand Calculator](/ctc-to-inhand) to calculate your exact Infosys take-home salary.
+    `.trim(),
+  },
+  {
+    slug: 'freshers-salary-it-companies-2025',
+    title: 'Fresher Salary in IT Companies 2025 — TCS, Infosys, Wipro, HCL Comparison',
+    description: 'Complete fresher salary comparison for top IT companies in India 2025. TCS vs Infosys vs Wipro vs HCL vs Accenture — monthly in-hand, variable pay, and growth prospects.',
+    category: 'Freshers Guide',
+    readTime: '8 min read',
+    publishedAt: '2025-05-21',
+    content: `
+## Fresher Salary in IT Companies 2025 — The Complete Comparison
+
+If you're a fresh graduate in India, choosing the right company involves understanding not just the CTC but the actual monthly in-hand salary.
+
+## Top IT Companies Fresher Salary Comparison (2025)
+
+| Company | CTC Range | Monthly In-Hand | Growth (3 yrs) |
+|---------|-----------|-----------------|----------------|
+| TCS (Digital) | ₹7 LPA | ~₹49,500 | ₹10–14 LPA |
+| TCS (NQT) | ₹3.36 LPA | ~₹23,500 | ₹5–7 LPA |
+| Infosys (DSE) | ₹6.25 LPA | ~₹44,000 | ₹9–12 LPA |
+| Infosys (SE) | ₹3.6 LPA | ~₹25,500 | ₹5–7 LPA |
+| Wipro (Turbo) | ₹6.5 LPA | ~₹46,000 | ₹9–12 LPA |
+| Wipro (Elite) | ₹3.5 LPA | ~₹24,500 | ₹5–7 LPA |
+| HCL (Tech) | ₹3.5–6.5 LPA | ₹24,500–₹46,000 | ₹8–12 LPA |
+| Cognizant (GenC Next) | ₹7 LPA | ~₹49,500 | ₹10–14 LPA |
+| Accenture (ASE) | ₹4.5 LPA | ~₹32,000 | ₹7–10 LPA |
+| Capgemini | ₹4–6 LPA | ₹28,000–₹43,000 | ₹7–10 LPA |
+| Tech Mahindra | ₹3.5–6 LPA | ₹24,000–₹43,000 | ₹6–9 LPA |
+
+## Monthly In-Hand Salary at ₹3.6 LPA (Infosys SE Level)
+
+This is the most common fresher offer. Here's the exact breakdown:
+
+| Component | Monthly |
+|-----------|---------|
+| Basic Salary | ₹15,000 |
+| HRA | ₹7,500 |
+| Special Allowance | ₹5,200 |
+| **Gross** | **₹27,700** |
+| Less: Employee PF | ₹1,800 |
+| Less: Professional Tax | ₹200 |
+| Less: Income Tax | ₹0 |
+| **Net In-Hand** | **~₹25,700** |
+
+## Monthly In-Hand Salary at ₹7 LPA (TCS Digital / Cognizant GenC Next)
+
+| Component | Monthly |
+|-----------|---------|
+| Basic Salary | ₹29,167 |
+| HRA (Metro) | ₹14,583 |
+| Special Allowance | ₹10,311 |
+| **Gross** | **₹54,061** |
+| Less: Employee PF | ₹1,800 |
+| Less: Professional Tax | ₹200 |
+| Less: Income Tax | ₹0 (zero tax under ₹12L new regime) |
+| **Net In-Hand** | **~₹52,061** |
+
+## City-Wise Take-Home for ₹7 LPA Freshers
+
+| City | Monthly In-Hand | Rent (PG/Shared) | Savings |
+|------|-----------------|------------------|---------|
+| Bangalore | ~₹49,500 | ₹8,000–₹15,000 | ₹25,000–₹35,000 |
+| Hyderabad | ~₹49,500 | ₹6,000–₹12,000 | ₹28,000–₹38,000 |
+| Pune | ~₹49,500 | ₹7,000–₹13,000 | ₹26,000–₹35,000 |
+| Chennai | ~₹49,500 | ₹6,000–₹10,000 | ₹30,000–₹38,000 |
+| Mumbai | ~₹49,500 | ₹10,000–₹18,000 | ₹20,000–₹30,000 |
+
+## Which Company Should You Choose?
+
+**For maximum in-hand salary:** TCS Digital, Cognizant GenC Next (₹7 LPA)
+**For work-life balance:** Infosys, TCS (better than product companies)
+**For fastest growth:** Product startups, but riskier
+**For onsite opportunities:** Infosys, Wipro have frequent US/UK postings
+
+## How to Increase Your Fresher In-Hand Salary
+
+1. **Clear TCS Digital/NQT Prime or Infosys DSE/PP tracks** — 2x the salary
+2. **Target niche skills**: Cloud (AWS/Azure), Data Science, DevOps pay premium
+3. **Job-hop after 1.5–2 years** — typically 40–60% hike vs internal raise of 8–12%
+4. **Negotiate joining bonus** for lateral moves
+
+## Frequently Asked Questions
+
+**Q: Is ₹3.6 LPA enough as a fresher?**
+It depends on city. In tier-2 cities like Coimbatore/Jaipur, ₹25,000/month is comfortable. In Bangalore or Mumbai, it's tight.
+
+**Q: Can I switch from TCS NQT to TCS Digital?**
+Yes — through internal exams (TCS Xplore, Digital Capability Assessment) after joining.
+
+**Q: What's the in-hand for TCS ₹3.36 LPA in Bangalore?**
+~₹23,500/month. After rent (₹8,000–₹12,000) and food (₹5,000–₹6,000), savings are ₹5,000–₹10,000.
+
+Calculate your exact take-home: [In-Hand Salary Calculator](/in-hand-salary-calculator)
+    `.trim(),
+  },
+  {
+    slug: 'how-to-read-salary-slip-india-2025',
+    title: 'How to Read Your Salary Slip in India 2025 — Every Component Explained',
+    description: 'Complete guide to reading an Indian salary slip in 2025. Understand every component — Basic, HRA, PF, TDS, ESI, Special Allowance — with worked examples.',
+    category: 'Salary Guide',
+    readTime: '8 min read',
+    publishedAt: '2025-05-21',
+    content: `
+## How to Read Your Salary Slip in India — Complete Guide 2025
+
+Your salary slip (payslip) is the most important financial document you receive every month. Yet most employees don't understand half the components. Here's a complete breakdown.
+
+## Sample Indian Salary Slip (₹10 LPA CTC)
+
+**Employee:** Software Engineer | **Month:** May 2025
+
+### EARNINGS
+
+| Component | Monthly Amount |
+|-----------|----------------|
+| Basic Salary | ₹41,667 |
+| House Rent Allowance (HRA) | ₹20,833 |
+| Special Allowance | ₹14,600 |
+| **Gross Earnings** | **₹77,100** |
+
+### DEDUCTIONS
+
+| Component | Monthly Amount |
+|-----------|----------------|
+| Employee PF (12% of Basic) | ₹1,800 |
+| Professional Tax | ₹200 |
+| Income Tax (TDS) | ₹0 |
+| **Total Deductions** | **₹2,000** |
+
+### **NET PAY (In-Hand): ₹75,100**
+
+## Every Earnings Component Explained
+
+### 1. Basic Salary
+- Typically **40–50% of CTC**
+- Foundation for all other calculations
+- Higher basic = higher PF, HRA, Gratuity
+
+### 2. HRA (House Rent Allowance)
+- **Metro city:** 50% of basic | **Non-metro:** 40% of basic
+- Tax-exempt under old regime if you pay rent (Section 10(13A))
+- **Not exempt under new regime**
+
+### 3. Special Allowance
+- The "balancing" component: CTC − Basic − HRA − Employer PF − Gratuity = Special Allowance
+- **Fully taxable** — no exemption
+- Companies use this to fill the CTC gap
+
+### 4. LTA (Leave Travel Allowance)
+- For domestic travel expenses
+- Tax-exempt twice in a 4-year block (old regime)
+- Must submit travel proof (tickets, boarding passes)
+
+### 5. Food Allowance / Meal Coupon
+- Up to **₹2,200/month tax-free** (as per current rules)
+- Usually given as Sodexo/Zeta meal cards
+
+## Every Deduction Component Explained
+
+### 1. Employee PF (EPF)
+- **12% of Basic Salary** (capped at ₹1,800/month)
+- Goes to your EPFO account, earns **8.25% interest (FY 2025-26)**
+- Tax-free maturity amount (after 5 years)
+- Check your UAN on [epfindia.gov.in](https://www.epfindia.gov.in)
+
+### 2. Professional Tax (PT)
+- State-specific tax, typically **₹200/month (₹2,400/year)**
+- **States with PT:** Maharashtra, Karnataka, Tamil Nadu, West Bengal, Andhra Pradesh, Telangana
+- **States without PT:** Delhi, Rajasthan, Haryana, UP
+
+### 3. TDS (Tax Deducted at Source)
+- Income tax deducted monthly by employer
+- Based on your **projected annual income and declared deductions**
+- Under new regime for ₹0–12 LPA: **₹0 TDS**
+- Submit **Form 12BB** to declare deductions (old regime)
+
+### 4. ESI (Employee State Insurance)
+- Only if your **gross salary ≤ ₹21,000/month**
+- Employee contribution: **0.75% of gross**
+- Employer contribution: **3.25% of gross**
+- Provides health insurance benefits
+
+## What's NOT on Your Payslip (But in CTC)
+
+| Component | Why Not in Payslip | Where It Goes |
+|-----------|-------------------|---------------|
+| Employer PF | Paid directly to EPFO | Your PF account |
+| Gratuity | Accrues over 5 years | Paid on exit after 5 yrs |
+| Health Insurance | Paid to insurer | Group insurance |
+
+## How to Verify Your Salary Slip Is Correct
+
+1. **Check Basic:** Should be 40–50% of monthly CTC
+2. **Check PF:** Should be exactly 12% of Basic (max ₹1,800)
+3. **Check TDS:** Use our [Tax Estimator](/tax-estimator) to verify
+4. **Check Gross:** Basic + HRA + Allowances should match your offer letter gross
+
+## Frequently Asked Questions
+
+**Q: Why is my in-hand much less than CTC ÷ 12?**
+CTC includes employer PF and gratuity, which are NOT paid monthly. Use our [CTC to In-Hand Calculator](/ctc-to-inhand).
+
+**Q: Can I ask HR to restructure my salary?**
+Yes. Ask to increase HRA, add food coupons, LTA — these reduce your tax liability legally.
+
+**Q: What if my employer deducts excess TDS?**
+File your ITR and get a refund. Excess TDS is always refunded by the Income Tax Department.
+
+**Q: Is professional tax mandatory?**
+Yes if you're in a state that levies it. It's ₹2,400/year max and is deductible from income.
+    `.trim(),
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
@@ -989,3 +1374,4 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
   return blogPosts.filter(p => p.slug !== currentSlug).slice(0, limit);
 }
+

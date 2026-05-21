@@ -18,11 +18,11 @@ const tools = [
 ]
 
 const examples = [
-  { ctc: '6 LPA', inhand: '₹43,200/mo', pct: 86 },
-  { ctc: '10 LPA', inhand: '₹68,500/mo', pct: 82 },
-  { ctc: '15 LPA', inhand: '₹95,000/mo', pct: 76 },
-  { ctc: '20 LPA', inhand: '₹1,16,000/mo', pct: 70 },
-  { ctc: '30 LPA', inhand: '₹1,58,000/mo', pct: 63 },
+  { ctc: '6 LPA',  inhand: '₹45,460/mo', pct: 91 },
+  { ctc: '10 LPA', inhand: '₹77,100/mo', pct: 82 },
+  { ctc: '15 LPA', inhand: '₹1,06,450/mo', pct: 76 },
+  { ctc: '20 LPA', inhand: '₹1,37,200/mo', pct: 70 },
+  { ctc: '30 LPA', inhand: '₹1,89,500/mo', pct: 63 },
 ]
 
 const faqs = [
