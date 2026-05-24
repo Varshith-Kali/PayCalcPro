@@ -147,6 +147,54 @@ export default function HRACalculatorPage() {
             </div>
           </div>
         </div>
+        {/* HRA Guide Section */}
+        <div className="max-w-3xl mt-8 space-y-5">
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">HRA Exemption Rules — Section 10(13A) Explained</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              House Rent Allowance (HRA) exemption under Section 10(13A) is one of the most valuable tax benefits available to salaried employees who live in rented accommodation and opt for the old tax regime. The exemption is the <strong>minimum of three limits</strong> — whichever is lowest becomes the tax-free portion.
+            </p>
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 my-4 space-y-2">
+              <p className="font-bold text-slate-900 text-sm">The three limiting conditions (minimum is exempt):</p>
+              <p className="text-slate-600 text-sm">1. <strong>Actual HRA received</strong> from employer</p>
+              <p className="text-slate-600 text-sm">2. <strong>50% of basic salary</strong> (metro) or <strong>40% of basic</strong> (non-metro)</p>
+              <p className="text-slate-600 text-sm">3. <strong>Actual rent paid minus 10% of basic salary</strong></p>
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              HRA exemption is NOT available under the new tax regime. If you claim HRA, you must choose the old tax regime for that financial year. This is why comparing both regimes is crucial before declaring your choice to your employer in April.
+            </p>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">HRA Worked Examples — Metro vs Non-Metro</h2>
+            <div className="overflow-x-auto">
+              <table className="data-table w-full text-sm">
+                <thead><tr><th>Scenario</th><th>Basic/mo</th><th>HRA Received</th><th>Rent Paid</th><th>City</th><th>HRA Exempt</th></tr></thead>
+                <tbody>
+                  <tr><td>IT Employee</td><td>Rs.50,000</td><td>Rs.25,000</td><td>Rs.20,000</td><td>Bengaluru (metro)</td><td>Rs.15,000/mo</td></tr>
+                  <tr><td>Bank Employee</td><td>Rs.40,000</td><td>Rs.16,000</td><td>Rs.18,000</td><td>Pune (non-metro)</td><td>Rs.14,000/mo</td></tr>
+                  <tr><td>Fresher</td><td>Rs.25,000</td><td>Rs.12,500</td><td>Rs.8,000</td><td>Hyderabad (metro)</td><td>Rs.5,500/mo</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="space-y-3 mt-4">
+              {[
+                { title: 'Metro Cities for HRA', body: 'Only Mumbai, Delhi (NCR), Kolkata, and Chennai qualify for the 50% basic HRA limit. All other cities including Bengaluru, Hyderabad, Pune, Ahmedabad are considered non-metro (40% limit). This is fixed by the Income Tax rules and has not been updated since 1997 despite urbanisation.' },
+                { title: 'Proof Required', body: 'Rent receipts are required for HRA exemption claims above Rs.1 lakh per year (Rs.8,333/month). For rent above Rs.50,000/month, you must deduct TDS at 5% from rent and deposit it with the Income Tax Department under Form 26QC.' },
+                { title: 'HRA if Paying Rent to Parents', body: 'Rent paid to parents is valid for HRA exemption if the payment is genuine and the parent owns the property. Your parent must show this rental income in their ITR. This is legal and commonly used tax planning.' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-sm">{item.title}</p>
+                    <p className="text-slate-500 text-xs mt-0.5 leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-3xl mt-8 mb-2">
           <AdUnit slot="1956241775" format="horizontal" />
         </div>

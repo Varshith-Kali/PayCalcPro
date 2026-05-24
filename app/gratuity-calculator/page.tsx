@@ -114,6 +114,51 @@ export default function GratuityCalculatorPage() {
             </div>
           </div>
         </div>
+        {/* Gratuity Guide Section */}
+        <div className="max-w-3xl mt-8 space-y-5">
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">How Gratuity is Calculated — Payment of Gratuity Act 1972</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              Gratuity is a statutory retirement benefit paid by employers to employees who have completed at least 5 years of continuous service. It is governed by the Payment of Gratuity Act, 1972 and applies to all organisations with 10 or more employees. The formula is: <strong>Gratuity = (Last Drawn Basic + DA) x 15 x Years of Service / 26</strong>.
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              The number 15 represents 15 days of salary, and 26 represents the average number of working days in a month (excluding Sundays). Years of service is rounded up if you have completed more than 6 months in the last year. For example, 4 years and 7 months counts as 5 years, while 4 years and 5 months counts as 4 years.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="data-table w-full text-sm">
+                <thead><tr><th>Scenario</th><th>Basic Salary</th><th>Service</th><th>Gratuity Amount</th><th>Tax-Free?</th></tr></thead>
+                <tbody>
+                  <tr><td>Junior Engineer</td><td>Rs.30,000/mo</td><td>5 years</td><td>Rs.86,538</td><td>Yes (below Rs.20L)</td></tr>
+                  <tr><td>Senior Manager</td><td>Rs.80,000/mo</td><td>10 years</td><td>Rs.4,61,538</td><td>Yes (below Rs.20L)</td></tr>
+                  <tr><td>VP / Director</td><td>Rs.2,00,000/mo</td><td>15 years</td><td>Rs.17,30,769</td><td>Yes (below Rs.20L)</td></tr>
+                  <tr><td>Senior Executive</td><td>Rs.2,00,000/mo</td><td>20 years</td><td>Rs.23,07,692</td><td>Partial (Rs.20L exempt, rest taxable)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-3">Gratuity Eligibility Rules — Key Points to Know</h2>
+            <div className="space-y-3">
+              {[
+                { title: '5 Year Minimum Service', body: 'You must complete at least 5 years of continuous service with the same employer to be eligible for gratuity. The 5-year rule applies to resignation. In case of death or disability, gratuity is paid regardless of service length.' },
+                { title: 'Service Rounding Rule', body: 'If your last year has more than 6 months, it is rounded up to the next full year. Example: 9 years and 8 months = 10 years for gratuity. This is a significant benefit for those close to a full year milestone.' },
+                { title: 'Tax Exemption Limit', body: 'Gratuity received by private sector employees is tax-exempt up to Rs.20 lakh (limit enhanced in 2019). Government employees receive full tax exemption. Any amount above Rs.20 lakh is added to your income and taxed at your applicable slab rate.' },
+                { title: 'Payment Timeline', body: 'Employers must pay gratuity within 30 days of it becoming due. If delayed beyond 30 days, simple interest at the rate applicable to bank deposits must be paid for the delay period.' },
+                { title: 'Forfeiture Rules', body: 'Gratuity can be partially or fully forfeited if the employee is terminated for causes involving wilful omission, negligence, or riotous conduct. Normal resignation or retirement does not attract forfeiture.' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-sm">{item.title}</p>
+                    <p className="text-slate-500 text-xs mt-0.5 leading-relaxed">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-3xl mt-8 mb-2">
           <AdUnit slot="1956241775" format="horizontal" />
         </div>
