@@ -64,7 +64,7 @@ export default function SalaryGuidePage() {
             India Salary Guide FY 2026-27
           </h1>
           <p className="text-slate-300 text-lg max-w-3xl">
-            Real in-hand salaries for every CTC — from freshers at 5 LPA to senior roles at 50 LPA. Updated for Budget 2025 with new tax regime, ₹12L zero-tax rebate, and variable pay.
+            Real in-hand salaries for every CTC - from freshers at 5 LPA to senior roles at 50 LPA. Updated for Budget 2026 with new tax regime, Rs.12L zero-tax rebate, and variable pay.
           </p>
         </div>
       </section>
@@ -145,9 +145,9 @@ export default function SalaryGuidePage() {
           </div>
         </section>
 
-        {/* Budget 2025 key changes */}
-        <section>
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Budget 2025 Key Changes for Salaried</h2>
+        {/* Budget 2026 key changes */}
+        <div className="card p-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Budget 2026 Key Changes for Salaried</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { title: 'Zero Tax up to ₹12 Lakh', body: 'Section 87A rebate enhanced to ₹60,000 under new regime. If your net taxable income is ₹12L or below, you pay zero income tax.', color: 'bg-emerald-50 border-emerald-200' },
@@ -161,7 +161,7 @@ export default function SalaryGuidePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Formula section */}
         <section>

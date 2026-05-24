@@ -16,7 +16,7 @@ const TAX_SLABS_NEW = [
 ]
 
 const faqs = [
-  { question: 'Which tax regime is better for FY 2026-27?', answer: 'Under the new regime (Budget 2025), there is zero tax up to ₹12 lakh due to the enhanced 87A rebate. If your total deductions (HRA + 80C + home loan + NPS) exceed ₹3.75L, old regime may save more. Use this calculator to compare.' },
+  { question: 'Which tax regime is better for FY 2026-27?', answer: 'Under the new regime (Budget 2026), there is zero tax up to Rs.12 lakh due to the enhanced 87A rebate. If your total deductions (HRA + 80C + home loan + NPS) exceed Rs.3.75L, old regime may save more. Use this calculator to compare.' },
   { question: 'What is the standard deduction for FY 2026-27?', answer: 'Under the New Tax Regime, standard deduction is ₹75,000 for FY 2026-27 (increased from ₹50,000 in FY 2024-25). Under the Old Regime, it remains ₹50,000.' },
   { question: 'What is the 87A rebate limit for FY 2026-27?', answer: 'Under the New Regime for FY 2026-27, rebate u/s 87A is ₹60,000 — meaning if your net taxable income is ₹12 lakh or below, your effective tax is zero. Under old regime it remains ₹12,500 (for income ≤ ₹5L).' },
   { question: 'How is variable pay or bonus taxed?', answer: 'Variable pay and annual bonuses are added to your gross salary and taxed at your marginal slab rate. For example, if you are in the 20% slab, a ₹1 lakh bonus adds approximately ₹20,800 to your tax (including 4% cess).' },

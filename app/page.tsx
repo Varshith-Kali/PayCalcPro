@@ -42,7 +42,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block bg-sky-50 text-sky-600 text-xs font-semibold px-3 py-1.5 rounded-full border border-sky-100 mb-6">
-              Updated for FY 2025–26 · Always Free
+              Updated for FY 2026-27 · Always Free
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-5">
               Know Your Exact<br />
@@ -62,7 +62,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-400">
-              {['No signup required', 'No data collected', 'FY 2025–26 tax rules', 'Calculations stay in your browser'].map((t, i) => (
+              {['No signup required', 'No data collected', 'FY 2026-27 tax rules', 'Calculations stay in your browser'].map((t, i) => (
                 <span key={i} className="flex items-center gap-1.5">
                   <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                   {t}

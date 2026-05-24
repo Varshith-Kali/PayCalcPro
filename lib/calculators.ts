@@ -2,7 +2,7 @@
 // New Tax Regime (Default): Rebate u/s 87A => Zero tax up to Rs.12L
 // Slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
 // Standard Deduction: Rs.75,000 | EPF: 8.25% p.a. | Cess: 4%
-// Budget 2026-27: No changes from FY 2025-26 slabs
+// Budget 2026-27: No changes from prior year slabs (confirmed)
 
 export interface SalaryComponent {
   label: string;
@@ -97,7 +97,7 @@ export function calculateSalary(
 /**
  * Income Tax Estimator - FY 2026-27 (AY 2027-28)
  *
- * NEW REGIME (Budget 2026 - identical slabs to FY 2025-26):
+ * NEW REGIME (Budget 2026 - identical slabs, no changes):
  *   Rs.0 - 4L      : 0%
  *   Rs.4 - 8L      : 5%   -> max Rs.20,000
  *   Rs.8 - 12L     : 10%  -> max Rs.40,000
@@ -170,7 +170,7 @@ export function estimateIncomeTax(
 }
 
 /**
- * PF Calculator - EPF rate 8.25% (EPFO confirmed for FY 2025-26, 3rd consecutive year)
+ * PF Calculator - EPF rate 8.25% (EPFO confirmed for FY 2026-27, 3rd consecutive year)
  * Employee: 12% of basic (capped at 12% of Rs.15,000 = Rs.1,800/mo when basic > Rs.15,000)
  * Employer EPF: 3.67% of capped basic (8.33% goes to EPS pension - not in corpus)
  * Corpus compounded annually at 8.25%

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Convert CTC to monthly in-hand salary instantly. See exact PF, HRA, tax deductions. Free Indian salary calculator for FY 2026-27 new tax regime with variable pay support.',
   openGraph: {
     title: 'CTC to In-Hand Salary Calculator India FY 2026-27',
-    description: 'Free CTC to take-home salary converter. See PF, HRA, tax breakdown. Updated for Budget 2025.',
+    description: 'Free CTC to take-home salary converter. See PF, HRA, tax breakdown. Updated for Budget 2026.',
     url: 'https://paycalcpro.online/ctc-to-inhand',
   },
   alternates: { canonical: 'https://paycalcpro.online/ctc-to-inhand' },

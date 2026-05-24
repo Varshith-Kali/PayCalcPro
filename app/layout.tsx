@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-int
 export const metadata: Metadata = {
   metadataBase: new URL('https://paycalcpro.online'),
   title: {
-    default: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand 2025-26',
+    default: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand 2026-27',
     template: '%s | PayCalc Pro',
   },
   description: 'Free Indian salary calculators for FY 2026-27. Calculate CTC to in-hand salary, PF, HRA exemption, gratuity & income tax instantly. New tax regime & old regime comparison.',

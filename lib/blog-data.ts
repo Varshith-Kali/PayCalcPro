@@ -431,7 +431,7 @@ Use our [Notice Period Buyout Calculator](/notice-period-buyout) for your exact 
   {
     slug: 'gratuity-calculation-india',
     title: 'How Gratuity is Calculated in India — Complete Guide 2026',
-    description: 'Complete guide to gratuity calculation in India for FY 2025. Formula, eligibility, tax rules, and worked examples for ₹10L, ₹15L, ₹20L salaries.',
+    description: 'Complete guide to gratuity calculation in India for FY 2026-27. Formula, eligibility, tax rules, and worked examples for Rs.10L, Rs.15L, Rs.20L salaries.',
     category: 'Benefits',
     readTime: '6 min read',
     publishedAt: '2025-02-28',
@@ -793,7 +793,7 @@ Use our [CTC Calculator](/ctc-to-inhand) to get your personalized result.
 
 ## Final Monthly In-Hand: ~₹74,900
 
-**Critical 2025 note:** Exactly at ₹12L, the Section 87A rebate makes your effective tax **₹0**. This is the biggest tax benefit for this salary level in Budget 2025.
+**Key FY 2026-27 note:** Exactly at Rs.12L, the Section 87A rebate makes your effective tax **Rs.0**. This is the biggest tax benefit for this salary level in Budget 2026.
 
 ## Old Regime vs New Regime
 

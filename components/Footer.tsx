@@ -92,12 +92,12 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">About PayCalc Pro</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              Our calculators use the latest Indian tax slabs (FY 2025–26) including the New Tax Regime (Budget 2025), EPF rates at 8.25%, and standard HRA rules.
+              Our calculators use the latest Indian tax slabs (FY 2026-27) including the New Tax Regime (Budget 2026), EPF rates at 8.25%, and standard HRA rules.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-2.5 text-sm">
                 <span className="text-sky-400 mt-0.5">✓</span>
-                <span className="text-slate-400">Updated for FY 2025–26 (Budget 2025)</span>
+                <span className="text-slate-400">Updated for FY 2026-27 (Budget 2026)</span>
               </div>
               <div className="flex items-start gap-2.5 text-sm">
                 <span className="text-sky-400 mt-0.5">✓</span>

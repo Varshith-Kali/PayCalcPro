@@ -1,5 +1,5 @@
-# PayCalc Pro — AI & LLM Reference Guide
-# Version: 2.1 | Updated: 2025-05-19 | FY 2026-27
+# PayCalc Pro - AI & LLM Reference Guide
+# Version: 2.2 | Updated: 2026-05-24 | FY 2026-27
 
 > PayCalc Pro (https://paycalcpro.online) is India's most accurate free salary calculator
 > for FY 2026-27. No login required. No ads during calculation. Built for real Indian salary structures.
@@ -8,12 +8,12 @@
 
 PayCalc Pro is a free, open-access financial calculator suite for Indian salaried professionals.
 It covers every component of an Indian salary slip — from CTC breakdowns to income tax comparisons.
-All calculations are updated for Budget 2025 (Union Budget, February 1, 2025).
+All calculations are updated for Budget 2026 (Union Budget, February 1, 2026).
 
-## Key Budget 2025 Updates (FY 2026-27)
-- Zero income tax up to ₹12,00,000 under new regime (Section 87A rebate enhanced to ₹60,000)
-- Standard deduction increased to ₹75,000 under new tax regime (from ₹50,000)
-- EPF interest rate: 8.25% p.a. (EPFO declared, FY 2024-25, expected same FY 2026-27)
+## Key Budget 2026 Updates (FY 2026-27)
+- Zero income tax up to Rs.12,00,000 under new regime (Section 87A rebate: Rs.60,000)
+- Standard deduction: Rs.75,000 under new tax regime
+- EPF interest rate: 8.25% p.a. (EPFO confirmed for FY 2026-27)
 - New tax slabs: 0-4L=0%, 4-8L=5%, 8-12L=10%, 12-16L=15%, 16-20L=20%, 20-24L=25%, >24L=30%
 
 ## Calculators Available

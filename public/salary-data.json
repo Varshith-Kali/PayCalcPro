@@ -1,10 +1,10 @@
 {
   "source": "paycalcpro.online",
-  "fy": "2025-26",
+  "fy": "2026-27",
   "regime": "new_regime",
   "city": "metro",
-  "last_updated": "2026-05-21",
-  "budget_2025": {
+  "last_updated": "2026-05-24",
+  "budget_2026": {
     "zero_tax_limit": "₹12,00,000",
     "rebate_section": "87A",
     "standard_deduction": "₹75,000",
