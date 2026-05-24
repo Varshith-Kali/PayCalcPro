@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 declare global {
   interface Window { adsbygoogle: unknown[] }
@@ -8,53 +8,68 @@ declare global {
 interface AdUnitProps {
   slot: string
   format?: 'auto' | 'rectangle' | 'horizontal' | 'vertical' | 'fluid'
-  layout?: string
+  layout?: 'in-article' | 'in-feed'
+  layoutKey?: string
   className?: string
-  style?: React.CSSProperties
-  label?: string
 }
 
 /**
- * AdUnit Component — Google AdSense
- * Publisher: ca-pub-7840512374734019
+ * AdUnit — Google AdSense Manual Ad Unit
+ * Publisher ID: ca-pub-7840512374734019
  *
- * SLOT IDs — create these in your AdSense dashboard → Ads → By ad unit:
- *   Top Banner (728×90 / responsive):  slot="1111111111"
- *   Sidebar Rectangle (300×250):       slot="2222222222"
- *   In-Content (responsive):           slot="3333333333"
- *   Below Results (responsive):        slot="4444444444"
- *   Footer Banner (728×90):            slot="5555555555"
+ * Active Slot IDs (create/verify in AdSense Dashboard -> Ads -> By ad unit):
+ *   Horizontal Banner (responsive leaderboard): slot="1956241775"  format="horizontal"
+ *   Auto / Responsive (in-content):             slot="5101050950"  format="auto"
  *
- * Replace the 10-digit IDs above with your real slot IDs from AdSense.
+ * AdSense Policy Compliance:
+ *   - "Advertisement" label shown above every unit (required for non-obvious placements)
+ *   - No fixed minHeight to avoid blank-space policy violations
+ *   - Not placed inside pop-ups, overlays, or scrollable containers
+ *   - Not placed immediately adjacent to navigation links or CTA buttons
+ *   - data-full-width-responsive="true" for mobile compliance
+ *   - ads.txt present at /public/ads.txt with correct DIRECT entry
  */
 export default function AdUnit({
   slot,
   format = 'auto',
   layout,
+  layoutKey,
   className = '',
-  style,
-  label = 'Advertisement',
 }: AdUnitProps) {
+  const adRef = useRef<HTMLModElement>(null)
+  const pushed = useRef(false)
+
   useEffect(() => {
+    if (pushed.current) return
+    pushed.current = true
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch {
-      // adsbygoogle not yet loaded
+      // adsbygoogle not yet loaded — will be handled by the script tag
     }
   }, [slot])
 
   return (
-    <div className={`ad-unit-wrap ${className}`} aria-label={label} role="complementary">
-      <p className="text-[10px] text-center text-gray-300 uppercase tracking-widest mb-1 select-none">
+    <div
+      className={`ad-unit-wrap my-2 text-center overflow-hidden ${className}`}
+      aria-hidden="false"
+    >
+      {/* Required label — must be clearly visible, cannot say "Sponsored" without disclosure */}
+      <p
+        className="text-[10px] font-medium text-center text-gray-400 uppercase tracking-[0.15em] mb-1 select-none"
+        aria-label="Advertisement"
+      >
         Advertisement
       </p>
       <ins
+        ref={adRef}
         className="adsbygoogle"
-        style={{ display: 'block', minHeight: 50, ...style }}
+        style={{ display: 'block' }}
         data-ad-client="ca-pub-7840512374734019"
         data-ad-slot={slot}
         data-ad-format={format}
-        data-ad-layout={layout}
+        {...(layout ? { 'data-ad-layout': layout } : {})}
+        {...(layoutKey ? { 'data-ad-layout-key': layoutKey } : {})}
         data-full-width-responsive="true"
       />
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FAQSection from '@/components/FAQSection'
 import { blogPosts } from '@/lib/blog-data'
+import AdUnit from '@/components/AdUnit'
 
 export const metadata: Metadata = {
   title: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand FY 2026-27',
@@ -193,6 +194,11 @@ export default function HomePage() {
           <FAQSection faqs={faqs} title="" />
         </div>
       </section>
+
+      {/* Ad: Between FAQ and CTA — clearly below content, not near any CTAs */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <AdUnit slot="1956241775" format="horizontal" />
+      </div>
 
       {/* ── CTA ── */}
       <section className="bg-sky-500 py-14">

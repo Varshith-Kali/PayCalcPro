@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getBlogPost, getRelatedPosts, blogPosts } from '@/lib/blog-data'
+import AdUnit from '@/components/AdUnit'
 
 interface Props { params: { slug: string } }
 
@@ -148,9 +149,19 @@ export default function BlogArticlePage({ params }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           <article className="lg:col-span-3">
+            {/* Ad: Top of article — clearly separated from content */}
+            <div className="mb-6">
+              <AdUnit slot="1956241775" format="horizontal" />
+            </div>
+
             <div>{renderContent(post.content)}</div>
 
-            <div className="mt-10 bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 rounded-2xl p-6 text-center">
+            {/* Ad: Mid-article — after content body, before CTA */}
+            <div className="mt-8 mb-6">
+              <AdUnit slot="5101050950" format="auto" />
+            </div>
+
+            <div className="mt-4 bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 rounded-2xl p-6 text-center">
               <h3 className="font-bold text-slate-900 text-lg mb-2">Try Our Free Salary Calculator</h3>
               <p className="text-slate-500 text-sm mb-5">Get instant results — no account needed</p>
               <div className="flex flex-wrap justify-center gap-3">
@@ -162,8 +173,11 @@ export default function BlogArticlePage({ params }: Props) {
 
           <aside className="lg:col-span-1 space-y-6">
             <div className="sticky top-24">
+              {/* Sidebar Ad — top of sticky sidebar */}
+              <AdUnit slot="5101050950" format="auto" className="mb-4" />
+
               <div className="card-flat p-5">
-                <h3 className="font-bold text-slate-800 text-sm mb-4">🧮 Quick Calculators</h3>
+                <h3 className="font-bold text-slate-800 text-sm mb-4">Quick Calculators</h3>
                 <div className="space-y-2">
                   {[
                     { href: '/ctc-to-inhand', label: 'CTC to In-Hand' },

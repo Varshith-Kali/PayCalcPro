@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import AdUnit from '@/components/AdUnit'
 
 export const metadata: Metadata = {
   title: 'India Salary Guide FY 2026-27 – Complete Calculator Hub | PayCalc Pro',
@@ -107,6 +108,9 @@ export default function SalaryGuidePage() {
           </div>
           <p className="text-xs text-slate-400 mt-2">Approximate. Use the calculator for exact figures with your specific deductions and city.</p>
         </section>
+
+        {/* Ad: After salary table — high-intent placement */}
+        <AdUnit slot="1956241775" format="horizontal" />
 
         {/* Calculators grid */}
         <section>
