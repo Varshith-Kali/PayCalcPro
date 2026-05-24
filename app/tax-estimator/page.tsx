@@ -256,6 +256,60 @@ export default function TaxEstimatorPage() {
         <div className="max-w-3xl mt-8 mb-2">
           <AdUnit slot="1956241775" format="horizontal" />
         </div>
+
+        {/* Income Tax Guide Section */}
+        <div className="max-w-3xl mt-8 space-y-6">
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">Income Tax Slabs FY 2026-27 — New Regime Explained</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              Under the new tax regime for FY 2026-27 (AY 2027-28), the income tax slabs are structured to provide maximum benefit to middle-income salaried employees. The most significant benefit is the enhanced Section 87A rebate of Rs.60,000 — which effectively makes income up to Rs.12 lakh completely tax-free after the Rs.75,000 standard deduction.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="data-table w-full text-sm">
+                <thead><tr><th>Income Slab</th><th>Tax Rate</th><th>Maximum Tax in Slab</th></tr></thead>
+                <tbody>
+                  <tr><td>Rs.0 – Rs.4 Lakh</td><td>0%</td><td>Rs.0</td></tr>
+                  <tr><td>Rs.4 – Rs.8 Lakh</td><td>5%</td><td>Rs.20,000</td></tr>
+                  <tr><td>Rs.8 – Rs.12 Lakh</td><td>10%</td><td>Rs.40,000</td></tr>
+                  <tr><td>Rs.12 – Rs.16 Lakh</td><td>15%</td><td>Rs.60,000</td></tr>
+                  <tr><td>Rs.16 – Rs.20 Lakh</td><td>20%</td><td>Rs.80,000</td></tr>
+                  <tr><td>Rs.20 – Rs.24 Lakh</td><td>25%</td><td>Rs.1,00,000</td></tr>
+                  <tr><td>Above Rs.24 Lakh</td><td>30%</td><td>Unlimited</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-500 text-xs mt-3">All figures above are before adding 4% Health and Education Cess on the total tax amount.</p>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">New Tax Regime vs Old Tax Regime — When to Choose Which</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              The fundamental question for every salaried employee in India is which tax regime results in lower tax. The answer depends on how much you can claim in deductions under the old regime. Here is a practical guide:
+            </p>
+            <div className="space-y-3">
+              {[
+                { label: 'Choose New Regime if', points: ['Your income is Rs.12L or below (zero tax)', 'You claim less than Rs.3.75L in total deductions', 'You do not have HRA exemption or home loan interest', 'You prefer simplicity without maintaining investment proofs'] },
+                { label: 'Choose Old Regime if', points: ['You claim HRA exemption (especially in high-rent cities)', 'You pay home loan interest above Rs.1.5L/year', 'Your 80C investments + other deductions exceed Rs.3.75L', 'You have significant LTA or medical reimbursement claims'] },
+              ].map((r, i) => (
+                <div key={i} className={`p-4 rounded-xl border text-sm ${i === 0 ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'}`}>
+                  <p className="font-bold text-slate-900 mb-2">{r.label}:</p>
+                  <ul className="space-y-1">{r.points.map((p, j) => <li key={j} className="text-slate-600 flex gap-2"><span>•</span>{p}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed mt-4">
+              For most salaried employees earning below Rs.15 LPA with standard deductions, the new tax regime results in zero or lower tax due to the Rs.12L rebate and Rs.75,000 standard deduction. Use the calculator above to compare both regimes with your exact numbers.
+            </p>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-3">How TDS is Deducted from Salary</h2>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Your employer deducts Tax Deducted at Source (TDS) from your monthly salary under Section 192 of the Income Tax Act. The calculation is simple: your employer estimates your annual tax liability, divides it by 12, and deducts that amount every month. You must declare your tax regime to your employer at the start of each financial year (April). If you do not declare, your employer defaults to the new tax regime from FY 2024-25 onwards. You can switch regimes when filing your ITR, but TDS already deducted under the employer's regime cannot be recovered mid-year — only as a refund when you file returns. Use our tax estimator to know your exact monthly TDS before the financial year begins.
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-3xl mt-2">
           <FAQSection faqs={faqs} title="Tax Estimator FAQs" />
         </div>

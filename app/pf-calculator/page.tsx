@@ -143,7 +143,42 @@ export default function PFCalculatorPage() {
         <div className="max-w-3xl mt-8 mb-2">
           <AdUnit slot="1956241775" format="horizontal" />
         </div>
-        <div className="max-w-3xl mt-2">
+
+        {/* EPF Educational Guide */}
+        <div className="max-w-3xl mt-6 space-y-5">
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">How EPF Works — Complete Guide for Salaried Employees</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              The Employees' Provident Fund (EPF) is a mandatory retirement savings scheme under the Employees' Provident Funds and Miscellaneous Provisions Act, 1952. Both you and your employer contribute 12% of your basic salary every month. The EPFO manages this corpus and declares an annual interest rate — 8.25% for FY 2026-27.
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              What most employees don't realize: of the employer's 12%, only 3.67% goes to your EPF account. The remaining 8.33% goes to the Employee Pension Scheme (EPS) which funds your pension after retirement. EPS contributions are capped at 8.33% of Rs.15,000 = Rs.1,250/month regardless of your actual salary.
+            </p>
+            <div className="overflow-x-auto mt-4">
+              <table className="data-table w-full text-sm">
+                <thead><tr><th>Contribution</th><th>Rate</th><th>Where It Goes</th><th>Monthly Cap</th></tr></thead>
+                <tbody>
+                  <tr><td>Employee</td><td>12% of basic</td><td>100% to EPF account</td><td>Rs.1,800/month</td></tr>
+                  <tr><td>Employer (EPF portion)</td><td>3.67% of basic</td><td>Your EPF account</td><td>Rs.550/month</td></tr>
+                  <tr><td>Employer (EPS portion)</td><td>8.33% of basic</td><td>Pension Scheme (EPS)</td><td>Rs.1,250/month</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-500 text-xs mt-3">Caps apply when basic salary exceeds Rs.15,000/month (EPFO statutory wage ceiling). Employees may voluntarily contribute extra via VPF without employer match.</p>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-3">EPF Withdrawal Rules and Tax Treatment</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              EPF withdrawals are completely tax-free after 5 continuous years of service. If you withdraw before completing 5 years, the employer's contribution and interest become taxable income in the year of withdrawal. The employee's own contribution is always returned tax-free, but interest earned on it becomes taxable on early withdrawal.
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              From FY 2021-22, interest on EPF contributions exceeding Rs.2.5 lakh per year (employee's share only) is taxable. This primarily affects high-earners making Voluntary PF (VPF) contributions. For such employees, comparing post-tax EPF returns (8.25% pre-tax) with PPF (7.1%, fully tax-free) or NPS (market-linked, with 60% tax-free at maturity) is essential for optimising retirement savings.
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-3xl mt-4">
           <FAQSection faqs={faqs} title="PF Calculator FAQs" />
         </div>
         {/* Below FAQ ad */}

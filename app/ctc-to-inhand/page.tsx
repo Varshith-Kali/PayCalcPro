@@ -239,6 +239,64 @@ export default function CTCCalculatorPage() {
           </div>
         </div>
 
+        {/* Educational Guide Section */}
+        <div className="max-w-3xl mt-10 space-y-6">
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">How to Calculate CTC to In-Hand Salary in India</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              Converting CTC (Cost to Company) to in-hand salary requires understanding how Indian companies structure compensation. Your CTC is the total annual cost your employer incurs for your employment — it is not what you receive. The difference can be substantial: for a Rs.15 LPA CTC, your in-hand might be Rs.1.06 lakh per month, not Rs.1.25 lakh as a naive division would suggest.
+            </p>
+            <p className="text-slate-600 text-sm leading-relaxed mb-3">
+              The standard formula is: <strong>In-Hand = Gross Salary - Employee PF - Professional Tax - Income Tax</strong>. But to get there, you first need to derive your Gross Salary from CTC: <strong>Gross = CTC - Employer PF - Gratuity Provision</strong>. This two-step process is what makes manual calculation error-prone.
+            </p>
+            <h3 className="font-bold text-slate-800 mt-5 mb-3">Step-by-Step Breakdown</h3>
+            <div className="space-y-3">
+              {[
+                { step: '1', title: 'Identify Fixed vs Variable CTC', body: 'Separate your fixed CTC from variable pay (annual bonus, performance incentive). Variable pay is excluded from monthly calculations.' },
+                { step: '2', title: 'Calculate Basic Salary', body: 'Basic = 50% of Fixed CTC (standard for IT/corporate). For Rs.12 LPA fixed CTC, Basic = Rs.6 LPA = Rs.50,000/month. Some companies use 40-45% — check your offer letter.' },
+                { step: '3', title: 'Calculate HRA', body: 'HRA = 50% of Basic in metro cities (Mumbai, Delhi, Kolkata, Chennai) or 40% in non-metro. Metro basic Rs.50K/month = HRA Rs.25,000/month.' },
+                { step: '4', title: 'Subtract Employer PF and Gratuity from CTC', body: 'Employer PF = 12% of Basic, capped at Rs.1,800/month. Gratuity provision = 4.81% of Annual Basic. These reduce your Gross from CTC.' },
+                { step: '5', title: 'Subtract Employee Deductions', body: 'Employee PF = same as employer (12% of basic, max Rs.1,800/month). Professional Tax = Rs.200/month in most states. Income Tax = as per your slab.' },
+              ].map((s, i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="w-6 h-6 bg-sky-600 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">{s.step}</span>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-sm">{s.title}</p>
+                    <p className="text-slate-500 text-xs mt-0.5 leading-relaxed">{s.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">CTC vs Gross vs Net Salary — Key Differences</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              These three terms are frequently confused in job offers and salary negotiations. Understanding the difference helps you accurately compare offers from different companies.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="data-table w-full text-sm">
+                <thead><tr><th>Term</th><th>Definition</th><th>Example (Rs.15 LPA CTC)</th></tr></thead>
+                <tbody>
+                  <tr><td className="font-semibold">CTC</td><td>Total employer cost including PF, gratuity, insurance</td><td>Rs.15,00,000/year</td></tr>
+                  <tr><td className="font-semibold">Gross Salary</td><td>CTC minus employer PF and gratuity — what appears in your salary slip as total earnings</td><td>~Rs.13.35L/year</td></tr>
+                  <tr><td className="font-semibold">Net / In-Hand</td><td>Gross minus employee PF, professional tax, and income tax — credited to your bank</td><td>~Rs.12.77L/year</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-slate-600 text-sm leading-relaxed mt-4">
+              For a Rs.15 LPA CTC under the new tax regime, you typically receive around Rs.1.06 lakh per month in-hand. The difference from your naive expectation (Rs.1.25L/month) is accounted for by employer PF (Rs.1,800/month), employee PF (Rs.1,800/month), professional tax (Rs.200/month), and income tax (~Rs.5,200/month).
+            </p>
+          </div>
+
+          <div className="card p-7">
+            <h2 className="text-xl font-bold text-slate-900 mb-3">New Tax Regime vs Old Tax Regime — Which Reduces Your TDS More?</h2>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Under the new tax regime for FY 2026-27, salaries up to Rs.12 lakh (after Rs.75,000 standard deduction) attract zero income tax due to the enhanced Section 87A rebate of Rs.60,000. This means for CTC up to approximately Rs.13-13.5 LPA, your monthly TDS will be zero under the new regime. For higher salaries, compare both regimes using our <a href="/tax-estimator" className="text-sky-600 hover:underline">Tax Estimator</a> before declaring your regime to your employer at the start of the financial year.
+            </p>
+          </div>
+        </div>
+
         {/* Ad below FAQ */}
         <div className="max-w-3xl mt-8">
           <FAQSection faqs={faqs} title="CTC Calculator FAQs" />
