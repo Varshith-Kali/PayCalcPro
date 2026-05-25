@@ -7,6 +7,7 @@ import AdUnit from '@/components/AdUnit'
 export const metadata: Metadata = {
   title: 'PayCalc Pro – Free Salary Calculator India | CTC to In-Hand FY 2026-27',
   description: 'Calculate your in-hand salary from CTC instantly. Free Indian salary calculators for PF, HRA, Gratuity & Tax. Updated for FY 2026-27 new tax regime.',
+  alternates: { canonical: 'https://paycalcpro.online/' },
 }
 
 const tools = [

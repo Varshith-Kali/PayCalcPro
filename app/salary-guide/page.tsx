@@ -5,7 +5,7 @@ import AdUnit from '@/components/AdUnit'
 export const metadata: Metadata = {
   title: 'India Salary Guide FY 2026-27 – Complete Calculator Hub | PayCalc Pro',
   description: 'Complete guide to Indian salaries FY 2026-27. In-hand salary for 5–50 LPA, tax comparison, PF, HRA, gratuity. Free calculators + real salary tables.',
-  alternates: { canonical: 'https://paycalcpro.online/salary-guide' },
+  alternates: { canonical: 'https://paycalcpro.online/salary-guide/' },
   openGraph: {
     title: 'India Salary Guide FY 2026-27 – All Calculators',
     description: 'Real in-hand salary for every CTC from 5 to 50 LPA. Tax, PF, HRA, gratuity explained.',

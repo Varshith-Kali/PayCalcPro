@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Contact Us | PayCalc Pro',
   description: 'Get in touch with the PayCalc Pro team. We are happy to answer questions about our free salary calculators for Indian professionals.',
+  alternates: { canonical: 'https://paycalcpro.online/contact/' },
 }
 
 export default function ContactPage() {

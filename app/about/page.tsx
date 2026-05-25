@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About PayCalc Pro – Free Indian Salary Calculator | Mission & Methodology',
   description: 'PayCalc Pro is India\'s most accurate free salary calculator. Learn about our mission, calculation methodology, tax rules used, and our commitment to helping Indian professionals understand their salary.',
-  alternates: { canonical: 'https://paycalcpro.online/about' },
+  alternates: { canonical: 'https://paycalcpro.online/about/' },
 }
 
 export default function AboutPage() {

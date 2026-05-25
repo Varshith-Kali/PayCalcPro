@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CTC to In-Hand Salary Calculator India FY 2026-27',
     description: 'Free CTC to take-home salary converter. See PF, HRA, tax breakdown. Updated for Budget 2026.',
-    url: 'https://paycalcpro.online/ctc-to-inhand',
+    url: 'https://paycalcpro.online/ctc-to-inhand/',
   },
-  alternates: { canonical: 'https://paycalcpro.online/ctc-to-inhand' },
+  alternates: { canonical: 'https://paycalcpro.online/ctc-to-inhand/' },
 }
 
 const howToSchema = {
@@ -34,7 +34,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://paycalcpro.online' },
-    { '@type': 'ListItem', position: 2, name: 'CTC to In-Hand Calculator', item: 'https://paycalcpro.online/ctc-to-inhand' },
+    { '@type': 'ListItem', position: 2, name: 'CTC to In-Hand Calculator', item: 'https://paycalcpro.online/ctc-to-inhand/' },
   ],
 }
 

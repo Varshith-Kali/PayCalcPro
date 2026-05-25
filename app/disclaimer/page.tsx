@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Disclaimer – PayCalc Pro',
-  description: 'Disclaimer for PayCalc Pro salary calculators. Results are estimates for informational purposes only.',
+  title: 'Disclaimer – PayCalc Pro | Salary Calculator Estimates',
+  description: 'Disclaimer for PayCalc Pro salary calculators. Results are estimates for informational purposes only. Not professional tax or financial advice.',
+  alternates: { canonical: 'https://paycalcpro.online/disclaimer/' },
 }
 
 export default function DisclaimerPage() {
@@ -11,7 +12,7 @@ export default function DisclaimerPage() {
       <section className="bg-slate-900 text-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-white mb-2">Disclaimer</h1>
-          <p className="text-slate-400">Last updated: May 2025</p>
+          <p className="text-slate-400">Last updated: May 2026</p>
         </div>
       </section>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 text-slate-700 leading-relaxed">
@@ -21,7 +22,7 @@ export default function DisclaimerPage() {
         </div>
         {[
           { title: 'Calculation Accuracy', body: 'Our salary calculators use standard assumptions (e.g., Basic = 50% of CTC, HRA = 50%/40% of Basic) that may not reflect your actual salary structure. Every company has different policies for structuring compensation.' },
-          { title: 'Tax Calculations', body: 'Income tax estimates are based on publicly available CBDT tax slabs for FY 2024-25. Individual tax liability varies based on actual investments, deductions, surcharges, and specific circumstances. Always consult a Chartered Accountant for official tax computation.' },
+          { title: 'Tax Calculations', body: 'Income tax estimates are based on publicly available CBDT tax slabs for FY 2026-27. Individual tax liability varies based on actual investments, deductions, surcharges, and specific circumstances. Always consult a Chartered Accountant for official tax computation.' },
           { title: 'EPF & Gratuity', body: 'PF and gratuity calculations follow standard EPFO rules and the Payment of Gratuity Act. Actual employer policies may differ. EPF interest rates change annually and are set by the EPFO board.' },
           { title: 'No Professional Relationship', body: 'Using PayCalc Pro does not create a professional (CA, financial advisor, or legal) relationship between you and PayCalc Pro.' },
           { title: 'Not Affiliated with Government Bodies', body: 'PayCalc Pro is an independent website and is not affiliated with, endorsed by, or connected to EPFO, the Income Tax Department, CBDT, or any Indian government body.' },

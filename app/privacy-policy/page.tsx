@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Privacy Policy – PayCalc Pro | How We Handle Your Data',
   description: 'PayCalc Pro Privacy Policy. Learn how we collect, use, and protect your data. Covers Google Analytics, Google AdSense, cookies, and your privacy rights.',
-  alternates: { canonical: 'https://paycalcpro.online/privacy-policy' },
+  alternates: { canonical: 'https://paycalcpro.online/privacy-policy/' },
 }
 
 export default function PrivacyPolicyPage() {

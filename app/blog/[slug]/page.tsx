@@ -17,6 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
     title: post.title,
     description: post.description,
     openGraph: { title: post.title, description: post.description, type: 'article', publishedTime: post.publishedAt },
+    alternates: { canonical: `https://paycalcpro.online/blog/${params.slug}/` },
     twitter: { card: 'summary_large_image', title: post.title, description: post.description },
   }
 }

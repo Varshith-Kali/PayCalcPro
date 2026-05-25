@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Terms of Use – PayCalc Pro | Salary Calculator Website',
   description: 'Terms of Use for PayCalc Pro. Read our terms governing use of the free Indian salary calculator website, calculators, content, and advertisements.',
-  alternates: { canonical: 'https://paycalcpro.online/terms' },
+  alternates: { canonical: 'https://paycalcpro.online/terms/' },
 }
 
 export default function TermsPage() {

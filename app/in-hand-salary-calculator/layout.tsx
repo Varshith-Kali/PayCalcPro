@@ -5,7 +5,8 @@ export const metadata: Metadata = {
   title: 'In-Hand Salary Calculator India 2026 – Monthly Take-Home from CTC',
   description: 'Calculate your exact monthly in-hand salary from CTC. Instant breakdown of Basic, HRA, PF, TDS, Professional Tax. Free for Indian salaried employees FY 2026-27.',
   keywords: ['in hand salary calculator', 'take home salary calculator india', 'monthly salary calculator', 'salary after deductions india', 'net salary calculator india 2026', '10 lpa in hand salary', '15 lpa in hand salary', 'ctc to monthly salary'],
-  openGraph: { title: 'In-Hand Salary Calculator India 2026', description: 'Free monthly take-home salary calculator. Enter CTC, get exact in-hand with full PF, HRA, tax breakdown.' },
+  alternates: { canonical: 'https://paycalcpro.online/in-hand-salary-calculator/' },
+  openGraph: { title: 'In-Hand Salary Calculator India 2026', description: 'Free monthly take-home salary calculator. Enter CTC, get exact in-hand with full PF, HRA, tax breakdown.', url: 'https://paycalcpro.online/in-hand-salary-calculator/' },
   other: {
     'script:ld+json': JSON.stringify({
       '@context': 'https://schema.org',

@@ -5,6 +5,7 @@ import { blogPosts } from '@/lib/blog-data'
 export const metadata: Metadata = {
   title: 'Salary Blog – Guides on CTC, PF, HRA, Tax & Salary Negotiation',
   description: 'Expert guides on Indian salary structure, tax saving tips, PF, HRA exemption, gratuity, and salary negotiation. Written for Indian professionals.',
+  alternates: { canonical: 'https://paycalcpro.online/blog/' },
 }
 
 const categories = ['All', 'Salary Guide', 'Tax Savings', 'PF & Savings', 'Career Tips', 'Freshers Guide', 'Salary Examples', 'Benefits']
