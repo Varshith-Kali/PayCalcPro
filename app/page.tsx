@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 }
 
 const tools = [
-  { href: '/ctc-to-inhand', emoji: '💰', title: 'CTC to In-Hand', desc: 'See your exact monthly take-home from annual CTC', tag: 'Most Used' },
-  { href: '/tax-estimator', emoji: '📊', title: 'Tax Estimator', desc: 'Compare new vs old tax regime side by side', tag: 'Popular' },
-  { href: '/pf-calculator', emoji: '🏦', title: 'PF Calculator', desc: 'EPF contributions and long-term corpus growth', tag: '' },
-  { href: '/hra-calculator', emoji: '🏠', title: 'HRA Calculator', desc: 'Your HRA tax exemption under Section 10(13A)', tag: '' },
-  { href: '/gratuity-calculator', emoji: '🎁', title: 'Gratuity Calculator', desc: 'Estimate gratuity after 5+ years of service', tag: '' },
-  { href: '/notice-period-buyout', emoji: '📋', title: 'Notice Buyout', desc: 'Cost of early exit with full tax breakdown', tag: '' },
+  { href: '/ctc-to-inhand/', emoji: '💰', title: 'CTC to In-Hand', desc: 'See your exact monthly take-home from annual CTC', tag: 'Most Used' },
+  { href: '/tax-estimator/', emoji: '📊', title: 'Tax Estimator', desc: 'Compare new vs old tax regime side by side', tag: 'Popular' },
+  { href: '/pf-calculator/', emoji: '🏦', title: 'PF Calculator', desc: 'EPF contributions and long-term corpus growth', tag: '' },
+  { href: '/hra-calculator/', emoji: '🏠', title: 'HRA Calculator', desc: 'Your HRA tax exemption under Section 10(13A)', tag: '' },
+  { href: '/gratuity-calculator/', emoji: '🎁', title: 'Gratuity Calculator', desc: 'Estimate gratuity after 5+ years of service', tag: '' },
+  { href: '/notice-period-buyout/', emoji: '📋', title: 'Notice Buyout', desc: 'Cost of early exit with full tax breakdown', tag: '' },
 ]
 
 const examples = [
@@ -54,11 +54,11 @@ export default function HomePage() {
               India's simplest salary calculators. Enter your CTC and get an instant, accurate breakdown of every rupee — PF, HRA, tax, and net salary.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-              <Link href="/ctc-to-inhand"
+              <Link href="/ctc-to-inhand/"
                 className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3.5 rounded-lg transition-colors text-base">
                 Calculate My Salary →
               </Link>
-              <Link href="/tax-estimator"
+              <Link href="/tax-estimator/"
                 className="bg-white hover:bg-gray-50 text-gray-700 font-semibold px-8 py-3.5 rounded-lg border border-gray-200 transition-colors text-base">
                 Compare Tax Regimes
               </Link>
@@ -112,7 +112,7 @@ export default function HomePage() {
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 India's simplest salary calculators. Enter your CTC and get an instant, accurate breakdown of every rupee — PF, HRA, tax, and net salary. Updated for FY 2026-27.
               </p>
-              <Link href="/ctc-to-inhand"
+              <Link href="/ctc-to-inhand/"
                 className="inline-block bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors">
                 Calculate Your Exact In-Hand →
               </Link>
@@ -164,7 +164,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-gray-900">Salary & Tax Guides</h2>
               <p className="text-gray-500 text-sm mt-1">In-depth articles on Indian salary, PF, HRA and taxes</p>
             </div>
-            <Link href="/blog" className="hidden md:block text-sky-500 hover:text-sky-600 text-sm font-semibold transition-colors">
+            <Link href="/blog/" className="hidden md:block text-sky-500 hover:text-sky-600 text-sm font-semibold transition-colors">
               All Articles →
             </Link>
           </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-6 text-center md:hidden">
-            <Link href="/blog" className="text-sky-500 font-semibold text-sm">View All Articles →</Link>
+            <Link href="/blog/" className="text-sky-500 font-semibold text-sm">View All Articles →</Link>
           </div>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Start With Your CTC</h2>
           <p className="text-sky-100 mb-7 text-base">Get your full salary breakdown in under 10 seconds — free, instant, private.</p>
-          <Link href="/ctc-to-inhand"
+          <Link href="/ctc-to-inhand/"
             className="inline-block bg-white hover:bg-sky-50 text-sky-600 font-bold px-9 py-3.5 rounded-lg shadow transition-colors text-base">
             Calculate Now — It&apos;s Free
           </Link>

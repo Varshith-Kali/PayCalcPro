@@ -225,10 +225,10 @@ export default function CTCCalculatorPage() {
               <h3 className="font-bold text-slate-800 text-sm mb-3">Related Calculators</h3>
               <div className="space-y-2">
                 {[
-                  { href: '/pf-calculator', label: '🏦 PF Calculator' },
-                  { href: '/hra-calculator', label: '🏠 HRA Exemption' },
-                  { href: '/tax-estimator', label: '📊 Tax Estimator' },
-                  { href: '/gratuity-calculator', label: '🎁 Gratuity Calculator' },
+                  { href: '/pf-calculator/', label: '🏦 PF Calculator' },
+                  { href: '/hra-calculator/', label: '🏠 HRA Exemption' },
+                  { href: '/tax-estimator/', label: '📊 Tax Estimator' },
+                  { href: '/gratuity-calculator/', label: '🎁 Gratuity Calculator' },
                 ].map(l => (
                   <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors border border-transparent hover:border-sky-100 text-sm text-slate-700 hover:text-sky-700">
                     {l.label} <span className="text-slate-300">→</span>
@@ -292,7 +292,7 @@ export default function CTCCalculatorPage() {
           <div className="card p-7">
             <h2 className="text-xl font-bold text-slate-900 mb-3">New Tax Regime vs Old Tax Regime — Which Reduces Your TDS More?</h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Under the new tax regime for FY 2026-27, salaries up to Rs.12 lakh (after Rs.75,000 standard deduction) attract zero income tax due to the enhanced Section 87A rebate of Rs.60,000. This means for CTC up to approximately Rs.13-13.5 LPA, your monthly TDS will be zero under the new regime. For higher salaries, compare both regimes using our <a href="/tax-estimator" className="text-sky-600 hover:underline">Tax Estimator</a> before declaring your regime to your employer at the start of the financial year.
+              Under the new tax regime for FY 2026-27, salaries up to Rs.12 lakh (after Rs.75,000 standard deduction) attract zero income tax due to the enhanced Section 87A rebate of Rs.60,000. This means for CTC up to approximately Rs.13-13.5 LPA, your monthly TDS will be zero under the new regime. For higher salaries, compare both regimes using our <a href="/tax-estimator/" className="text-sky-600 hover:underline">Tax Estimator</a> before declaring your regime to your employer at the start of the financial year.
             </p>
           </div>
         </div>

@@ -87,12 +87,12 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { href: '/ctc-to-inhand', icon: 'Rs.', title: 'CTC to In-Hand Calculator', desc: 'Convert annual CTC to exact monthly take-home. Supports variable pay, metro/non-metro, and shows full PF, HRA, tax breakdown.' },
-              { href: '/tax-estimator', icon: '%', title: 'Income Tax Estimator', desc: 'Compare new vs old tax regime side by side. Add HRA, home loan, NPS, 80C deductions to see which regime saves more tax.' },
-              { href: '/pf-calculator', icon: 'PF', title: 'EPF Calculator', desc: 'Calculate EPF corpus over 1 to 30 years at 8.25% interest. Shows employee, employer, and total contributions separately.' },
-              { href: '/hra-calculator', icon: 'H', title: 'HRA Exemption Calculator', desc: 'Calculate your HRA tax exemption under Section 10(13A). Shows limiting factor and tax saved amount.' },
-              { href: '/gratuity-calculator', icon: 'G', title: 'Gratuity Calculator', desc: 'Estimate gratuity using Payment of Gratuity Act formula. Handles service period rounding and Rs.20L tax-free limit.' },
-              { href: '/notice-period-buyout', icon: 'N', title: 'Notice Period Buyout', desc: 'Calculate exact cost of buying out your notice period including income tax impact at your marginal slab rate.' },
+              { href: '/ctc-to-inhand/', icon: 'Rs.', title: 'CTC to In-Hand Calculator', desc: 'Convert annual CTC to exact monthly take-home. Supports variable pay, metro/non-metro, and shows full PF, HRA, tax breakdown.' },
+              { href: '/tax-estimator/', icon: '%', title: 'Income Tax Estimator', desc: 'Compare new vs old tax regime side by side. Add HRA, home loan, NPS, 80C deductions to see which regime saves more tax.' },
+              { href: '/pf-calculator/', icon: 'PF', title: 'EPF Calculator', desc: 'Calculate EPF corpus over 1 to 30 years at 8.25% interest. Shows employee, employer, and total contributions separately.' },
+              { href: '/hra-calculator/', icon: 'H', title: 'HRA Exemption Calculator', desc: 'Calculate your HRA tax exemption under Section 10(13A). Shows limiting factor and tax saved amount.' },
+              { href: '/gratuity-calculator/', icon: 'G', title: 'Gratuity Calculator', desc: 'Estimate gratuity using Payment of Gratuity Act formula. Handles service period rounding and Rs.20L tax-free limit.' },
+              { href: '/notice-period-buyout/', icon: 'N', title: 'Notice Period Buyout', desc: 'Calculate exact cost of buying out your notice period including income tax impact at your marginal slab rate.' },
             ].map((f, i) => (
               <Link key={i} href={f.href} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl hover:bg-sky-50 hover:border-sky-200 border border-transparent transition-all">
                 <span className="w-9 h-9 bg-sky-600 text-white rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0">{f.icon}</span>
@@ -138,8 +138,8 @@ export default function AboutPage() {
         <div className="text-center space-y-4">
           <p className="text-slate-500 text-sm">Have questions or found an error in our calculations?</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="btn-primary">Contact Us</Link>
-            <Link href="/blog" className="btn-secondary">Read Our Salary Guides</Link>
+            <Link href="/contact/" className="btn-primary">Contact Us</Link>
+            <Link href="/blog/" className="btn-secondary">Read Our Salary Guides</Link>
           </div>
         </div>
 

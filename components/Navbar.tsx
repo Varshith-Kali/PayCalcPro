@@ -3,13 +3,13 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const tools = [
-  { href: '/ctc-to-inhand', label: 'CTC to In-Hand Calculator' },
-  { href: '/in-hand-salary-calculator', label: 'In-Hand Salary Calculator' },
-  { href: '/pf-calculator', label: 'PF Calculator' },
-  { href: '/hra-calculator', label: 'HRA Calculator' },
-  { href: '/gratuity-calculator', label: 'Gratuity Calculator' },
-  { href: '/notice-period-buyout', label: 'Notice Period Buyout' },
-  { href: '/tax-estimator', label: 'Tax Estimator' },
+  { href: '/ctc-to-inhand/', label: 'CTC to In-Hand Calculator' },
+  { href: '/in-hand-salary-calculator/', label: 'In-Hand Salary Calculator' },
+  { href: '/pf-calculator/', label: 'PF Calculator' },
+  { href: '/hra-calculator/', label: 'HRA Calculator' },
+  { href: '/gratuity-calculator/', label: 'Gratuity Calculator' },
+  { href: '/notice-period-buyout/', label: 'Notice Period Buyout' },
+  { href: '/tax-estimator/', label: 'Tax Estimator' },
 ]
 
 export default function Navbar() {
@@ -46,15 +46,15 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            <Link href="/salary-guide" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Salary Guide</Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">About</Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Contact</Link>
+            <Link href="/salary-guide/" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Salary Guide</Link>
+            <Link href="/blog/" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
+            <Link href="/about/" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">About</Link>
+            <Link href="/contact/" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Contact</Link>
           </nav>
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Link href="/ctc-to-inhand"
+            <Link href="/ctc-to-inhand/"
               className="bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
               Calculate Salary
             </Link>
@@ -90,14 +90,14 @@ export default function Navbar() {
                 ))}
               </div>
             )}
-            {[{ href: '/salary-guide', label: 'Salary Guide' }, { href: '/blog', label: 'Blog' }, { href: '/about', label: 'About' }, { href: '/contact', label: 'Contact' }].map(l => (
+            {[{ href: '/salary-guide/', label: 'Salary Guide' }, { href: '/blog/', label: 'Blog' }, { href: '/about/', label: 'About' }, { href: '/contact/', label: 'Contact' }].map(l => (
               <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
                 className="block py-2.5 text-sm font-medium text-gray-700 border-t border-gray-50">
                 {l.label}
               </Link>
             ))}
             <div className="pt-2 pb-1 border-t border-gray-100">
-              <Link href="/ctc-to-inhand" onClick={() => setOpen(false)}
+              <Link href="/ctc-to-inhand/" onClick={() => setOpen(false)}
                 className="block text-center bg-sky-500 text-white text-sm font-semibold py-2.5 rounded-lg">
                 Calculate My Salary
               </Link>

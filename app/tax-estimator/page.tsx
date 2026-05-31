@@ -241,9 +241,9 @@ export default function TaxEstimatorPage() {
               <h3 className="font-bold text-slate-900 mb-3 text-sm">Related Tools</h3>
               <div className="space-y-2">
                 {[
-                  { href: '/ctc-to-inhand', label: '💰 CTC to In-Hand' },
-                  { href: '/hra-calculator', label: '🏠 HRA Calculator' },
-                  { href: '/pf-calculator', label: '🏦 PF Calculator' },
+                  { href: '/ctc-to-inhand/', label: '💰 CTC to In-Hand' },
+                  { href: '/hra-calculator/', label: '🏠 HRA Calculator' },
+                  { href: '/pf-calculator/', label: '🏦 PF Calculator' },
                 ].map(l => (
                   <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors text-sm text-slate-700 hover:text-sky-700 border border-transparent hover:border-sky-100">
                     {l.label} <span className="text-slate-300">→</span>

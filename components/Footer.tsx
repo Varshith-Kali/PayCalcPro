@@ -1,25 +1,25 @@
 import Link from 'next/link'
 
 const tools = [
-  { href: '/ctc-to-inhand', label: 'CTC to In-Hand Calculator' },
-  { href: '/in-hand-salary-calculator', label: 'In-Hand Salary Calculator' },
-  { href: '/pf-calculator', label: 'PF Calculator' },
-  { href: '/hra-calculator', label: 'HRA Calculator' },
-  { href: '/gratuity-calculator', label: 'Gratuity Calculator' },
-  { href: '/notice-period-buyout', label: 'Notice Period Buyout' },
-  { href: '/tax-estimator', label: 'Tax Estimator' },
+  { href: '/ctc-to-inhand/', label: 'CTC to In-Hand Calculator' },
+  { href: '/in-hand-salary-calculator/', label: 'In-Hand Salary Calculator' },
+  { href: '/pf-calculator/', label: 'PF Calculator' },
+  { href: '/hra-calculator/', label: 'HRA Calculator' },
+  { href: '/gratuity-calculator/', label: 'Gratuity Calculator' },
+  { href: '/notice-period-buyout/', label: 'Notice Period Buyout' },
+  { href: '/tax-estimator/', label: 'Tax Estimator' },
 ]
 
 const quickLinks = [
-  { href: '/blog', label: 'Salary Blog' },
-  { href: '/about', label: 'About Us' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: '/blog/', label: 'Salary Blog' },
+  { href: '/about/', label: 'About Us' },
+  { href: '/contact/', label: 'Contact Us' },
 ]
 
 const legal = [
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms of Use' },
-  { href: '/disclaimer', label: 'Disclaimer' },
+  { href: '/privacy-policy/', label: 'Privacy Policy' },
+  { href: '/terms/', label: 'Terms of Use' },
+  { href: '/disclaimer/', label: 'Disclaimer' },
 ]
 
 export default function Footer() {

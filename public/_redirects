@@ -1,0 +1,16 @@
+# Cloudflare permanent redirects: non-trailing-slash → trailing-slash (301)
+# This ensures Google and all crawlers always land on the canonical trailing-slash URL
+/ctc-to-inhand /ctc-to-inhand/ 301
+/in-hand-salary-calculator /in-hand-salary-calculator/ 301
+/pf-calculator /pf-calculator/ 301
+/hra-calculator /hra-calculator/ 301
+/gratuity-calculator /gratuity-calculator/ 301
+/tax-estimator /tax-estimator/ 301
+/notice-period-buyout /notice-period-buyout/ 301
+/salary-guide /salary-guide/ 301
+/blog /blog/ 301
+/about /about/ 301
+/contact /contact/ 301
+/privacy-policy /privacy-policy/ 301
+/terms /terms/ 301
+/disclaimer /disclaimer/ 301

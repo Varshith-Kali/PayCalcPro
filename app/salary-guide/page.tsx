@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'India Salary Guide FY 2026-27 – All Calculators',
     description: 'Real in-hand salary for every CTC from 5 to 50 LPA. Tax, PF, HRA, gratuity explained.',
-    url: 'https://paycalcpro.online/salary-guide',
+    url: 'https://paycalcpro.online/salary-guide/',
   },
 }
 
@@ -43,7 +43,7 @@ const guideSchema = {
   '@type': 'Article',
   headline: 'India Salary Guide FY 2026-27: In-Hand Salary for Every CTC',
   description: 'Complete salary guide for Indian professionals. Real in-hand amounts for 5–50 LPA under new tax regime with all deductions.',
-  url: 'https://paycalcpro.online/salary-guide',
+  url: 'https://paycalcpro.online/salary-guide/',
   datePublished: '2025-05-01',
   dateModified: '2025-05-19',
   author: { '@type': 'Person', name: 'Varshith Kali' },
@@ -98,7 +98,7 @@ export default function SalaryGuidePage() {
                       <td className={row.tax === '₹0' ? 'text-emerald-600 font-semibold' : 'text-red-500'}>{row.tax}</td>
                       <td className="text-xs text-slate-400">{row.regime}</td>
                       <td>
-                        <Link href="/ctc-to-inhand" className="text-xs text-sky-600 hover:underline font-medium">Calculate →</Link>
+                        <Link href="/ctc-to-inhand/" className="text-xs text-sky-600 hover:underline font-medium">Calculate →</Link>
                       </td>
                     </tr>
                   ))}
@@ -117,13 +117,13 @@ export default function SalaryGuidePage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Free Salary Calculators</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { href: '/ctc-to-inhand', icon: '💰', title: 'CTC to In-Hand', desc: 'Full breakdown: PF, HRA, tax, special allowance. Variable pay support.' },
-              { href: '/in-hand-salary-calculator', icon: '🧮', title: 'In-Hand Salary', desc: 'Monthly take-home with salary chart. New & old regime.' },
-              { href: '/tax-estimator', icon: '📊', title: 'Tax Estimator', desc: 'New vs old regime. Add NPS, HRA, home loan deductions.' },
-              { href: '/pf-calculator', icon: '🏦', title: 'EPF Calculator', desc: '30-year corpus at 8.25%. Employee + employer breakdown.' },
-              { href: '/hra-calculator', icon: '🏠', title: 'HRA Exemption', desc: 'Section 10(13A). Metro vs non-metro. Tax saved amount.' },
-              { href: '/gratuity-calculator', icon: '🎁', title: 'Gratuity', desc: 'Payment of Gratuity Act formula. Service rounding included.' },
-              { href: '/notice-period-buyout', icon: '📋', title: 'Notice Period Buyout', desc: 'Daily rate × remaining days + tax impact calculation.' },
+              { href: '/ctc-to-inhand/', icon: '💰', title: 'CTC to In-Hand', desc: 'Full breakdown: PF, HRA, tax, special allowance. Variable pay support.' },
+              { href: '/in-hand-salary-calculator/', icon: '🧮', title: 'In-Hand Salary', desc: 'Monthly take-home with salary chart. New & old regime.' },
+              { href: '/tax-estimator/', icon: '📊', title: 'Tax Estimator', desc: 'New vs old regime. Add NPS, HRA, home loan deductions.' },
+              { href: '/pf-calculator/', icon: '🏦', title: 'EPF Calculator', desc: '30-year corpus at 8.25%. Employee + employer breakdown.' },
+              { href: '/hra-calculator/', icon: '🏠', title: 'HRA Exemption', desc: 'Section 10(13A). Metro vs non-metro. Tax saved amount.' },
+              { href: '/gratuity-calculator/', icon: '🎁', title: 'Gratuity', desc: 'Payment of Gratuity Act formula. Service rounding included.' },
+              { href: '/notice-period-buyout/', icon: '📋', title: 'Notice Period Buyout', desc: 'Daily rate × remaining days + tax impact calculation.' },
             ].map(c => (
               <Link key={c.href} href={c.href}
                 className="card p-5 hover:shadow-md transition-all hover:border-sky-200 border border-transparent group">
@@ -188,7 +188,7 @@ export default function SalaryGuidePage() {
             ))}
           </div>
           <div className="mt-4 text-center">
-            <Link href="/ctc-to-inhand" className="btn-primary inline-flex">Calculate My In-Hand Salary →</Link>
+            <Link href="/ctc-to-inhand/" className="btn-primary inline-flex">Calculate My In-Hand Salary →</Link>
           </div>
         </section>
       </div>

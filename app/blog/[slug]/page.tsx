@@ -128,7 +128,7 @@ export default function BlogArticlePage({ params }: Props) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="breadcrumb mb-5 text-slate-400">
             <Link href="/" className="hover:text-white">Home</Link><span>/</span>
-            <Link href="/blog" className="hover:text-white">Blog</Link><span>/</span>
+            <Link href="/blog/" className="hover:text-white">Blog</Link><span>/</span>
             <span className="text-slate-300 line-clamp-1">{post.title}</span>
           </nav>
           <div className="flex items-center gap-3 mb-4">
@@ -166,8 +166,8 @@ export default function BlogArticlePage({ params }: Props) {
               <h3 className="font-bold text-slate-900 text-lg mb-2">Try Our Free Salary Calculator</h3>
               <p className="text-slate-500 text-sm mb-5">Get instant results — no account needed</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link href="/ctc-to-inhand" className="btn-primary">CTC to In-Hand →</Link>
-                <Link href="/tax-estimator" className="btn-secondary">Tax Estimator →</Link>
+                <Link href="/ctc-to-inhand/" className="btn-primary">CTC to In-Hand →</Link>
+                <Link href="/tax-estimator/" className="btn-secondary">Tax Estimator →</Link>
               </div>
             </div>
           </article>
@@ -181,11 +181,11 @@ export default function BlogArticlePage({ params }: Props) {
                 <h3 className="font-bold text-slate-800 text-sm mb-4">Quick Calculators</h3>
                 <div className="space-y-2">
                   {[
-                    { href: '/ctc-to-inhand', label: 'CTC to In-Hand' },
-                    { href: '/pf-calculator', label: 'PF Calculator' },
-                    { href: '/hra-calculator', label: 'HRA Calculator' },
-                    { href: '/tax-estimator', label: 'Tax Estimator' },
-                    { href: '/gratuity-calculator', label: 'Gratuity Calc' },
+                    { href: '/ctc-to-inhand/', label: 'CTC to In-Hand' },
+                    { href: '/pf-calculator/', label: 'PF Calculator' },
+                    { href: '/hra-calculator/', label: 'HRA Calculator' },
+                    { href: '/tax-estimator/', label: 'Tax Estimator' },
+                    { href: '/gratuity-calculator/', label: 'Gratuity Calc' },
                   ].map(l => (
                     <Link key={l.href} href={l.href} className="flex items-center justify-between p-2.5 rounded-lg hover:bg-sky-50 transition-colors text-sm text-slate-600 hover:text-sky-700">
                       {l.label} <span className="text-slate-300">→</span>

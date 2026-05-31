@@ -113,7 +113,7 @@ export default function ContactPage() {
         {/* Navigation Back */}
         <div className="text-center">
           <Link href="/" className="btn-secondary btn-lg mr-4">&larr; Back to Home</Link>
-          <Link href="/about" className="btn-primary btn-lg">About Us &rarr;</Link>
+          <Link href="/about/" className="btn-primary btn-lg">About Us &rarr;</Link>
         </div>
       </div>
     </div>

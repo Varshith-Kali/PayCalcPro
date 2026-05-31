@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-export { default } from './page'
 
 export const metadata: Metadata = {
   title: 'PF Calculator India 2026 – EPF Corpus & Monthly Deduction Calculator',
@@ -7,4 +6,8 @@ export const metadata: Metadata = {
   keywords: ['pf calculator india', 'epf calculator 2026', 'provident fund calculator', 'pf deduction calculator', 'epf corpus calculator india'],
   alternates: { canonical: 'https://paycalcpro.online/pf-calculator/' },
   openGraph: { title: 'EPF/PF Calculator India 2026', description: 'Free EPF calculator showing monthly PF deduction and long-term corpus at 8.25% interest rate.', url: 'https://paycalcpro.online/pf-calculator/' },
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
 }

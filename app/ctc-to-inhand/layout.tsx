@@ -17,7 +17,7 @@ const howToSchema = {
   name: 'How to Calculate In-Hand Salary from CTC in India (FY 2026-27)',
   description: 'Step-by-step method to convert your annual CTC to monthly in-hand take-home salary using the standard Indian salary structure.',
   totalTime: 'PT2M',
-  tool: [{ '@type': 'HowToTool', name: 'PayCalc Pro CTC Calculator', url: 'https://paycalcpro.online/ctc-to-inhand' }],
+  tool: [{ '@type': 'HowToTool', name: 'PayCalc Pro CTC Calculator', url: 'https://paycalcpro.online/ctc-to-inhand/' }],
   step: [
     { '@type': 'HowToStep', position: 1, name: 'Find Fixed CTC', text: 'Separate Fixed CTC from Variable Pay. Fixed CTC = Annual CTC − Variable/Bonus component.' },
     { '@type': 'HowToStep', position: 2, name: 'Calculate Basic Salary', text: 'Basic = 50% of Fixed CTC (industry standard). E.g., for ₹12L CTC: Basic = ₹6L/year = ₹50,000/month.' },

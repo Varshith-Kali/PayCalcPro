@@ -64,10 +64,10 @@ export default function BlogPage() {
           <p className="text-slate-500 mb-6">Put your learnings to use with our instant salary calculators</p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { href: '/ctc-to-inhand', label: 'CTC to In-Hand' },
-              { href: '/pf-calculator', label: 'PF Calculator' },
-              { href: '/hra-calculator', label: 'HRA Calculator' },
-              { href: '/tax-estimator', label: 'Tax Estimator' },
+              { href: '/ctc-to-inhand/', label: 'CTC to In-Hand' },
+              { href: '/pf-calculator/', label: 'PF Calculator' },
+              { href: '/hra-calculator/', label: 'HRA Calculator' },
+              { href: '/tax-estimator/', label: 'Tax Estimator' },
             ].map(l => (
               <Link key={l.href} href={l.href} className="btn-secondary text-sm">{l.label}</Link>
             ))}

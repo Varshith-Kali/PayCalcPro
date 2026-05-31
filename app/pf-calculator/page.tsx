@@ -127,9 +127,9 @@ export default function PFCalculatorPage() {
               <h3 className="font-bold text-slate-800 text-sm mb-3">Related Tools</h3>
               <div className="space-y-2">
                 {[
-                  { href: '/ctc-to-inhand', label: '💰 CTC to In-Hand' },
-                  { href: '/gratuity-calculator', label: '🎁 Gratuity Calculator' },
-                  { href: '/tax-estimator', label: '📊 Tax Estimator' },
+                  { href: '/ctc-to-inhand/', label: '💰 CTC to In-Hand' },
+                  { href: '/gratuity-calculator/', label: '🎁 Gratuity Calculator' },
+                  { href: '/tax-estimator/', label: '📊 Tax Estimator' },
                 ].map(l => (
                   <Link key={l.href} href={l.href} className="flex items-center justify-between p-3 rounded-xl hover:bg-sky-50 transition-colors text-sm text-slate-700 hover:text-sky-700 border border-transparent hover:border-sky-100">
                     {l.label} <span className="text-slate-300">→</span>
