@@ -1,6 +1,7 @@
-# PayCalc Pro — Robots & AI Crawler Policy
+# PayCalc Pro - Robots & Crawler Policy
+# https://paycalcpro.online
 
-# ── Standard Search Engines ──────────────────────────────────────────
+# Standard Search Engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -15,8 +16,7 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# ── AI Search Bots (real-time answer/citation bots — ALLOW ALL) ──────
-# These fetch content to answer user queries and cite sources
+# AI Search Bots (citation bots - ALLOW)
 User-agent: ChatGPT-User
 Allow: /
 
@@ -38,16 +38,6 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-User-agent: Diffbot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: ia_archiver
-Allow: /
-
-# ── AI Training Bots — also allow (helps model learn our content) ─────
 User-agent: GPTBot
 Allow: /
 
@@ -60,15 +50,11 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-User-agent: omgili
-Allow: /
-
-# ── All other bots ────────────────────────────────────────────────────
+# All other bots
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-# ── Sitemaps & AI guidance ────────────────────────────────────────────
+# Sitemap
 Sitemap: https://paycalcpro.online/sitemap.xml
-LLMS-TXT: https://paycalcpro.online/llms.txt

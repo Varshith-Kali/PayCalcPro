@@ -1,0 +1,5 @@
+Contact: mailto:support@paycalcpro.online
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://paycalcpro.online/.well-known/security.txt
+Policy: https://paycalcpro.online/privacy-policy/
