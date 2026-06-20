@@ -1329,10 +1329,8 @@ Gratuity is a lump-sum payment made by your employer as a token of appreciation 
 
 **For Employees Covered Under the Payment of Gratuity Act:**
 
-```
-Gratuity = (Last Drawn Basic Salary + DA) × 15 ÷ 26 × Number of Years of Service
-```
-
+    Gratuity = (Last Drawn Basic Salary + DA) × 15 ÷ 26 × Number of Years of Service
+    
 Where:
 - **15**: 15 days of salary per year of service
 - **26**: Average working days per month (26 days, excluding Sundays)
